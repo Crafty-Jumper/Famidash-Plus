@@ -69,7 +69,7 @@ func fade_effect() -> void:
 func change_song(song: String = "menu_theme",loop:bool=false):
 	songLoop = loop
 	songName = song
-	if DirAccess.get_files_at("res://music/song_" + song).size() > 0:
+	if DirAccess.dir_exists_absolute("res://music/song_" + song):
 		var name = "res://music/song_" + song + "/" + DirAccess.get_files_at("res://music/song_" + song)[randi_range(0,DirAccess.get_files_at("res://music/song_" + song).size()-1)]
 		name = name.replace(".import","")
 		music.stream = load(name)
