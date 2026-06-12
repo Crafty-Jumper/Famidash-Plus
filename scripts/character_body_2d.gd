@@ -21,12 +21,24 @@ const speeds : Array = [
 	208, # 2x
 	]
 var speedIdx = 0
-const JUMP_VELOCITY = 0xF953 / 224.0
-const ship_speed = 0x003C
-const maxFall = 0x07C1 / 5.0
+
+var JUMP_VELOCITY = 0xF953 / 224.0
+var ship_speed = 0x003C
+var maxFall = 0x07C1 / 5.0
+var gravity = 0x009A / 416.0
+var physicsTable = {
+		"canHeadBonk":false,
+		"upVel":284.942,
+		"gravity":0.37,
+		"maxFall":397.0,
+		"maxUp":397.0,
+		"pads":[0,0,0,0],
+		"size":[14,14]
+	}
+var physics = JSON.parse_string(FileAccess.open("res://physics.json",FileAccess.READ).get_as_text())
 
 var gravMult : float = 1
-const gravity = 0x009A / 416.0
+
 @onready var level: Node2D = $".."
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -51,6 +63,8 @@ const jimshipSpr : Texture2D = preload("res://player/jim/ship.png")
 const jimufoSpr : Texture2D = preload("res://player/jim/ufo.png")
 const jimrobotSpr : Texture2D = preload("res://player/jim/robot.png")
 
+func update_physics(mode:String="cube") -> void:
+	physicsTable = physics[mode]
 
 func _physics_process(delta: float) -> void:
 	collision_shape_2d.disabled = gamemode == -1
@@ -78,7 +92,9 @@ func _physics_process(delta: float) -> void:
 		first_click = (Input.is_action_just_pressed("A") or Input.is_action_just_pressed("up"))
 	if is_on_wall():
 		die()
-	
+	if is_on_ceiling():
+		if !physicsTable["canHeadBonk"]:
+			die()
 	
 	
 	
@@ -197,44 +213,80 @@ func buffer() -> void:
 		buffering = true
 
 func handle_cube(delta:float) -> void:
+	update_physics()
 	
 	if Global.retro:
 		gamemode = 4
 	
 	animate_cube(cubeSpr)
-	
 	if not is_on_floor():
-		velocity.y += gravity * delta * 3600 * flippedMult * gravMult
+		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	if clicking and is_on_floor():
-		velocity.y = -JUMP_VELOCITY * flippedMult
+		velocity.y = -physicsTable["upVel"] * flippedMult
+	if velocity.y > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"]
+	if velocity.y < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"]
+
 
 func handle_ship(delta:float) -> void:
-	if velocity.y > maxFall/2:
-		velocity.y = maxFall/2
-	if velocity.y < -maxFall/2:
-		velocity.y = -maxFall/2
+	update_physics("ship")
 	animate_ship()
 	if not is_on_floor() and !clicking:
-		velocity.y += ship_speed * delta * 7 * flippedMult * gravMult
+		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	if clicking:
-		velocity.y -= ship_speed * delta * 12.5 * flippedMult * gravMult
+		velocity.y -= physicsTable["upVel"] * delta * flippedMult * gravMult
+	if velocity.y > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"]
+	if velocity.y < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"]
+
+
 
 func handle_ball(delta:float) -> void:
+	update_physics("ball")
 	if (first_click and is_on_floor()) or (buffering and is_on_floor()):
 		flipped = !flipped
-		velocity.y = -20 * flippedMult
+		velocity.y = -physicsTable["upVel"] * flippedMult
 	animate_ball()
 	if not is_on_floor():
-		velocity.y += gravity * delta * 3600 * flippedMult * gravMult
+		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
+	
+	if velocity.y > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"]
+	if velocity.y < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"]
+
+func handle_ufo(delta:float) -> void:
+	update_physics("ufo")
+	if Global.retro:
+		if gamemode == 1:
+			animate_ship(jimshipSpr)
+		else:
+			animate_ufo(jimufoSpr)
+	else:
+		animate_ufo()
+	
+	if not is_on_floor():
+		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
+	if first_click:
+		velocity.y = -physicsTable["upVel"] * flippedMult
+	if velocity.y > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"]
+	if velocity.y < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"]
 
 func handle_robot(delta:float) -> void:
-	
+	if Global.retro:
+		update_physics("cube")
+	else:
+		update_physics("robot")
 	if Global.retro:
 		animate_robot(jimrobotSpr,true)
 	else:
 		animate_robot()
 	if not is_on_floor():
-		velocity.y += gravity * delta * 3600 * flippedMult * (1 if Global.retro else 0.9) * gravMult
+		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 		if !clicking:
 			robotJump = 0
 	else:
@@ -248,13 +300,23 @@ func handle_robot(delta:float) -> void:
 			if first_click:
 				robotJump = 0x13
 				ninjaJumps -= 1
+	if velocity.y > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"]
+	if velocity.y < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"]
+
 
 func handle_spider(delta:float) -> void:
+	update_physics("spider")
 	if (first_click and is_on_floor()) or (buffering and is_on_floor()):
 		spider_teleport(!flipped)
 	animate_robot(spiderSpr)
 	if not is_on_floor():
-		velocity.y += gravity * delta * 3600 * flippedMult * gravMult * 0.9
+		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult * 0.9
+	if velocity.y > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"]
+	if velocity.y < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"]
 
 func handle_wave(delta:float) -> void:
 	animate_wave()
@@ -264,6 +326,7 @@ func handle_wave(delta:float) -> void:
 		velocity.y = abs(velocity.x)
 
 func handle_ninja(delta:float) -> void:
+	update_physics()
 	
 	if Global.retro:
 		animate_robot(jimrobotSpr)
@@ -273,27 +336,17 @@ func handle_ninja(delta:float) -> void:
 	
 	
 	if first_click and ninjaJumps > 1:
-		velocity.y = -JUMP_VELOCITY * flippedMult
+		velocity.y = -physicsTable["upVel"] * flippedMult
 		ninjaJumps -= 1
 	
 	if not is_on_floor():
-		velocity.y += gravity * delta * 3600 * flippedMult * gravMult
+		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	else:
 		ninjaJumps = 3
-func handle_ufo(delta:float) -> void:
-	
-	if Global.retro:
-		if gamemode == 1:
-			animate_ship(jimshipSpr)
-		else:
-			animate_ufo(jimufoSpr)
-	else:
-		animate_ufo()
-	
-	if not is_on_floor():
-		velocity.y += gravity/3 * delta * 3600 * flippedMult * gravMult
-	if first_click:
-		velocity.y = -JUMP_VELOCITY * flippedMult / 2
+	if velocity.y > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"]
+	if velocity.y < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"]
 
 func die() -> void:
 	collision_shape_2d.disabled = true
