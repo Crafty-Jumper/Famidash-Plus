@@ -85,6 +85,7 @@ func place_tile_column() -> void:
 		_place_sprites()
 
 func _process(_delta: float) -> void:
+	visible = !Global.blind
 	if tilePosX < levelWidth:
 		place_tile_column()
 
