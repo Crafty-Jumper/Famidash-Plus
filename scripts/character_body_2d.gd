@@ -13,8 +13,6 @@ var first_click : bool = false
 var clickDisabler : bool = false
 @onready var trigger_manager: Area2D = $"../Area2D"
 
-@onready var collision_area: Area2D = $CollisionArea
-
 const speeds : Array = [
 	166, # 1x
 	132, # 0.5x

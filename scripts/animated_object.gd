@@ -1,23 +1,23 @@
-class AnimatingObject:
-	extends Sprite2D
-	
-	@export var frames = 2
-	@export var fps = 1
-	var frame_idx = 0
-	var startFrame = frame
-	
-	var timer = Timer.new()
-	
-	func _ready() -> void:
-		timer.time_left = fps/60.0
-		timer.one_shot = true
-		add_child(timer)
+extends Node2D
+class_name AnimatedObject
 
+@export var frames = 2
+@export var fps = 1
+@onready var sprite = get_parent()
+var frame_idx = 0
+var startFrame = 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-	func _process(_delta: float) -> void:
-		if timer.time_left <= 0:
-			timer.start()
-		if frame_idx > frames:
-			frame_idx = 0
-		frame = startFrame + frame_idx
+var timer = Timer.new()
+
+func _ready() -> void:
+	add_child(timer)
+	timer.one_shot = true
+	timer.start(1.0/fps)
+	timer.timeout.connect(looped)
+	startFrame = sprite.frame
+
+func looped() -> void:
+	timer.start(fps/60.0)
+	sprite.frame = startFrame + frame_idx
+	if frame_idx > frames:
+		frame_idx = 0

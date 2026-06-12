@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://666tc5xexcod"]
 
 [ext_resource type="Texture2D" uid="uid://d1j6xhx1wmv2k" path="res://spritesheets/portalSheet.png" id="1_ixp6j"]
+[ext_resource type="Script" uid="uid://xhfs56536gpk" path="res://scripts/animated_object.gd" id="2_uff7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bd3t6"]
 size = Vector2(16, 48)
@@ -18,3 +19,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=545990553]
 shape = SubResource("RectangleShape2D_bd3t6")
+
+[node name="AnimatedObject" type="Node2D" parent="." unique_id=1111561077]
+script = ExtResource("2_uff7e")
+metadata/_custom_type_script = "uid://xhfs56536gpk"
