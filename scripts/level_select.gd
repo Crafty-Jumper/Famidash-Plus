@@ -22,15 +22,10 @@ const difficulties = {
 
 @onready var banner_corner: Sprite2D = $BannerCorner
 @onready var banner_corner_2: Sprite2D = $BannerCorner2
-@onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar
-@onready var texture_progress_bar_2: TextureProgressBar = $TextureProgressBar2
-@onready var normal_percent: Label = $NormalPercent
-@onready var practice_percent: Label = $PracticePercent
-@onready var sprite_2d_2: Sprite2D = $Sprite2D2
+@onready var center_level: Node2D = $CenterLevel
+@onready var left_level: Node2D = $LeftLevel
+@onready var right_level: Node2D = $RightLevel
 
-@onready var level_name: Label = $LevelName
-@onready var star_count: Label = $StarCount
-@onready var sprite_2d: Sprite2D = $Sprite2D
 const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_sides","menu_e_sides"]
 var json
 
@@ -56,10 +51,20 @@ func _process(delta: float) -> void:
 		await Global.sfx.finished
 		Global.fade_scene("res://scenes/level.tscn")
 	
+	center_level.position.x /= 1.25
+	left_level.position.x = center_level.position.x-get_viewport_rect().size.x/4
+	right_level.position.x = center_level.position.x+get_viewport_rect().size.x/4
+	
 	if Input.is_action_just_pressed("left"):
 		Global.levelIdx -= 1
+		left_level.position.x = -get_viewport_rect().size.x/2
+		center_level.position.x = -get_viewport_rect().size.x/4
+		right_level.position.x = 0
 	if Input.is_action_just_pressed("right"):
 		Global.levelIdx += 1
+		left_level.position.x = 0
+		center_level.position.x = get_viewport_rect().size.x/4
+		right_level.position.x = get_viewport_rect().size.x/2
 	if Global.levelIdx < 0:
 		Global.levelIdx = robtopLvlCnt
 	if Global.levelIdx > json.size()-1:
@@ -71,28 +76,38 @@ func _process(delta: float) -> void:
 		if Global.levelIdx < robtopLvlCnt+1:
 			Global.levelIdx = json.size()-1
 	
-	var data = get_level_data(Global.levelIdx)
-	set_level_data(data)
-	set_level_progress()
+	
+	if true:
+		var data = get_level_data(Global.levelIdx-1)
+		set_level_data(data,left_level)
+		set_level_progress(left_level)
+	if true:
+		var data = get_level_data(Global.levelIdx+1)
+		set_level_data(data,right_level)
+		set_level_progress(right_level)
+	if true:
+		var data = get_level_data(Global.levelIdx)
+		set_level_data(data)
+		set_level_progress()
 
 func get_level_data(index:int):
 	var file = FileAccess.open("res://LEVELS/lvlset_HUGE_metadata.json",FileAccess.READ)
 	var text = file.get_as_text()
 	file.close()
 	json = JSON.parse_string(text)
-	return json[index]
+	return json[clamp(index,0,json.size()-1)]
 
-func set_level_data(data:Dictionary):
-	sprite_2d.frame = difficulties.get(data["difficulty"],0)
+func set_level_data(data:Dictionary,node:Node2D=$CenterLevel):
+	node.get_child(1).frame = difficulties.get(data["difficulty"],0)
 	Global.levelName = data["level"]
-	level_name.text = data.get("upperText","") + (" \n" if fmod(data.get("upperText","").length(),2) == 1 else "\n")
-	level_name.text += data["lowerText"] + (" " if fmod(data["lowerText"].length(),2) == 1 else "")
-	star_count.text = str(int(data["stars"]) if floor(data["stars"]) == data["stars"] else data["stars"])
+	node.get_child(6).text = data.get("upperText","") + (" \n" if fmod(data.get("upperText","").length(),2) == 1 else "\n")
+	node.get_child(6).text += data["lowerText"] + (" " if fmod(data["lowerText"].length(),2) == 1 else "")
+	node.get_child(7).text = str(int(data["stars"]) if floor(data["stars"]) == data["stars"] else data["stars"])
 
-func set_level_progress() -> void:
+func set_level_progress(node:Node2D=$CenterLevel) -> void:
 	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})
-	sprite_2d_2.visible = level_save["normal"] >= 100
-	texture_progress_bar.value = level_save["normal"]
-	normal_percent.text = str(int(ceil(level_save["normal"]))) + "%"
-	texture_progress_bar_2.value = level_save["practice"]
-	practice_percent.text = str(int(ceil(level_save["practice"]))) + "%"
+	node.get_child(2).visible = level_save["normal"] >= 100
+	node.get_child(3).value = level_save["normal"]
+	node.get_child(8).text = str(int(ceil(level_save["normal"]))) + "%"
+	node.get_child(4).value = level_save["practice"]
+	node.get_child(9).text = str(int(ceil(level_save["practice"]))) + "%"

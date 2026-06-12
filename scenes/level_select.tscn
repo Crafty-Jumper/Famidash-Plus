@@ -27,30 +27,9 @@ offset_right = 512.0
 offset_bottom = 192.0
 color = Color(0, 0.25882354, 0.7764706, 1)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=420527303]
-offset_left = -80.0
-offset_top = 64.0
-offset_right = 80.0
-offset_bottom = 112.0
-texture = ExtResource("2_r77uv")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=512061961]
-position = Vector2(-64, 88)
-texture = ExtResource("3_4nqmc")
-hframes = 7
-vframes = 2
-frame = 2
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1957538102]
-visible = false
-position = Vector2(-64, 76)
-texture = ExtResource("5_o2xx4")
-region_enabled = true
-region_rect = Rect2(0, 8, 16, 8)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1390204358]
+position = Vector2(0, 120)
+zoom = Vector2(4, 4)
 
 [node name="BannerCorner" type="Sprite2D" parent="." unique_id=107037172]
 position = Vector2(-104, 216)
@@ -65,11 +44,38 @@ centered = false
 offset = Vector2(-48, -24)
 flip_h = true
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1390204358]
-position = Vector2(0, 120)
-zoom = Vector2(4, 4)
+[node name="BannerTop" type="Sprite2D" parent="." unique_id=726215493]
+position = Vector2(0, 8)
+texture = ExtResource("11_htctk")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=858695212]
+[node name="LeftLevel" type="Node2D" parent="." unique_id=80565624]
+position = Vector2(-256, 0)
+
+[node name="Background" type="NinePatchRect" parent="LeftLevel" unique_id=364161793]
+offset_left = -80.0
+offset_top = 64.0
+offset_right = 80.0
+offset_bottom = 112.0
+texture = ExtResource("2_r77uv")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Difficulty" type="Sprite2D" parent="LeftLevel" unique_id=794995186]
+position = Vector2(-64, 88)
+texture = ExtResource("3_4nqmc")
+hframes = 7
+vframes = 2
+frame = 2
+
+[node name="Crown" type="Sprite2D" parent="LeftLevel" unique_id=650962740]
+position = Vector2(-64, 76)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(0, 8, 16, 8)
+
+[node name="NormalProgress" type="TextureProgressBar" parent="LeftLevel" unique_id=554151667]
 offset_left = -80.0
 offset_top = 128.0
 offset_right = 80.0
@@ -78,7 +84,7 @@ texture_under = ExtResource("6_4nqmc")
 texture_progress = ExtResource("7_7plkq")
 tint_progress = Color(0, 1, 0, 1)
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="." unique_id=1820898478]
+[node name="PracticeProgress" type="TextureProgressBar" parent="LeftLevel" unique_id=1449281651]
 offset_left = -80.0
 offset_top = 152.0
 offset_right = 80.0
@@ -87,31 +93,22 @@ texture_under = ExtResource("6_4nqmc")
 texture_progress = ExtResource("7_7plkq")
 tint_progress = Color(0, 1, 1, 1)
 
-[node name="NormalLabel" type="Label" parent="." unique_id=1655029318]
+[node name="ProgressLabels" type="Label" parent="LeftLevel" unique_id=1485678805]
 offset_left = -72.0
 offset_top = 120.0
 offset_right = 80.0
-offset_bottom = 143.0
+offset_bottom = 152.0
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("8_ckc44")
 theme_override_font_sizes/font_size = 8
-text = "NORMAL MOdE"
+text = "NORMAL MODE
+
+
+PRACTICE MODE"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="PracticeLabel" type="Label" parent="." unique_id=1092554406]
-offset_left = -72.0
-offset_top = 144.0
-offset_right = 80.0
-offset_bottom = 167.0
-theme_override_constants/line_spacing = 0
-theme_override_fonts/font = ExtResource("8_ckc44")
-theme_override_font_sizes/font_size = 8
-text = "PRACTICE MODE"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="LevelName" type="Label" parent="." unique_id=478118349]
+[node name="LevelName" type="Label" parent="LeftLevel" unique_id=583680222]
 offset_left = -415.0
 offset_top = 80.0
 offset_right = 431.0
@@ -124,7 +121,7 @@ YOU AGAIN "
 horizontal_alignment = 1
 uppercase = true
 
-[node name="StarCount" type="Label" parent="." unique_id=78444883]
+[node name="StarCount" type="Label" parent="LeftLevel" unique_id=1324709965]
 offset_left = -118.0
 offset_top = 72.0
 offset_right = 64.0
@@ -136,7 +133,7 @@ text = "2"
 horizontal_alignment = 2
 uppercase = true
 
-[node name="NormalPercent" type="Label" parent="." unique_id=1646653003]
+[node name="NormalPercent" type="Label" parent="LeftLevel" unique_id=1730859797]
 offset_left = -76.0
 offset_top = 128.0
 offset_right = 76.0
@@ -148,7 +145,7 @@ text = "0%"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="PracticePercent" type="Label" parent="." unique_id=199581303]
+[node name="PracticePercent" type="Label" parent="LeftLevel" unique_id=1991716789]
 offset_left = -76.0
 offset_top = 152.0
 offset_right = 76.0
@@ -160,30 +157,291 @@ text = "0%"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=173497717]
+[node name="Star" type="Sprite2D" parent="LeftLevel" unique_id=1483099451]
 position = Vector2(68, 76)
 texture = ExtResource("5_o2xx4")
 region_enabled = true
 region_rect = Rect2(0, 0, 8, 8)
 
-[node name="Coin1" type="Sprite2D" parent="." unique_id=2054962208]
+[node name="Coin1" type="Sprite2D" parent="LeftLevel" unique_id=457722334]
 position = Vector2(52, 100)
 texture = ExtResource("5_o2xx4")
 region_enabled = true
 region_rect = Rect2(8, 0, 8, 8)
 
-[node name="Coin2" type="Sprite2D" parent="." unique_id=151096101]
+[node name="Coin2" type="Sprite2D" parent="LeftLevel" unique_id=1046054208]
 position = Vector2(60, 100)
 texture = ExtResource("5_o2xx4")
 region_enabled = true
 region_rect = Rect2(8, 0, 8, 8)
 
-[node name="Coin3" type="Sprite2D" parent="." unique_id=2023217900]
+[node name="Coin3" type="Sprite2D" parent="LeftLevel" unique_id=1296440780]
 position = Vector2(68, 100)
 texture = ExtResource("5_o2xx4")
 region_enabled = true
 region_rect = Rect2(8, 0, 8, 8)
 
-[node name="BannerTop" type="Sprite2D" parent="." unique_id=726215493]
-position = Vector2(0, 8)
-texture = ExtResource("11_htctk")
+[node name="CenterLevel" type="Node2D" parent="." unique_id=1252506766]
+
+[node name="Background" type="NinePatchRect" parent="CenterLevel" unique_id=420527303]
+offset_left = -80.0
+offset_top = 64.0
+offset_right = 80.0
+offset_bottom = 112.0
+texture = ExtResource("2_r77uv")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Difficulty" type="Sprite2D" parent="CenterLevel" unique_id=512061961]
+position = Vector2(-64, 88)
+texture = ExtResource("3_4nqmc")
+hframes = 7
+vframes = 2
+frame = 2
+
+[node name="Crown" type="Sprite2D" parent="CenterLevel" unique_id=1957538102]
+position = Vector2(-64, 76)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(0, 8, 16, 8)
+
+[node name="NormalProgress" type="TextureProgressBar" parent="CenterLevel" unique_id=858695212]
+offset_left = -80.0
+offset_top = 128.0
+offset_right = 80.0
+offset_bottom = 168.0
+texture_under = ExtResource("6_4nqmc")
+texture_progress = ExtResource("7_7plkq")
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="PracticeProgress" type="TextureProgressBar" parent="CenterLevel" unique_id=1820898478]
+offset_left = -80.0
+offset_top = 152.0
+offset_right = 80.0
+offset_bottom = 192.0
+texture_under = ExtResource("6_4nqmc")
+texture_progress = ExtResource("7_7plkq")
+tint_progress = Color(0, 1, 1, 1)
+
+[node name="ProgressLabels" type="Label" parent="CenterLevel" unique_id=1655029318]
+offset_left = -72.0
+offset_top = 120.0
+offset_right = 80.0
+offset_bottom = 152.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "NORMAL MODE
+
+
+PRACTICE MODE"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="LevelName" type="Label" parent="CenterLevel" unique_id=478118349]
+offset_left = -415.0
+offset_top = 80.0
+offset_right = 431.0
+offset_bottom = 103.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "AND THEN KILL 
+YOU AGAIN "
+horizontal_alignment = 1
+uppercase = true
+
+[node name="StarCount" type="Label" parent="CenterLevel" unique_id=78444883]
+offset_left = -118.0
+offset_top = 72.0
+offset_right = 64.0
+offset_bottom = 80.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "2"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="NormalPercent" type="Label" parent="CenterLevel" unique_id=1646653003]
+offset_left = -76.0
+offset_top = 128.0
+offset_right = 76.0
+offset_bottom = 151.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "0%"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PracticePercent" type="Label" parent="CenterLevel" unique_id=199581303]
+offset_left = -76.0
+offset_top = 152.0
+offset_right = 76.0
+offset_bottom = 175.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "0%"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Star" type="Sprite2D" parent="CenterLevel" unique_id=173497717]
+position = Vector2(68, 76)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="Coin1" type="Sprite2D" parent="CenterLevel" unique_id=2054962208]
+position = Vector2(52, 100)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="Coin2" type="Sprite2D" parent="CenterLevel" unique_id=151096101]
+position = Vector2(60, 100)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="Coin3" type="Sprite2D" parent="CenterLevel" unique_id=2023217900]
+position = Vector2(68, 100)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="RightLevel" type="Node2D" parent="." unique_id=1578546008]
+position = Vector2(256, 0)
+
+[node name="Background" type="NinePatchRect" parent="RightLevel" unique_id=1266215841]
+offset_left = -80.0
+offset_top = 64.0
+offset_right = 80.0
+offset_bottom = 112.0
+texture = ExtResource("2_r77uv")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Difficulty" type="Sprite2D" parent="RightLevel" unique_id=1620855796]
+position = Vector2(-64, 88)
+texture = ExtResource("3_4nqmc")
+hframes = 7
+vframes = 2
+frame = 2
+
+[node name="Crown" type="Sprite2D" parent="RightLevel" unique_id=1916590383]
+position = Vector2(-64, 76)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(0, 8, 16, 8)
+
+[node name="NormalProgress" type="TextureProgressBar" parent="RightLevel" unique_id=2128705356]
+offset_left = -80.0
+offset_top = 128.0
+offset_right = 80.0
+offset_bottom = 168.0
+texture_under = ExtResource("6_4nqmc")
+texture_progress = ExtResource("7_7plkq")
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="PracticeProgress" type="TextureProgressBar" parent="RightLevel" unique_id=561730823]
+offset_left = -80.0
+offset_top = 152.0
+offset_right = 80.0
+offset_bottom = 192.0
+texture_under = ExtResource("6_4nqmc")
+texture_progress = ExtResource("7_7plkq")
+tint_progress = Color(0, 1, 1, 1)
+
+[node name="ProgressLabels" type="Label" parent="RightLevel" unique_id=358820682]
+offset_left = -72.0
+offset_top = 120.0
+offset_right = 80.0
+offset_bottom = 152.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "NORMAL MODE
+
+
+PRACTICE MODE"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="LevelName" type="Label" parent="RightLevel" unique_id=1850783806]
+offset_left = -415.0
+offset_top = 80.0
+offset_right = 431.0
+offset_bottom = 103.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "AND THEN KILL 
+YOU AGAIN "
+horizontal_alignment = 1
+uppercase = true
+
+[node name="StarCount" type="Label" parent="RightLevel" unique_id=2038493374]
+offset_left = -118.0
+offset_top = 72.0
+offset_right = 64.0
+offset_bottom = 80.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "2"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="NormalPercent" type="Label" parent="RightLevel" unique_id=1360808166]
+offset_left = -76.0
+offset_top = 128.0
+offset_right = 76.0
+offset_bottom = 151.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "0%"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PracticePercent" type="Label" parent="RightLevel" unique_id=1767050644]
+offset_left = -76.0
+offset_top = 152.0
+offset_right = 76.0
+offset_bottom = 175.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "0%"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Star" type="Sprite2D" parent="RightLevel" unique_id=1930759985]
+position = Vector2(68, 76)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="Coin1" type="Sprite2D" parent="RightLevel" unique_id=1699391540]
+position = Vector2(52, 100)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="Coin2" type="Sprite2D" parent="RightLevel" unique_id=118090387]
+position = Vector2(60, 100)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="Coin3" type="Sprite2D" parent="RightLevel" unique_id=2076577344]
+position = Vector2(68, 100)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
