@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c0332ymehycxl"]
 
-[ext_resource type="Script" uid="uid://bs60og6jvvuhn" path="res://scenes/level.gd" id="1_2r41h"]
-[ext_resource type="Script" uid="uid://gm4ier7h3wq2" path="res://tmxloader.gd" id="2_vonw3"]
+[ext_resource type="Script" uid="uid://bs60og6jvvuhn" path="res://scripts/level.gd" id="1_2r41h"]
+[ext_resource type="Script" uid="uid://gm4ier7h3wq2" path="res://scripts/tmxloader.gd" id="2_vonw3"]
 [ext_resource type="Texture2D" uid="uid://ctpw1et218qeb" path="res://tiles/AA.png" id="3_klq6b"]
 [ext_resource type="Texture2D" uid="uid://cn4qdf5bta7v3" path="res://spritesheets/parallax1.png" id="4_2r41h"]
 [ext_resource type="PackedScene" uid="uid://clol7k2esrjip" path="res://scenes/player.tscn" id="4_mx8sn"]
 [ext_resource type="Shader" uid="uid://c4knthwwyim1l" path="res://colors.gdshader" id="5_2r41h"]
 [ext_resource type="Texture2D" uid="uid://b87h3j47hr0bh" path="res://spritesheets/progressbar-empty.png" id="7_8c41q"]
-[ext_resource type="Script" uid="uid://bvp2m1q8ajt8w" path="res://scenes/triggers.gd" id="7_klq6b"]
+[ext_resource type="Script" uid="uid://bvp2m1q8ajt8w" path="res://scripts/triggers.gd" id="7_klq6b"]
 [ext_resource type="Texture2D" uid="uid://cjofoldsbb4dt" path="res://spritesheets/progressbar-full.png" id="8_olg7q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]

@@ -13,7 +13,6 @@ config_version=5
 config/name="soup family computer geometry dash"
 run/main_scene="uid://du82hjkyi5nln"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 

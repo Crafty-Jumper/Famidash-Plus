@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clol7k2esrjip"]
 
-[ext_resource type="Script" uid="uid://cnuoy7b0klkuv" path="res://character_body_2d.gd" id="1_qhqgy"]
+[ext_resource type="Script" uid="uid://cnuoy7b0klkuv" path="res://scripts/character_body_2d.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://dm7nmpf61kud4" path="res://player/cube00.png" id="2_dqkch"]
 [ext_resource type="Shader" uid="uid://c0meobq1wnqn6" path="res://playercolors.gdshader" id="2_qhqgy"]
 

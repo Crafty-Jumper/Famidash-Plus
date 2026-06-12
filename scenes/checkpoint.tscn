@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6qiilp7m3aai"]
 
 [ext_resource type="Texture2D" uid="uid://bpcc1ngdda7b2" path="res://spritesheets/checkpoint.png" id="1_ywqth"]
-[ext_resource type="Script" uid="uid://c2oltiosudra" path="res://checkpoint.gd" id="2_vsimk"]
+[ext_resource type="Script" uid="uid://c2oltiosudra" path="res://scripts/checkpoint.gd" id="2_vsimk"]
 
 [node name="Checkpoint" type="Sprite2D" unique_id=1465186723]
 texture = ExtResource("1_ywqth")

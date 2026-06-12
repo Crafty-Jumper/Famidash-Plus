@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://83apilp16js7" path="res://music player/pulse.gd" id="1_673fh"]
 [ext_resource type="Script" uid="uid://81g5wnfnf8ix" path="res://music player/noise.gd" id="1_ia7ho"]
 [ext_resource type="Script" uid="uid://c5egvw0xnrm0a" path="res://music player/famistudio_player.gd" id="1_kujnf"]
-[ext_resource type="Script" uid="uid://cdstlxgbceprn" path="res://musiccache.gd" id="4_5yoid"]
+[ext_resource type="Script" uid="uid://cdstlxgbceprn" path="res://scripts/musiccache.gd" id="4_5yoid"]
 [ext_resource type="Script" uid="uid://qulxfdwyqotk" path="res://music player/dpcm.gd" id="5_a6he2"]
 
 [node name="CacheManager" type="Node" unique_id=1602747374]

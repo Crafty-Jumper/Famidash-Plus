@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_lg3lr"]
 [ext_resource type="Texture2D" uid="uid://bcaxe31mxerqw" path="res://spritesheets/padSheet.png" id="2_6mgtp"]
-[ext_resource type="Script" uid="uid://cix2vdvev0gqt" path="res://scenes/sprites/scripts/pad.gd" id="3_6mgtp"]
+[ext_resource type="Script" uid="uid://cix2vdvev0gqt" path="res://scripts/pad.gd" id="3_6mgtp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mgtp"]
 size = Vector2(15, 3)
