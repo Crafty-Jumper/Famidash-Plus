@@ -180,10 +180,118 @@
 		"coveringArtist":"JAEZU"
 	},
 	{
+		"song":"atthespeedoflightfull",
+		"text":"AT THE SPEED OF LIGHT",
+		"originalArtist":"DIMRAIN47",
+		"coveringArtist":"ELANGEL378"
+	},
+	{
+		"song":"cryogenic",
+		"text":"CRYOGENIC",
+		"originalArtist":"NERDBOY628",
+		"coveringArtist":"NERDBOY628"
+	},
+	{
+		"song":"c_madness",
+		"text":"C MADNESS",
+		"originalArtist":["FOREVERBOUND","CRAFTY JUMPER"],
+		"coveringArtist":["ZENITH302","USERSNIPER","NERDBOY628"]
+	},
+	{
+		"song":"endgame",
+		"text":"ENDGAME",
+		"originalArtist":"WATERFLAME",
+		"coveringArtist":"VIKRINOX"
+	},
+	{
+		"song":"factory_time",
+		"text":"FACTORY TIME",
+		"originalArtist":"VISAGER",
+		"coveringArtist":"NERDBOY628"
+	},
+	{
+		"song":"glitch_gremlin",
+		"text":"GLITCH GREMLIN",
+		"originalArtist":"BOSSFIGHT",
+		"coveringArtist":"SEAGLOWINGPRO"
+	},
+	{
+		"song":"golden_haze",
+		"text":"GOLDEN HAZE",
+		"originalArtist":"DETIOUSMUSIC",
+		"coveringArtist":["CRAFTY JUMPER","ELANGEL378"]
+	},
+	{
 		"song":"ground_to_space",
 		"text":"GROUND TO SPACE",
 		"originalArtist":"SEAGLOWINGPRO",
 		"coveringArtist":["SEAGLOWINGPRO","ELANGEL378"]
+	},
+	{
+		"song":"just_right",
+		"text":"JUST RIGHT",
+		"originalArtist":["TESSA VIOLET","DAN HARRISON B"],
+		"coveringArtist":["SEAGLOWINGPRO","ELANGEL378"]
+	},
+	{
+		"song":"meowstuff",
+		"text":"MEOWSTUFF",
+		"originalArtist":"DAVINCE",
+		"coveringArtist":"ELANGEL378"
+	},
+	{
+		"song":"miami_hotline_vol_3",
+		"text":"MIAMI HOTLINE VOL. 3",
+		"originalArtist":"DEMONOCITY",
+		"coveringArtist":"NERDBOY628"
+	},
+	{
+		"song":"new_dash_city",
+		"text":"NEW DASH CITY",
+		"originalArtist":"SEAGLOWINGPRO",
+		"coveringArtist":"SEAGLOWINGPRO"
+	},
+	{
+		"song":"nine_circles",
+		"text":"NINE CIRCLES",
+		"originalArtist":"RUKKUS",
+		"coveringArtist":"CLOUD54"
+	},
+	{
+		"song":"off_to_mars",
+		"text":"OFF TO MARS",
+		"originalArtist":"COSMICSPACE33",
+		"coveringArtist":["CRAFTY JUMPER","COSMICSPACE33"]
+	},
+	{
+		"song":"pyrophoric/original",
+		"text":"PYROPHORIC",
+		"originalArtist":"NERDBOY628",
+		"coveringArtist":"NERDBOY628"
+	},
+	{
+		"song":"pyrophoric/legacy_rmx",
+		"text":"PYROPHORIC LEGACY REMIX",
+		"originalArtist":"NERDBOY628",
+		"coveringArtist":["NERDBOY628","DAJINKOSA","SEAGLOWINGPRO"]
+	},
+	{
+		"song":"pyrophoric/dajinkosa_rmx",
+		"text":"PYROPHORIC DAJINKOSA REMIX",
+		"originalArtist":"NERDBOY628",
+		"coveringArtist":"DAJINKOSA"
+	},
+	{
+		"song":"rainbow_tylenol",
+		"text":"RAINBOW TYLENOL",
+		"originalArtist":"KITSUNE2",
+		"coveringArtist":"CLICKERTY"
+	},
+	{
+		"song":"raining_tacos",
+		"text":"RAINING TACOS",
+		"originalArtist":"PARRY GRIPP",
+		"coveringArtist":"SEAGLOWINGPRO"
 	},
 	{
 		"song":"select_payment_type",
@@ -196,5 +304,59 @@
 		"text":"SLASH INFERNO",
 		"originalArtist":["WATERFLAME","TEMINITE","BOOM KITTY"],
 		"coveringArtist":"SEAGLOWINGPRO"
+	},
+	{
+		"song":"stereo_madness_2",
+		"text":"STEREO MADNESS 2",
+		"originalArtist":"FOREVERBOUND",
+		"coveringArtist":"ELANGEL378"
+	},
+	{
+		"song":"subtle_oddities",
+		"text":"SUBTLE ODDITIES",
+		"originalArtist":"LEMON DEMON",
+		"coveringArtist":""
+	},
+	{
+		"song":"ultimatedestruction",
+		"text":"ULTIMATE DESTRUCTION",
+		"originalArtist":"FOREVERBOUND",
+		"coveringArtist":"ELANGEL378"
+	},
+	{
+		"song":"unity",
+		"text":"UNITY, RANDOM",
+		"originalArtist":"THEFATRAT",
+		"coveringArtist":"WHO KNOWS"
+	},
+	{
+		"song":"unity/elangel",
+		"text":"UNITY, ELANGEL COVER",
+		"originalArtist":"THEFATRAT",
+		"coveringArtist":"ELANGEL378"
+	},
+	{
+		"song":"unity/kabez",
+		"text":"UNITY, KABEZ COVER",
+		"originalArtist":"THEFATRAT",
+		"coveringArtist":"KABEZ"
+	},
+	{
+		"song":"unity/nerdboy",
+		"text":"UNITY, NERDBOY COVER",
+		"originalArtist":"THEFATRAT",
+		"coveringArtist":"NERDBOY628"
+	},
+	{
+		"song":"unity/okujassu",
+		"text":"UNITY, OKUJASSU COVER",
+		"originalArtist":"THEFATRAT",
+		"coveringArtist":"OKUJASSU"
+	},
+	{
+		"song":"unity/sussysy",
+		"text":"UNITY, SUSSYSY COVER",
+		"originalArtist":"THEFATRAT",
+		"coveringArtist":"SUSSYSY"
 	},
 ]
