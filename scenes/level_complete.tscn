@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cxnea5xici4ec"]
+
+[ext_resource type="Texture2D" uid="uid://dcrfq4ams44oy" path="res://Famidash - Crafty's Levels_012.png" id="1_hhoem"]
+
+[node name="Node2D" type="Node2D" unique_id=1737469120]
+
+[node name="FamidashCrafty\'sLevels012" type="Sprite2D" parent="." unique_id=1675449335]
+position = Vector2(128, 120)
+texture = ExtResource("1_hhoem")

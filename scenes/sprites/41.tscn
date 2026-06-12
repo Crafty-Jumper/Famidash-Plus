@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://buf73x0drfrht"]
+
+[ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_77qob"]
+[ext_resource type="Texture2D" uid="uid://bldvb2khhbycs" path="res://spritesheets/orbSheet.png" id="2_1eibb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj3y0"]
+size = Vector2(16, 16)
+
+[node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_77qob")]
+texture = ExtResource("2_1eibb")
+hframes = 4
+vframes = 12
+
+[node name="Area2D" parent="." index="0" unique_id=1803678054]
+position = Vector2(8, 8)
+
+[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=545990553]
+shape = SubResource("RectangleShape2D_lj3y0")

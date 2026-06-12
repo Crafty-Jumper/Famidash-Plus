@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://3b1ag5j7lg2h"]
+
+[ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_dfx6h"]
+[ext_resource type="Texture2D" uid="uid://d1j6xhx1wmv2k" path="res://spritesheets/portalSheet.png" id="2_6s1be"]
+[ext_resource type="Script" uid="uid://bui25xr8s11iu" path="res://scenes/sprites/scripts/gamemode_portal.gd" id="3_6s1be"]
+
+[node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_dfx6h")]
+texture = ExtResource("2_6s1be")
+hframes = 5
+vframes = 5
+frame = 5
+script = ExtResource("3_6s1be")
+gamemode = 4

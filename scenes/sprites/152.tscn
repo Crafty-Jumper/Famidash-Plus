@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c1r5y60q4bgxb"]
+
+[ext_resource type="PackedScene" uid="uid://bljjgfswa0kr6" path="res://scenes/sprites/trigger.tscn" id="1_g5nwn"]
+[ext_resource type="Script" uid="uid://uo2j41cy714r" path="res://scenes/sprites/scripts/bg_color_trig.gd" id="2_kha6u"]
+
+[node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_g5nwn")]
+script = ExtResource("2_kha6u")
+index = 24

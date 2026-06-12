@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://coxwysqdlone3"]
+
+[ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_m3ftx"]
+[ext_resource type="Texture2D" uid="uid://bcaxe31mxerqw" path="res://spritesheets/padSheet.png" id="2_enfjk"]
+[ext_resource type="Script" uid="uid://cix2vdvev0gqt" path="res://scenes/sprites/scripts/pad.gd" id="3_enfjk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l2c4"]
+size = Vector2(14, 3)
+
+[node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_m3ftx")]
+texture = ExtResource("2_enfjk")
+flip_v = true
+hframes = 4
+vframes = 6
+frame = 8
+script = ExtResource("3_enfjk")
+
+[node name="Area2D" parent="." index="0" unique_id=1803678054]
+position = Vector2(8, 1.5)
+
+[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=545990553]
+shape = SubResource("RectangleShape2D_1l2c4")

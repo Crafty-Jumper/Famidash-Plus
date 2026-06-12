@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bibqvntvhttav"]
+
+[ext_resource type="Script" uid="uid://dmjqlywbmjaj1" path="res://music player/triangle.gd" id="1_25cum"]
+[ext_resource type="Script" uid="uid://83apilp16js7" path="res://music player/pulse.gd" id="1_673fh"]
+[ext_resource type="Script" uid="uid://81g5wnfnf8ix" path="res://music player/noise.gd" id="1_ia7ho"]
+[ext_resource type="Script" uid="uid://c5egvw0xnrm0a" path="res://music player/famistudio_player.gd" id="1_kujnf"]
+[ext_resource type="Script" uid="uid://cdstlxgbceprn" path="res://musiccache.gd" id="4_5yoid"]
+[ext_resource type="Script" uid="uid://qulxfdwyqotk" path="res://music player/dpcm.gd" id="5_a6he2"]
+
+[node name="CacheManager" type="Node" unique_id=1602747374]
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+script = ExtResource("4_5yoid")
+
+[node name="Pulse1" type="AudioStreamPlayer" parent="." unique_id=1498467337]
+script = ExtResource("1_673fh")
+
+[node name="Pulse2" type="AudioStreamPlayer" parent="." unique_id=12076838]
+script = ExtResource("1_673fh")
+
+[node name="Triangle" type="AudioStreamPlayer" parent="." unique_id=975203937]
+script = ExtResource("1_25cum")
+
+[node name="Noise" type="AudioStreamPlayer" parent="." unique_id=1455159602]
+script = ExtResource("1_ia7ho")
+
+[node name="DPCM" type="AudioStreamPlayer" parent="." unique_id=1857137177]
+script = ExtResource("5_a6he2")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1418093016]
+process_thread_group = 2
+process_thread_group_order = 2
+process_thread_messages = 0
+script = ExtResource("1_kujnf")

@@ -1,0 +1,67 @@
+extends Node2D
+
+@onready var cursor: Sprite2D = $Cursor
+@onready var parallax_1: Sprite2D = $Parallax1
+@onready var ground: Sprite2D = $Ground
+
+var scroll = 0
+var selection = 1
+const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_sides","menu_e_sides"]
+
+func _ready() -> void:
+	if Global.songName.contains("menu") or Global.songName.contains("unem"):
+		return
+	if Global.menuTheme == -1:
+		if randi_range(1,256) == 1:
+			Global.menuTheme = 4
+		else:
+			Global.menuTheme = randi_range(0,3)
+	Global.change_song(menu_themes[Global.menuTheme],true)
+
+func _process(delta: float) -> void:
+	scroll -= 120*delta
+	parallax_1.position.x = round(fmod(scroll/6,144))-144
+	ground.position.x = round(fmod(scroll,64))-128
+	handle_cursor()
+	if selection == 1 and Input.is_action_just_pressed("A"):
+		if randi_range(1,256) == 1:
+			Global.play_sfx("fire.wav")
+		else:
+			Global.play_sfx("geometry-dash.wav")
+		Global.music.stream_paused = true
+		Global.levelIdx = 0
+		await Global.sfx.finished
+		Global.fade_scene("res://scenes/level_select.tscn")
+		Global.music.stream_paused = false
+	if selection == 2 and Input.is_action_just_pressed("A"):
+		if randi_range(1,256) == 1:
+			Global.play_sfx("gofuckyourself.wav")
+		else:
+			Global.play_sfx("fire.wav")
+		Global.music.stream_paused = true
+		Global.levelIdx = 27
+		await Global.sfx.finished
+		Global.fade_scene("res://scenes/level_select.tscn")
+		Global.music.stream_paused = false
+	if selection == 3 and Input.is_action_just_pressed("A"):
+		Global.change_song("")
+		Global.fade_scene("res://scenes/sound_test.tscn")
+
+func handle_cursor() -> void:
+	if Input.is_action_just_pressed("left"):
+		selection -= 1
+	if Input.is_action_just_pressed("right"):
+		selection += 1
+	if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down"):
+		selection += 3
+	selection = fmod(selection,6)
+	if selection < 0:
+		selection = 5
+	if selection <= 2:
+		cursor.position.x = 80 + selection * 48
+		cursor.position.y = 96
+		cursor.region_rect.position.x = 64
+	if selection > 2:
+		cursor.position.x = 80 + (selection - 3) * 48
+		cursor.position.y = 152
+		cursor.region_rect.position.x = 80

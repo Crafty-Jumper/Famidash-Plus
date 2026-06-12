@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bxkau637kw48k"]
+
+[ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_yumhg"]
+[ext_resource type="Texture2D" uid="uid://d1j6xhx1wmv2k" path="res://spritesheets/portalSheet.png" id="2_uu8gt"]
+
+[node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_yumhg")]
+texture = ExtResource("2_uu8gt")
+hframes = 5
+vframes = 5
+frame = 15

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://derwqs7j735mq"]
+
+[ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_suw2t"]
+[ext_resource type="Texture2D" uid="uid://bldvb2khhbycs" path="res://spritesheets/orbSheet.png" id="2_4xv0v"]
+[ext_resource type="Script" uid="uid://ba6bio6c0oo4d" path="res://scenes/sprites/scripts/spider_interactable.gd" id="3_4xv0v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxsrh"]
+size = Vector2(16, 16)
+
+[node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_suw2t")]
+texture = ExtResource("2_4xv0v")
+flip_v = true
+hframes = 4
+vframes = 12
+frame = 22
+script = ExtResource("3_4xv0v")
+
+[node name="Area2D" parent="." index="0" unique_id=1803678054]
+position = Vector2(8, 8)
+
+[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=545990553]
+shape = SubResource("RectangleShape2D_qxsrh")

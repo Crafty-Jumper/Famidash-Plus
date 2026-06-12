@@ -1,0 +1,932 @@
+[
+  {
+	"level": "stereomadness",
+	"upperText": "STEREO ",
+	"lowerText": "MADNESS",
+	"stars": 1,
+	"difficulty": "EASY"
+  },
+  {
+	"level": "backontrack",
+	"upperText": "BACK ON",
+	"lowerText": "TRACK",
+	"stars": 2,
+	"difficulty": "EASY"
+  },
+  {
+	"level": "polargeist",
+	"lowerText": "POLARGEIST",
+	"stars": 3,
+	"difficulty": "NORMAL"
+  },
+  {
+	"level": "dryout",
+	"lowerText": "DRY OUT",
+	"stars": 4,
+	"difficulty": "NORMAL"
+  },
+  {
+	"level": "baseafterbase",
+	"upperText": "BASE AFTER",
+	"lowerText": "BASE",
+	"stars": 5,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "cantletgo",
+	"lowerText": "CANT LET GO",
+	"stars": 6,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "jumper",
+	"lowerText": "JUMPER",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "timemachine",
+	"lowerText": "TIME MACHINE",
+	"stars": 8,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "cycles",
+	"lowerText": "CYCLES",
+	"stars": 9,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "xstep",
+	"lowerText": "XSTEP",
+	"stars": 10,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "clutterfunk",
+	"lowerText": "CLUTTERFUNK",
+	"stars": 11,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "theoryofeverything",
+	"upperText": "THEORY OF",
+	"lowerText": "EVERYTHING",
+	"stars": 12,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "electromanadventures",
+	"upperText": "ELECTROMAN",
+	"lowerText": "ADVENTURES",
+	"stars": 10,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "clubstep",
+	"lowerText": "CLUBSTEP",
+	"stars": 14,
+	"difficulty": "DEMON"
+  },
+  {
+	"level": "electrodynamix",
+	"lowerText": " ELECTRODYNAMIX",
+	"stars": 12,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "hexagonforce",
+	"upperText": "HEXAGON",
+	"lowerText": "FORCE",
+	"stars": 12,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "blastprocessing",
+	"upperText": "BLAST",
+	"lowerText": "PROCESSING",
+	"stars": 10,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "toe2",
+	"upperText": "THEORY OF",
+	"lowerText": "EVERYTHING 2",
+	"stars": 14,
+	"difficulty": "DEMON"
+  },
+  {
+	"level": "geometricaldominator",
+	"upperText": "GEOMETRICAL",
+	"lowerText": "DOMINATOR",
+	"stars": 10,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "deadlocked",
+	"lowerText": "DEADLOCKED",
+	"stars": 15,
+	"difficulty": "DEMON"
+  },
+  {
+	"level": "fingerdash",
+	"lowerText": "FINGERDASH",
+	"stars": 12,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "dash",
+	"lowerText": "DASH",
+	"stars": 12,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "explorers",
+	"lowerText": "EXPLORERS",
+	"stars": 15,
+	"difficulty": "DEMON"
+  },
+  {
+	"level": "thetower",
+	"lowerText": "THE TOWER",
+	"stars": 5,
+	"difficulty": "NORMAL"
+  },
+  {
+	"level": "thesewers",
+	"lowerText": "THE SEWERS",
+	"stars": 6,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "thecellar",
+	"upperText": "",
+	"lowerText": "THE CELLAR",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "thechallenge",
+	"upperText": "THE",
+	"lowerText": "CHALLENGE",
+	"stars": 3,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "bestautomaticlvl",
+	"upperText": "BEST",
+	"lowerText": "AUTOMATIC LVL",
+	"stars": 1,
+	"difficulty": "AUTO"
+  },
+  {
+	"level": "movie",
+	"upperText": "THE TRIPLE",
+	"lowerText": "SPIKE OF DOOM",
+	"stars": 1,
+	"difficulty": "AUTO"
+  },
+  {
+	"level": "retray",
+	"lowerText": "RETRAY",
+	"stars": 2,
+	"difficulty": "EASY"
+  },
+  {
+	"level": "groundtoretray",
+	"upperText": "GROUND TO",
+	"lowerText": "RETRAY",
+	"stars": 2,
+	"difficulty": "EASY"
+  },
+  {
+	"level": "sonar",
+	"lowerText": "SONAR",
+	"stars": 2,
+	"difficulty": "EASY"
+  },
+  {
+	"level": "darkparadise",
+	"lowerText": "DARK PARADISE",
+	"stars": 2,
+	"difficulty": "EASY"
+  },
+  {
+	"level": "madness",
+	"lowerText": "MADNESS.",
+	"stars": 2,
+	"difficulty": "EASY"
+  },
+  {
+	"level": "xmaschallenge",
+	"upperText": "XMAS",
+	"lowerText": "CHALLENGE",
+	"stars": 2,
+	"difficulty": "EASY"
+  },
+  {
+	"level": "leveleasy",
+	"lowerText": "LEVEL EASY",
+	"stars": 3,
+	"difficulty": "NORMAL"
+  },
+  {
+	"level": "dorabaebasic4",
+	"upperText": "DORABAE",
+	"lowerText": "BASIC4",
+	"stars": 3,
+	"difficulty": "NORMAL"
+  },
+  {
+	"level": "ninox",
+	"lowerText": "NINOX",
+	"stars": 3,
+	"difficulty": "NORMAL"
+  },
+  {
+	"level": "dorabaebasic6",
+	"upperText": "DORABAE",
+	"lowerText": "BASIC6",
+	"stars": 3,
+	"difficulty": "NORMAL"
+  },
+  {
+	"level": "somewhereinaforest",
+	"upperText": "SOMEWHERE",
+	"lowerText": "IN A FOREST",
+	"stars": 3,
+	"difficulty": "NORMAL"
+  },
+  {
+	"level": "dreamer",
+	"lowerText": "DREAMER",
+	"stars": 4,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "lookatthislevel",
+	"upperText": "LOOK AT",
+	"lowerText": "THIS LEVEL",
+	"stars": 4,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "hungrymanadventures",
+	"upperText": "HUNGRYMAN",
+	"lowerText": "ADVENTURES",
+	"stars": 4,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "groundtospace",
+	"upperText": "GROUND TO",
+	"lowerText": "SPACE",
+	"stars": 5,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "ajollyretrochristmas",
+	"upperText": "A JOLLY RETRO",
+	"lowerText": "CHRISTMAS",
+	"stars": 5,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "ultiatedestruction",
+	"upperText": "ULTIATE",
+	"lowerText": "DESTRUCTION",
+	"stars": 5,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "subzero",
+	"lowerText": "SUBZERO",
+	"stars": 5,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "moonlight",
+	"lowerText": "MOONLIGHT",
+	"stars": 5,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "fofii_fofii_fofii",
+	"upperText": "FOFII",
+	"lowerText": "FOFII FOFII",
+	"stars": 5,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "selectpaymenttype",
+	"upperText": "SELECT",
+	"lowerText": "PAYMENT TYPE",
+	"stars": 5,
+	"difficulty": "HARD"
+  },
+  {
+	"level": "pyrophoric",
+	"lowerText": "PYROPHORIC",
+	"stars": 6,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "cryogenic",
+	"lowerText": "CRYOGENIC",
+	"stars": 6,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "oceane",
+	"lowerText": "OCEANE",
+	"stars": 6,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "generationretro",
+	"upperText": "GENERATION",
+	"lowerText": "RETRO",
+	"stars": 6,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "scarletsurge",
+	"upperText": "SCARLET",
+	"lowerText": "SURGE",
+	"stars": 6,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "tinytunes",
+	"lowerText": "TINY TUNES",
+	"stars": 6,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "kappaclysm",
+	"lowerText": "KAPPACLYSM",
+	"stars": 6,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "sunshine",
+	"lowerText": "SUNSHINE",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "revolution",
+	"lowerText": "REVOLUTION",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "funnygameholiday",
+	"upperText": "FUNNYGAME",
+	"lowerText": "HOLIDAY",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "fireaura",
+	"lowerText": "FIRE AURA",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "rainbowdust",
+	"upperText": "RAINBOW",
+	"lowerText": "DUST",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "wintherace",
+	"upperText": "WIN",
+	"lowerText": "THE RACE",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "factorytime",
+	"lowerText": "FACTORY TIME",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "thesteamworks",
+	"lowerText": "THE STEAMWORKS",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "astronomicalexpedition",
+	"upperText": "ASTRONOMICAL",
+	"lowerText": "EXPEDITION",
+	"stars": 7,
+	"difficulty": "HARDER"
+  },
+  {
+	"level": "lostinthewoods",
+	"upperText": "LOST IN",
+	"lowerText": "THE WOODS",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "rainingtacos",
+	"lowerText": "RAINING TACOS",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "overawed",
+	"lowerText": "OVERAWED",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "bloodbathbutno",
+	"upperText": "BLOODBATH",
+	"lowerText": "BUT NO",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "rainbowtylenol",
+	"upperText": "RAINBOW",
+	"lowerText": "TYLENOL",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "greif",
+	"lowerText": "GREIF",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "dorabaebasic10",
+	"upperText": "DORABAEBASIC",
+	"lowerText": "10",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "offtomars",
+	"upperText": "OFF TO",
+	"lowerText": "MARS",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "unity",
+	"lowerText": "UNITY",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "akrile",
+	"lowerText": "AKRILE",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "subtleoddities",
+	"upperText": "SUBTLE",
+	"lowerText": "ODDITIES",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "powertrip",
+	"lowerText": "POWER TRIP",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "danceofviolins",
+	"upperText": "DANCE OF",
+	"lowerText": "VIOLINS",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "newdashcity",
+	"lowerText": "NEW DASH CITY",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "dastardly",
+	"lowerText": "DASTARDLY",
+	"stars": 8,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "trolledfix",
+	"upperText": "YOUVE BEEN",
+	"lowerText": "TROLLED",
+	"stars": 9,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "birdbrain",
+	"lowerText": "BIRDBRAIN",
+	"stars": 9,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "aprettyeasylevel",
+	"upperText": "A PRETTY",
+	"lowerText": "EASY LEVEL",
+	"stars": 9,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "tetrix",
+	"lowerText": "TETRIX",
+	"stars": 9,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "highlife",
+	"lowerText": "HIGH LIFE",
+	"stars": 9,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "extraordinaryexcitement",
+	"upperText": "EXTRAORDINARY",
+	"lowerText": "EXCITEMENT",
+	"stars": 9,
+	"difficulty": "INSANE"
+  },
+  {
+	"level": "thelightningroad",
+	"upperText": "THE LIGHTNING",
+	"lowerText": "ROAD",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "nightmare",
+	"lowerText": "THE NIGHTMARE",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "demonpark",
+	"lowerText": "DEMON PARK",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "supercycles",
+	"lowerText": "SUPER CYCLES",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "xx",
+	"lowerText": "X",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "problematic",
+	"lowerText": "PROBLEMATIC",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "infinitecircles",
+	"upperText": "INFINITE",
+	"lowerText": "CIRCLES",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "sonicblaster",
+	"upperText": "SONIC",
+	"lowerText": "BLASTER",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "decode",
+	"lowerText": "DECODE",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "deathmoon",
+	"lowerText": "DEATH MOON",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "dearnostalgists",
+	"lowerText": " DEAR NOSTALGISTS",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "clutterfunk2",
+	"lowerText": "CLUTTERFUNK 2",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "motion",
+	"lowerText": "MOTION",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "speedracer",
+	"lowerText": "SPEED RACER",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "endorphinrush",
+	"upperText": "ENDORPHIN",
+	"lowerText": "RUSH",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "everymadness",
+	"upperText": "EVERY",
+	"lowerText": "MADNESS",
+	"stars": 10,
+	"difficulty": "EASYDEMON"
+  },
+  {
+	"level": "skeletalshenanigans",
+	"upperText": "SKELETAL",
+	"lowerText": "SHENANIGANS",
+	"stars": 10,
+	"difficulty": "MEDIUMDEMON"
+  },
+  {
+	"level": "trythisgd",
+	"lowerText": "TRY THIS GD",
+	"stars": 10,
+	"difficulty": "MEDIUMDEMON"
+  },
+  {
+	"level": "goldenhaze",
+	"lowerText": "GOLDEN HAZE",
+	"stars": 10,
+	"difficulty": "MEDIUMDEMON"
+  },
+  {
+	"level": "hell",
+	"lowerText": "HELL",
+	"stars": 10,
+	"difficulty": "MEDIUMDEMON"
+  },
+  {
+	"level": "gameover",
+	"lowerText": "GAME OVER",
+	"stars": 10,
+	"difficulty": "MEDIUMDEMON"
+  },
+  {
+	"level": "invisiblelight",
+	"upperText": "INVISIBLE",
+	"lowerText": "LIGHT",
+	"stars": 10,
+	"difficulty": "MEDIUMDEMON"
+  },
+  {
+	"level": "firetemple",
+	"lowerText": "FIRE TEMPLE",
+	"stars": 10,
+	"difficulty": "MEDIUMDEMON"
+  },
+  {
+	"level": "demonpyrophoric",
+	"upperText": "DEMON",
+	"lowerText": "PYROPHORIC",
+	"stars": 10,
+	"difficulty": "MEDIUMDEMON"
+  },
+  {
+	"level": "toeiiv2",
+	"lowerText": "TOE II V2",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "pgclubstep",
+	"lowerText": "PG CLUBSTEP",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "deadlyclubstep",
+	"upperText": "DEADLY",
+	"lowerText": "CLUBSTEP",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "thermodynamix",
+	"lowerText": "THERMODYNAMIX",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "demoncryogenic",
+	"lowerText": "DEMON CRYOGENIC",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "azuronxolax",
+	"lowerText": "AZURONXOLAX",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "foresttemple",
+	"lowerText": "FOREST TEMPLE",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "ninecircles",
+	"lowerText": "NINE CIRCLES",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "fairydust",
+	"lowerText": "FAIRYDUST",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "jawbreaker",
+	"lowerText": "JAWBREAKER",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "futurefunkfix",
+	"lowerText": "FUTURE FUNK",
+	"stars": 10,
+	"difficulty": "HARDDEMON"
+  },
+  {
+	"level": "stalemate",
+	"lowerText": "STALEMATE",
+	"stars": 10,
+	"difficulty": "INSANEDEMON"
+  },
+  {
+	"level": "eighto",
+	"lowerText": "8O",
+	"stars": 10,
+	"difficulty": "INSANEDEMON"
+  },
+  {
+	"level": "acropolis",
+	"lowerText": "ACROPOLIS",
+	"stars": 10,
+	"difficulty": "INSANEDEMON"
+  },
+  {
+	"level": "hi",
+	"lowerText": "HI",
+	"stars": 10,
+	"difficulty": "INSANEDEMON"
+  },
+  {
+	"level": "eon",
+	"lowerText": "EON",
+	"stars": 10,
+	"difficulty": "INSANEDEMON"
+  },
+  {
+	"level": "windylandscape",
+	"upperText": "WINDY",
+	"lowerText": "LANDSCAPE",
+	"stars": 10,
+	"difficulty": "EXTREMEDEMON"
+  },
+  {
+	"level": "icdx",
+	"upperText": "ICE CARBON",
+	"lowerText": "DIABLO X",
+	"stars": 10,
+	"difficulty": "EXTREMEDEMON"
+  },
+  {
+	"level": "sonicwave",
+	"lowerText": "SONIC WAVE",
+	"stars": 10,
+	"difficulty": "EXTREMEDEMON"
+  },
+  {
+	"level": "styx",
+	"lowerText": "STYX",
+	"stars": 10,
+	"difficulty": "EXTREMEDEMON"
+  },
+  {
+	"level": "bloodbath",
+	"lowerText": "BLOODBATH",
+	"stars": 10,
+	"difficulty": "EXTREMEDEMON"
+  },
+  {
+	"level": "cataclysm",
+	"lowerText": "CATACLYSM",
+	"stars": 10,
+	"difficulty": "IMPOSSIBLEDEMON"
+  },
+  {
+	"level": "aftermath",
+	"lowerText": "AFTERMATH",
+	"stars": 10,
+	"difficulty": "IMPOSSIBLEDEMON"
+  },
+  {
+	"level": "wcropolix",
+	"lowerText": "WCROPOLIX",
+	"stars": 10,
+	"difficulty": "IMPOSSIBLEDEMON"
+  },
+  {
+	"level": "silentclubstep",
+	"upperText": "SILENT",
+	"lowerText": "CLUBSTEP",
+	"stars": 10,
+	"difficulty": "IMPOSSIBLEDEMON"
+  },
+  {
+	"level": "aftercatabath",
+	"lowerText": "AFTERCATABATH",
+	"stars": 10,
+	"difficulty": "IMPOSSIBLEDEMON"
+  },
+  {
+	"level": "shardscapes",
+	"lowerText": "SHARDSCAPES",
+	"stars": 10,
+	"difficulty": "IMPOSSIBLEDEMON"
+  },
+  {
+	"level": "element111rg",
+	"upperText": "ELEMENT",
+	"lowerText": "111 RG",
+	"stars": 10,
+	"difficulty": "IMPOSSIBLEDEMON"
+  },
+  {
+	"level": "slaughterhouse",
+	"lowerText": "SLAUGHTERHOUSE",
+	"stars": 10,
+	"difficulty": "GRANDPADEMON"
+  },
+  {
+	"level": "kratos",
+	"lowerText": "KRATOS",
+	"stars": 10,
+	"difficulty": "GRANDPADEMON"
+  },
+  {
+	"level": "nullscapes",
+	"lowerText": "NULLSCAPES",
+	"stars": 10,
+	"difficulty": "GRANDPADEMON"
+  },
+  {
+	"level": "everyend",
+	"lowerText": "EVERY END",
+	"stars": 10,
+	"difficulty": "GRANDPADEMON"
+  },
+  {
+	"level": "silentcircles",
+	"lowerText": "SILENT CIRCLES",
+	"stars": 10,
+	"difficulty": "GRANDPADEMON"
+  },
+  {
+	"level": "luckydraw",
+	"lowerText": "LUCKY DRAW",
+	"stars": 10,
+	"difficulty": "GRANDPADEMON"
+  },
+  {
+	"level": "madetotest",
+	"lowerText": "TEST4",
+	"stars": 0,
+	"difficulty": "GRANDPADEMON"
+  }
+]

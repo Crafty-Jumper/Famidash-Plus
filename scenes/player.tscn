@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://clol7k2esrjip"]
+
+[ext_resource type="Script" uid="uid://cnuoy7b0klkuv" path="res://character_body_2d.gd" id="1_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dm7nmpf61kud4" path="res://player/cube00.png" id="2_dqkch"]
+[ext_resource type="Shader" uid="uid://c0meobq1wnqn6" path="res://playercolors.gdshader" id="2_qhqgy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqkch"]
+shader = ExtResource("2_qhqgy")
+shader_parameter/outline = Color(0, 0, 0, 1)
+shader_parameter/col1 = Color(0, 1, 0, 1)
+shader_parameter/col2 = Color(0, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+custom_solver_bias = 1.0
+size = Vector2(10, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4ue"]
+custom_solver_bias = 1.0
+size = Vector2(10, 14)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1335267833 groups=["player"]]
+collision_layer = 4
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_max_angle = 1.2042772
+floor_snap_length = 2.0
+safe_margin = 0.001
+script = ExtResource("1_qhqgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1212965346]
+material = SubResource("ShaderMaterial_dqkch")
+texture = ExtResource("2_dqkch")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140290215]
+shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1997052640]
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DetectionArea" unique_id=1676803979]
+shape = SubResource("RectangleShape2D_0b4ue")
+debug_color = Color(0.70196074, 0, 0.6317644, 0.41960785)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1589084587]
+target_position = Vector2(0, 256)
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_area_2d_body_entered"]

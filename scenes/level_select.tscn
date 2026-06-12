@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://ckrwwrc62vbnd"]
+
+[ext_resource type="Script" uid="uid://c75yejatjx14u" path="res://scenes/level_select.gd" id="1_7plkq"]
+[ext_resource type="Texture2D" uid="uid://ckrdbab4mc12s" path="res://spritesheets/ground.png" id="1_chg43"]
+[ext_resource type="Texture2D" uid="uid://brebaa50dfwoh" path="res://spritesheets/level_select_bg.png" id="2_r77uv"]
+[ext_resource type="Texture2D" uid="uid://cgld67xuw6j22" path="res://spritesheets/difficultySheet.png" id="3_4nqmc"]
+[ext_resource type="Texture2D" uid="uid://cc8se21vv3mpd" path="res://spritesheets/banner_corner.png" id="5_ckc44"]
+[ext_resource type="Texture2D" uid="uid://bfeqc3l7a7yru" path="res://spritesheets/levelSelectSheet.png" id="5_o2xx4"]
+[ext_resource type="Texture2D" uid="uid://b87h3j47hr0bh" path="res://spritesheets/progressbar-empty.png" id="6_4nqmc"]
+[ext_resource type="Texture2D" uid="uid://cjofoldsbb4dt" path="res://spritesheets/progressbar-full.png" id="7_7plkq"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="8_ckc44"]
+[ext_resource type="Texture2D" uid="uid://irm1d6hgufth" path="res://spritesheets/banner_top.png" id="11_htctk"]
+
+[node name="Node2D" type="Node2D" unique_id=1829594306]
+script = ExtResource("1_7plkq")
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=62749408]
+texture_repeat = 2
+position = Vector2(0, 224)
+texture = ExtResource("1_chg43")
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 64)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=77235650]
+offset_left = -512.0
+offset_right = 512.0
+offset_bottom = 192.0
+color = Color(0, 0.25882354, 0.7764706, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=420527303]
+offset_left = -80.0
+offset_top = 64.0
+offset_right = 80.0
+offset_bottom = 112.0
+texture = ExtResource("2_r77uv")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=512061961]
+position = Vector2(-64, 88)
+texture = ExtResource("3_4nqmc")
+hframes = 7
+vframes = 2
+frame = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1957538102]
+visible = false
+position = Vector2(-64, 76)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(0, 8, 16, 8)
+
+[node name="BannerCorner" type="Sprite2D" parent="." unique_id=107037172]
+position = Vector2(-104, 216)
+texture = ExtResource("5_ckc44")
+centered = false
+offset = Vector2(0, -24)
+
+[node name="BannerCorner2" type="Sprite2D" parent="." unique_id=70265134]
+position = Vector2(104, 216)
+texture = ExtResource("5_ckc44")
+centered = false
+offset = Vector2(-48, -24)
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1390204358]
+position = Vector2(0, 120)
+zoom = Vector2(4, 4)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=858695212]
+offset_left = -80.0
+offset_top = 128.0
+offset_right = 80.0
+offset_bottom = 168.0
+texture_under = ExtResource("6_4nqmc")
+texture_progress = ExtResource("7_7plkq")
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="." unique_id=1820898478]
+offset_left = -80.0
+offset_top = 152.0
+offset_right = 80.0
+offset_bottom = 192.0
+texture_under = ExtResource("6_4nqmc")
+texture_progress = ExtResource("7_7plkq")
+tint_progress = Color(0, 1, 1, 1)
+
+[node name="NormalLabel" type="Label" parent="." unique_id=1655029318]
+offset_left = -72.0
+offset_top = 120.0
+offset_right = 80.0
+offset_bottom = 143.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "NORMAL MOdE"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PracticeLabel" type="Label" parent="." unique_id=1092554406]
+offset_left = -72.0
+offset_top = 144.0
+offset_right = 80.0
+offset_bottom = 167.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "PRACTICE MODE"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="LevelName" type="Label" parent="." unique_id=478118349]
+offset_left = -415.0
+offset_top = 80.0
+offset_right = 431.0
+offset_bottom = 103.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "AND THEN KILL 
+YOU AGAIN "
+horizontal_alignment = 1
+uppercase = true
+
+[node name="StarCount" type="Label" parent="." unique_id=78444883]
+offset_left = -118.0
+offset_top = 72.0
+offset_right = 64.0
+offset_bottom = 80.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "2"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="NormalPercent" type="Label" parent="." unique_id=1646653003]
+offset_left = -76.0
+offset_top = 128.0
+offset_right = 76.0
+offset_bottom = 151.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "0%"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PracticePercent" type="Label" parent="." unique_id=199581303]
+offset_left = -76.0
+offset_top = 152.0
+offset_right = 76.0
+offset_bottom = 175.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_ckc44")
+theme_override_font_sizes/font_size = 8
+text = "0%"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=173497717]
+position = Vector2(68, 76)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="Coin1" type="Sprite2D" parent="." unique_id=2054962208]
+position = Vector2(52, 100)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="Coin2" type="Sprite2D" parent="." unique_id=151096101]
+position = Vector2(60, 100)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="Coin3" type="Sprite2D" parent="." unique_id=2023217900]
+position = Vector2(68, 100)
+texture = ExtResource("5_o2xx4")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="BannerTop" type="Sprite2D" parent="." unique_id=726215493]
+position = Vector2(0, 8)
+texture = ExtResource("11_htctk")
