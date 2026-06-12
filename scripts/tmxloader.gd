@@ -68,7 +68,7 @@ func respawn_at_checkpoint() -> void:
 	if checkpoint == null:
 		reset_level()
 		return
-	
+	camera_2d.position = checkpoint.camera_pos
 	character_body_2d.sprite_2d.position.y = 0
 	character_body_2d.flipped = false
 	character_body_2d.sprite_2d.show()

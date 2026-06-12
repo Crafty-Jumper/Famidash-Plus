@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cwfrjl6btsxbc"]
+
+[ext_resource type="PackedScene" uid="uid://bljjgfswa0kr6" path="res://scenes/sprites/trigger.tscn" id="1_344y8"]
+[ext_resource type="Script" uid="uid://dtuj3epk2m82e" path="res://scripts/gravity_trigger.gd" id="2_rupku"]
+
+[node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_344y8")]
+script = ExtResource("2_rupku")
+modifier = 0.5

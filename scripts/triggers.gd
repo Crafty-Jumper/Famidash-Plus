@@ -30,4 +30,4 @@ func _on_gnd_color(index) -> void:
 	color_rect.material.set_shader_parameter("GND2",Color("#" + colors[secondary]))
 
 func _on_gravity_mod(mod: float) -> void:
-	character_body_2d.gravMod = mod
+	character_body_2d.gravMult = mod

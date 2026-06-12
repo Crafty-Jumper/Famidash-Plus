@@ -35,6 +35,11 @@ func _process(delta: float) -> void:
 			Global.change_song("")
 		return
 	
+	if character_body_2d.position.y < camera_2d.position.y-120:
+		character_body_2d.die()
+	if character_body_2d.position.y > camera_2d.position.y+120:
+		character_body_2d.die()
+	
 	if practiceMode:
 		if Input.is_action_just_pressed("B"):
 			var new = checkpoint.instantiate()
