@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://jqjlhcwf6no7"]
+
+[ext_resource type="Texture2D" uid="uid://de78l06nctlsf" path="res://spritesheets/DialogueBox.png" id="1_7obqq"]
+[ext_resource type="Script" uid="uid://dc87ditprpxag" path="res://scripts/save.gd" id="1_wsf25"]
+[ext_resource type="Texture2D" uid="uid://brebaa50dfwoh" path="res://spritesheets/level_select_bg.png" id="2_wsf25"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_th0i3"]
+
+[node name="Node2D" type="Node2D" unique_id=548115526]
+script = ExtResource("1_wsf25")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=926013136]
+offset_left = -1487.0
+offset_right = 1743.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1227476449]
+position = Vector2(128, 120)
+zoom = Vector2(4, 4)
+
+[node name="DialogueBox" type="Sprite2D" parent="." unique_id=1942200760]
+position = Vector2(128, 120)
+texture = ExtResource("1_7obqq")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2059918643]
+offset_left = 56.0
+offset_top = 152.0
+offset_right = 200.0
+offset_bottom = 184.0
+texture = ExtResource("2_wsf25")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1663938697]
+offset_left = 40.0
+offset_top = 56.0
+offset_right = 216.0
+offset_bottom = 64.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1617275480]
+offset_left = 40.0
+offset_top = 56.0
+offset_right = 216.0
+offset_bottom = 200.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_th0i3")
+theme_override_font_sizes/font_size = 8
+text = "  SAVE  FILE  SAFETY
+
+
+ PLEASE RETURN TO THE
+
+ TITLE TO ENSURE THAT
+
+  YOUR SAVE DATA IS
+
+   CORRECTLY SAVED
+
+
+
+   PRESS ANY BUTTON
+     TO  CONTINUE"

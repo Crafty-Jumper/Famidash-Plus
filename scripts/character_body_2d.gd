@@ -44,6 +44,7 @@ const ballSpr : Texture2D = preload("res://player/ball00.png")
 const ufoSpr : Texture2D = preload("res://player/ufo00.png")
 const robotSpr : Texture2D = preload("res://player/robot00.png")
 const spiderSpr : Texture2D = preload("res://player/spider00.png")
+const waveSpr : Texture2D = preload("res://player/spider00.png")
 const ninjaSpr : Texture2D = preload("res://player/ninja00.png")
 
 const jimshipSpr : Texture2D = preload("res://player/jim/ship.png")
@@ -96,6 +97,8 @@ func _physics_process(delta: float) -> void:
 		handle_robot(delta)
 	if gamemode == 5:
 		handle_spider(delta)
+	if gamemode == 6:
+		handle_wave(delta)
 	if gamemode == 8:
 		if Global.retro:
 			handle_robot(delta)
@@ -240,6 +243,13 @@ func handle_spider(delta:float) -> void:
 	animate_robot(spiderSpr)
 	if not is_on_floor():
 		velocity.y += gravity * delta * 3600 * flippedMult * gravMult * 0.9
+
+func handle_wave(delta:float) -> void:
+	animate_ball()
+	if clicking:
+		velocity.y = -abs(velocity.x)
+	else:
+		velocity.y = abs(velocity.x)
 
 func handle_ninja(delta:float) -> void:
 	

@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="soup family computer geometry dash"
-run/main_scene="uid://du82hjkyi5nln"
+config/name="soup family computer geometry dash additional symbol"
+run/main_scene="uid://jqjlhcwf6no7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false

@@ -19,6 +19,8 @@ func _ready() -> void:
 	Global.change_song(menu_themes[Global.menuTheme],true)
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("select"):
+		Global.fade_scene("res://scenes/credits.tscn")
 	scroll -= 120*delta
 	parallax_1.position.x = round(fmod(scroll/6,144))-144
 	ground.position.x = round(fmod(scroll,64))-128

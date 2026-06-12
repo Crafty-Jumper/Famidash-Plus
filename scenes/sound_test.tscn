@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="1_5se8y"]
 [ext_resource type="Script" uid="uid://b6vr5ajbyxiod" path="res://scripts/sound_test.gd" id="1_54gq2"]
-[ext_resource type="Texture2D" uid="uid://5c8n64ya0ph3" path="res://famidash-llvm_001.png" id="2_p8c8o"]
+[ext_resource type="Texture2D" uid="uid://de78l06nctlsf" path="res://spritesheets/DialogueBox.png" id="2_3uo7u"]
 [ext_resource type="Texture2D" uid="uid://cc8se21vv3mpd" path="res://spritesheets/banner_corner.png" id="4_3uo7u"]
 
 [node name="Node2D" type="Node2D" unique_id=1071776986]
@@ -21,10 +21,9 @@ offset_right = 818.0
 offset_bottom = 224.0
 color = Color(0.08235294, 0.37254903, 0.8509804, 1)
 
-[node name="FamidashLlvm001" type="Sprite2D" parent="." unique_id=310588638]
-visible = false
-position = Vector2(0, 120)
-texture = ExtResource("2_p8c8o")
+[node name="DialogueBox" type="Sprite2D" parent="." unique_id=1450035805]
+position = Vector2(0, 112)
+texture = ExtResource("2_3uo7u")
 
 [node name="Label4" type="Label" parent="." unique_id=100329495]
 offset_left = -80.0

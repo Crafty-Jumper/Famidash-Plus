@@ -3,6 +3,7 @@ extends Node2D
 @onready var label: Label = $Label
 @onready var label_2: Label = $Label2
 @onready var label_3: Label = $Label3
+@onready var label_4: Label = $Label4
 @onready var banner_corner: Sprite2D = $BannerCorner
 @onready var banner_corner_2: Sprite2D = $BannerCorner2
 
@@ -18,6 +19,10 @@ var music_meta = JSON.parse_string(FileAccess.open("res://music_data.json",FileA
 
 
 func _process(delta: float) -> void:
+	if currSong["originalArtist"] is Array:
+		label_4.text = "SONG:\n\n\n\nORIGINAL ARTISTS:\n\n\n\nCOVERED BY:"
+	else:
+		label_4.text = "SONG:\n\n\n\nORIGINAL ARTIST:\n\n\n\nCOVERED BY:"
 	if Input.is_action_just_pressed("start"):
 		music_meta = JSON.parse_string(FileAccess.open("res://music_data.json",FileAccess.READ).get_as_text())
 	banner_corner.position.x = -get_viewport_rect().size.x/8

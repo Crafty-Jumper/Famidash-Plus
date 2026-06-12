@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c3b5iwtldunv3"]
+
+[ext_resource type="Texture2D" uid="uid://c1fuxf407227j" path="res://spritesheets/logo.png" id="1_0bpdh"]
+[ext_resource type="Texture2D" uid="uid://bh8ongyj8gcd6" path="res://Famidash - Huge Man_000.png" id="1_0ctdu"]
+[ext_resource type="Script" uid="uid://c5oh7lcx3kngh" path="res://scripts/credits.gd" id="1_2fbfq"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_2fbfq"]
+
+[node name="Node2D" type="Node2D" unique_id=838024476]
+script = ExtResource("1_2fbfq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1326540549]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=974424730]
+offset_left = -1007.0
+offset_right = 1007.0
+offset_bottom = 1602.0
+color = Color(0, 0.22352941, 0.4509804, 1)
+
+[node name="FamidashHugeMan000" type="Sprite2D" parent="." unique_id=623907365]
+visible = false
+position = Vector2(128, 120)
+texture = ExtResource("1_0ctdu")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1095961734]
+position = Vector2(128, 120)
+zoom = Vector2(4, 4)
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=524977347]
+position = Vector2(137, 27)
+texture = ExtResource("1_0bpdh")
+
+[node name="Label" type="Label" parent="." unique_id=985043054]
+offset_left = 48.0
+offset_top = 56.0
+offset_right = 160.0
+offset_bottom = 79.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_2fbfq")
+theme_override_font_sizes/font_size = 8
+text = "A GODOT REMAKE
+OF FAMIDASH TO PC
+MADE BY CRAFTY JUMPER
+
+ TOP CONTRIBUTORS
+
+ -CRAFTY JUMPER
+ - THATS PRETTY MUCH
+  IT LMAO
+ -AT LEAST FOR NOW"
+
+[node name="Label2" type="Label" parent="." unique_id=1974892077]
+offset_left = 8.0
+offset_top = 192.0
+offset_right = 48.0
+offset_bottom = 215.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_2fbfq")
+theme_override_font_sizes/font_size = 8
+text = "BETA 1.0.0
+    FAMIDASH IS 2024 TFDSOFT
+       GEOMETRY DASH IS
+        2013 ROBTOPGAMES"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
