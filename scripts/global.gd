@@ -102,6 +102,9 @@ func save_file() -> void:
 	file.close()
 
 func load_file() -> void:
-	var file = FileAccess.open(savePath,FileAccess.READ)
-	save_data = file.get_var()
-	file.close()
+	if FileAccess.file_exists(savePath):
+		var file = FileAccess.open(savePath,FileAccess.READ)
+		save_data = file.get_var()
+		file.close()
+	else:
+		save_file()
