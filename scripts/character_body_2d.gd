@@ -43,6 +43,7 @@ const shipSpr : Texture2D = preload("res://player/ship00.png")
 const ballSpr : Texture2D = preload("res://player/ball00.png")
 const ufoSpr : Texture2D = preload("res://player/ufo00.png")
 const robotSpr : Texture2D = preload("res://player/robot00.png")
+const spiderSpr : Texture2D = preload("res://player/spider00.png")
 const ninjaSpr : Texture2D = preload("res://player/ninja00.png")
 
 const jimshipSpr : Texture2D = preload("res://player/jim/ship.png")
@@ -236,7 +237,7 @@ func handle_robot(delta:float) -> void:
 func handle_spider(delta:float) -> void:
 	if (first_click and is_on_floor()) or (buffering and is_on_floor()):
 		spider_teleport(!flipped)
-	animate_robot()
+	animate_robot(spiderSpr)
 	if not is_on_floor():
 		velocity.y += gravity * delta * 3600 * flippedMult * gravMult * 0.9
 
