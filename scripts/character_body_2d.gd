@@ -44,7 +44,7 @@ const ballSpr : Texture2D = preload("res://player/ball00.png")
 const ufoSpr : Texture2D = preload("res://player/ufo00.png")
 const robotSpr : Texture2D = preload("res://player/robot00.png")
 const spiderSpr : Texture2D = preload("res://player/spider00.png")
-const waveSpr : Texture2D = preload("res://player/spider00.png")
+const waveSpr : Texture2D = preload("res://player/wave00.png")
 const ninjaSpr : Texture2D = preload("res://player/ninja00.png")
 
 const jimshipSpr : Texture2D = preload("res://player/jim/ship.png")
@@ -175,6 +175,18 @@ func animate_robot(texture: Texture2D=robotSpr,isThreeFrame:bool=false) -> void:
 	rotation_frame = wrap(rotation_frame,0,15)
 	rotation_frame += 1
 
+func animate_wave(texture:Texture2D=waveSpr):
+	sprite_2d.rotation = 0
+	sprite_2d.texture = texture
+	sprite_2d.hframes = 3
+	if velocity.y < 0:
+		rotation_frame = 2
+	elif velocity.y > 0:
+		rotation_frame = 0
+	else:
+		rotation_frame = 1
+	sprite_2d.frame = rotation_frame
+
 func buffer() -> void:
 	if is_on_floor():
 		buffering = false
@@ -245,7 +257,7 @@ func handle_spider(delta:float) -> void:
 		velocity.y += gravity * delta * 3600 * flippedMult * gravMult * 0.9
 
 func handle_wave(delta:float) -> void:
-	animate_ball()
+	animate_wave()
 	if clicking:
 		velocity.y = -abs(velocity.x)
 	else:
