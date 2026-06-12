@@ -1,5 +1,6 @@
 extends TileMapLayer
 
+var attempts = 0
 var index = 0
 var tilePosX = 0
 var tilePosY = 0
@@ -14,6 +15,7 @@ var levelHeight = 0
 @onready var character_body_2d: CharacterBody2D = $"../CharacterBody2D"
 @onready var area_2d: Area2D = $"../Area2D"
 @onready var node_2d: Node2D = $".."
+@onready var label: Label = $"../Label"
 @onready var checkpoints: Node2D = $"../Checkpoints"
 
 func _ready() -> void:
@@ -41,6 +43,9 @@ func _ready() -> void:
 			_place_sprites()
 
 func reset_level() -> void:
+	attempts += 1
+	label.text = "ATTEMPT " + str(attempts)
+	label.position.y = levelHeight*16-72
 	character_body_2d.gravMult = 1
 	camera_2d.position.y = levelHeight*16 - 72
 	character_body_2d.sprite_2d.position.y = 0

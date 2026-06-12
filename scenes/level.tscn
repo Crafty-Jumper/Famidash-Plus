@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b87h3j47hr0bh" path="res://spritesheets/progressbar-empty.png" id="7_8c41q"]
 [ext_resource type="Script" uid="uid://bvp2m1q8ajt8w" path="res://scripts/triggers.gd" id="7_klq6b"]
 [ext_resource type="Texture2D" uid="uid://cjofoldsbb4dt" path="res://spritesheets/progressbar-full.png" id="8_olg7q"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="10_olg7q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("3_klq6b")
@@ -545,6 +546,15 @@ shape = SubResource("RectangleShape2D_2r41h")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=871784214]
 visible = false
 texture = SubResource("CompressedTexture2D_b121j")
+
+[node name="Label" type="Label" parent="." unique_id=757192245]
+offset_left = 48.0
+offset_right = 112.0
+offset_bottom = 8.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("10_olg7q")
+theme_override_font_sizes/font_size = 8
+text = "ATTEMPT "
 
 [connection signal="bg_color" from="Area2D" to="Area2D" method="_on_bg_color"]
 [connection signal="gnd_color" from="Area2D" to="Area2D" method="_on_gnd_color"]
