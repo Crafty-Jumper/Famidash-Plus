@@ -13,6 +13,8 @@ var first_click : bool = false
 var clickDisabler : bool = false
 @onready var trigger_manager: Area2D = $"../Area2D"
 
+var iconRotates : bool = true
+
 const speeds : Array = [
 	166, # 1x
 	132, # 0.5x
@@ -63,6 +65,12 @@ const jimrobotSpr : Texture2D = preload("res://player/jim/robot.png")
 
 func update_physics(mode:String="cube") -> void:
 	physicsTable = physics[mode]
+
+func _ready() -> void:
+	var icons = FileAccess.open("res://icons.json",FileAccess.READ)
+	var json = JSON.parse_string(icons.get_as_text())
+	iconRotates = json[Global.save_data["icons"][0]]["rotate"]
+	icons.close()
 
 func _physics_process(delta: float) -> void:
 	collision_shape_2d.disabled = gamemode == -1
@@ -216,7 +224,8 @@ func handle_cube(delta:float) -> void:
 	if Global.retro:
 		gamemode = 4
 	
-	animate_cube(cubeSpr)
+	
+	animate_cube(cubeSpr,iconRotates)
 	if not is_on_floor():
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	if clicking and is_on_floor():

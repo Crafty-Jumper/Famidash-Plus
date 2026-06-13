@@ -10,6 +10,7 @@ var selected_icon : int = 0
 @onready var banner_corner_2: Sprite2D = $BannerCorner2
 @onready var color_rect: ColorRect = $ColorRect
 var max_icons = 0
+var icon_meta = JSON.parse_string(FileAccess.open("res://icons.json",FileAccess.READ).get_as_text())
 
 func _ready() -> void:
 	selected_icon = Global.save_data.get("icons",[0,0,0,0,0,0,0,0,0,0,0,0])[0]
@@ -61,6 +62,7 @@ func update_icon_list() -> void:
 		var icon : Sprite2D = canvas_group.get_child(i)
 		if FileAccess.file_exists("res://player/cubes/cube" + str(int(floor(selected_icon/16.0)*16 + i)) + ".png"):
 			icon.texture = load("res://player/cubes/cube" + str(int(floor(selected_icon/16.0)*16 + i)) + ".png")
+			icon.frame = icon_meta[int(floor(selected_icon/16.0)*16 + i)]["previewFrame"]
 		else:
 			icon.texture = Texture.new()
 		if !FileAccess.file_exists("res://player/cubes/cube" + str(int(floor(selected_icon/16.0)*16 + i)) + ".png"):
