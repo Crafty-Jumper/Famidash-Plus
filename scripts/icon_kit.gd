@@ -59,7 +59,10 @@ func update_icon_list() -> void:
 	selector.position.y = fmod(floor(selected_icon/8.0),2)*16+136.0
 	for i in canvas_group.get_children().size():
 		var icon : Sprite2D = canvas_group.get_child(i)
-		icon.texture = load("res://player/cubes/cube" + str(int(floor(selected_icon/16.0)*16 + i)) + ".png")
+		if FileAccess.file_exists("res://player/cubes/cube" + str(int(floor(selected_icon/16.0)*16 + i)) + ".png"):
+			icon.texture = load("res://player/cubes/cube" + str(int(floor(selected_icon/16.0)*16 + i)) + ".png")
+		else:
+			icon.texture = Texture.new()
 		if !FileAccess.file_exists("res://player/cubes/cube" + str(int(floor(selected_icon/16.0)*16 + i)) + ".png"):
 			if max_icons == 0:
 				max_icons = int(floor(selected_icon/16.0)*16 + i)-1
