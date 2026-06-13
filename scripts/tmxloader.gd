@@ -52,7 +52,8 @@ func reset_level() -> void:
 	character_body_2d.flipped = false
 	character_body_2d.velocity = Vector2.ZERO
 	character_body_2d.position.x = 8
-	character_body_2d.position.y = 16*(levelHeight-1)+8
+	character_body_2d.rotation_frame = 0
+	character_body_2d.position.y = 16*(levelHeight-1)+10
 	character_body_2d.speedIdx = ohgodthelag["startingSpeed"]
 	character_body_2d.gamemode = ohgodthelag["startingGameMode"]
 	character_body_2d.sprite_2d.show()

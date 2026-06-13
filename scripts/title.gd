@@ -9,6 +9,7 @@ var selection = 1
 const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_sides","menu_e_sides"]
 
 func _ready() -> void:
+	Global.save_file()
 	if Global.songName.contains("menu") or Global.songName.contains("unem"):
 		return
 	if Global.menuTheme == -1:
@@ -48,6 +49,8 @@ func _process(delta: float) -> void:
 	if selection == 3 and Input.is_action_just_pressed("A"):
 		Global.change_song("")
 		Global.fade_scene("res://scenes/sound_test.tscn")
+	if selection == 0 and Input.is_action_just_pressed("A"):
+		Global.fade_scene("res://scenes/icon_kit.tscn")
 
 func handle_cursor() -> void:
 	if Input.is_action_just_pressed("left"):

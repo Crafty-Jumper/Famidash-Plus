@@ -48,7 +48,7 @@ var robotJump = 0x13
 ## textures n stuff
 const deathSpr : Texture2D = preload("res://player/explode.png")
 
-const cubeSpr : Texture2D = preload("res://player/cube00.png")
+var cubeSpr : Texture2D = load("res://player/cubes/cube" + str(Global.save_data["icons"][0]) + ".png")
 const shipSpr : Texture2D = preload("res://player/ship00.png")
 const ballSpr : Texture2D = preload("res://player/ball00.png")
 const ufoSpr : Texture2D = preload("res://player/ufo00.png")
@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = speeds[speedIdx]
 	flippedMult = -1 if flipped else 1
 	up_direction.y = -flippedMult
-	sprite_2d.flip_v = flipped
+	sprite_2d.flip_v = flipped if gamemode != 0 else false
 	if !(Input.is_action_pressed("A") or Input.is_action_pressed("up")):
 		clickDisabler = false
 	if !clickDisabler:
@@ -136,12 +136,12 @@ func animate_cube(texture: Texture2D=cubeSpr,rotate:bool=true) -> void:
 	sprite_2d.hframes = 7
 	
 	if !is_on_floor():
-		rotation_frame += 1
+		rotation_frame += flippedMult
 		if dashing:
-			rotation_frame += 1
+			rotation_frame += flippedMult
 	else:
 		if !clicking:
-			rotation_frame = floor(rotation_frame/12.0)*12
+			rotation_frame = round(rotation_frame/12.0)*12
 	sprite_2d.frame = floor(fmod(rotation_frame/2,6))
 	if rotate:
 		sprite_2d.rotation_degrees = floor(rotation_frame/12)*90

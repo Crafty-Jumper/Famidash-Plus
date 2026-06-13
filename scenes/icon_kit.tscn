@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://blfpe35rtmm2e"]
+
+[ext_resource type="Script" uid="uid://cegoh1wmtjwbu" path="res://scripts/icon_kit.gd" id="1_gpncu"]
+[ext_resource type="Texture2D" uid="uid://cc8se21vv3mpd" path="res://spritesheets/banner_corner.png" id="1_mg1tg"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="2_gpncu"]
+[ext_resource type="Texture2D" uid="uid://brebaa50dfwoh" path="res://spritesheets/level_select_bg.png" id="3_k26hn"]
+[ext_resource type="Texture2D" uid="uid://cj814wg1pib68" path="res://test_header1.png" id="4_3w6sm"]
+[ext_resource type="Shader" uid="uid://c0meobq1wnqn6" path="res://playercolors.gdshader" id="5_l57dw"]
+[ext_resource type="Texture2D" uid="uid://0f2l5gi5kksl" path="res://player/cubes/cube1.png" id="7_8buvy"]
+[ext_resource type="Texture2D" uid="uid://dkmpvo71oneu6" path="res://player/cubes/cube0.png" id="7_mg1tg"]
+[ext_resource type="Texture2D" uid="uid://cn051t5tqf65j" path="res://player/cubes/cube2.png" id="8_bdy1t"]
+[ext_resource type="Texture2D" uid="uid://cq1o2pae6xb3j" path="res://player/cubes/cube3.png" id="9_2nb2n"]
+[ext_resource type="Texture2D" uid="uid://1p8axc270sjb" path="res://player/cubes/cube4.png" id="10_3ge1s"]
+[ext_resource type="Texture2D" uid="uid://c8ma4gmqr10dl" path="res://player/cubes/cube5.png" id="11_jxett"]
+[ext_resource type="Texture2D" uid="uid://dq0ji2ux25mt0" path="res://player/cubes/cube6.png" id="12_m53gt"]
+[ext_resource type="Texture2D" uid="uid://f1arp4cat2ho" path="res://player/cubes/cube7.png" id="13_l2eyk"]
+[ext_resource type="Texture2D" uid="uid://dajyqygwausch" path="res://player/cubes/cube8.png" id="14_ne4dk"]
+[ext_resource type="Texture2D" uid="uid://4h4rfw3rsm7n" path="res://player/cubes/cube9.png" id="15_kkwr2"]
+[ext_resource type="Texture2D" uid="uid://bsc2qtfuoit4n" path="res://player/cubes/cube10.png" id="16_2xamp"]
+[ext_resource type="Texture2D" uid="uid://1tp70xeijyg0" path="res://player/cubes/cube11.png" id="17_aool4"]
+[ext_resource type="Texture2D" uid="uid://dvb0orcsgscgx" path="res://player/cubes/cube12.png" id="18_1h35t"]
+[ext_resource type="Texture2D" uid="uid://b4w1a2jx536mm" path="res://player/cubes/cube13.png" id="19_nlaqx"]
+[ext_resource type="Texture2D" uid="uid://crlnom2mndojg" path="res://player/cubes/cube14.png" id="20_ja7gl"]
+[ext_resource type="Texture2D" uid="uid://sr0o6flcnqki" path="res://player/cubes/cube15.png" id="21_r6vfd"]
+[ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="23_k26hn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fwahj"]
+shader = ExtResource("5_l57dw")
+shader_parameter/outline = Color(0, 0, 0, 1)
+shader_parameter/col1 = Color(0.64705884, 0.64705884, 0.64705884, 1)
+shader_parameter/col2 = Color(0.9372549, 0.9372549, 0.9372549, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1651070141]
+script = ExtResource("1_gpncu")
+
+[node name="BannerCorner" type="Sprite2D" parent="." unique_id=663323518]
+position = Vector2(-128, 192)
+texture = ExtResource("1_mg1tg")
+centered = false
+
+[node name="BannerCorner3" type="Sprite2D" parent="." unique_id=793438804]
+position = Vector2(-128, 0)
+texture = ExtResource("1_mg1tg")
+centered = false
+flip_v = true
+
+[node name="BannerCorner2" type="Sprite2D" parent="." unique_id=2051832645]
+position = Vector2(128, 192)
+texture = ExtResource("1_mg1tg")
+centered = false
+offset = Vector2(-48, 0)
+flip_h = true
+
+[node name="Label" type="Label" parent="." unique_id=2071516633]
+offset_left = -128.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_gpncu")
+theme_override_font_sizes/font_size = 8
+text = "USERNAME"
+horizontal_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1424033048]
+offset_left = -72.0
+offset_top = 120.0
+offset_right = 71.0
+offset_bottom = 168.0
+texture = ExtResource("3_k26hn")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="TestHeader1" type="Sprite2D" parent="." unique_id=1849955415]
+visible = false
+modulate = Color(1, 1, 1, 0.28627452)
+position = Vector2(0, 120)
+texture = ExtResource("4_3w6sm")
+
+[node name="selectedicon" type="Sprite2D" parent="." unique_id=290675299]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(0, 73)
+texture = ExtResource("10_3ge1s")
+hframes = 7
+
+[node name="icon1" type="Sprite2D" parent="." unique_id=1898056014]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(-56, 136)
+texture = ExtResource("7_mg1tg")
+hframes = 7
+
+[node name="icon2" type="Sprite2D" parent="." unique_id=1132678928]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(-40, 136)
+texture = ExtResource("7_8buvy")
+hframes = 7
+
+[node name="icon3" type="Sprite2D" parent="." unique_id=1370370964]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(-24, 136)
+texture = ExtResource("8_bdy1t")
+hframes = 7
+
+[node name="icon4" type="Sprite2D" parent="." unique_id=188900389]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(-8, 136)
+texture = ExtResource("9_2nb2n")
+hframes = 7
+
+[node name="icon5" type="Sprite2D" parent="." unique_id=343184853]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(8, 136)
+texture = ExtResource("10_3ge1s")
+hframes = 7
+
+[node name="icon6" type="Sprite2D" parent="." unique_id=6620978]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(24, 136)
+texture = ExtResource("11_jxett")
+hframes = 7
+
+[node name="icon7" type="Sprite2D" parent="." unique_id=1791733758]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(40, 136)
+texture = ExtResource("12_m53gt")
+hframes = 7
+
+[node name="icon8" type="Sprite2D" parent="." unique_id=1781895055]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(56, 136)
+texture = ExtResource("13_l2eyk")
+hframes = 7
+
+[node name="icon9" type="Sprite2D" parent="." unique_id=1633649014]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(-56, 152)
+texture = ExtResource("14_ne4dk")
+hframes = 7
+
+[node name="icon10" type="Sprite2D" parent="." unique_id=701144467]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(-40, 152)
+texture = ExtResource("15_kkwr2")
+hframes = 7
+
+[node name="icon11" type="Sprite2D" parent="." unique_id=1192666263]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(-24, 152)
+texture = ExtResource("16_2xamp")
+hframes = 7
+
+[node name="icon12" type="Sprite2D" parent="." unique_id=2002112110]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(-8, 152)
+texture = ExtResource("17_aool4")
+hframes = 7
+
+[node name="icon13" type="Sprite2D" parent="." unique_id=1985705932]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(8, 152)
+texture = ExtResource("18_1h35t")
+hframes = 7
+
+[node name="icon14" type="Sprite2D" parent="." unique_id=339911465]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(24, 152)
+texture = ExtResource("19_nlaqx")
+hframes = 7
+
+[node name="icon15" type="Sprite2D" parent="." unique_id=1831371322]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(40, 152)
+texture = ExtResource("20_ja7gl")
+hframes = 7
+
+[node name="icon16" type="Sprite2D" parent="." unique_id=1150915510]
+material = SubResource("ShaderMaterial_fwahj")
+position = Vector2(56, 152)
+texture = ExtResource("21_r6vfd")
+hframes = 7
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=652408370]
+position = Vector2(0, 120)
+zoom = Vector2(4, 4)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=569293217]
+offset_left = -128.0
+offset_top = 183.0
+offset_right = 128.0
+offset_bottom = 184.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1780004857]
+offset_left = -32.0
+offset_top = 80.0
+offset_right = 33.0
+offset_bottom = 81.0
+
+[node name="Selector" type="Sprite2D" parent="." unique_id=1219721414]
+position = Vector2(-56, 136)
+texture = ExtResource("23_k26hn")
+region_enabled = true
+region_rect = Rect2(80, 32, 16, 16)
