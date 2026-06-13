@@ -13,6 +13,7 @@ const colors : Array = [
 signal bg_color(index)
 signal gnd_color(index)
 signal gravity_mod(mod:float)
+signal kill_player
 
 func _on_bg_color(index) -> void:
 	var secondary = index - 16
@@ -31,3 +32,7 @@ func _on_gnd_color(index) -> void:
 
 func _on_gravity_mod(mod: float) -> void:
 	character_body_2d.gravMult = mod
+
+
+func _on_kill_player() -> void:
+	character_body_2d.die()

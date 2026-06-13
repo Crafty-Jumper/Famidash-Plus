@@ -559,3 +559,4 @@ text = "ATTEMPT "
 [connection signal="bg_color" from="Area2D" to="Area2D" method="_on_bg_color"]
 [connection signal="gnd_color" from="Area2D" to="Area2D" method="_on_gnd_color"]
 [connection signal="gravity_mod" from="Area2D" to="Area2D" method="_on_gravity_mod"]
+[connection signal="kill_player" from="Area2D" to="Area2D" method="_on_kill_player"]
