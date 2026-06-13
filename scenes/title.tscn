@@ -54,14 +54,21 @@ position = Vector2(120, 144)
 texture = ExtResource("3_p6dhs")
 centered = false
 region_enabled = true
-region_rect = Rect2(16, 32, 16, 16)
+region_rect = Rect2(16, 80, 16, 16)
 
 [node name="HelpButton" type="Sprite2D" parent="." unique_id=752289741]
 position = Vector2(168, 144)
 texture = ExtResource("3_p6dhs")
 centered = false
 region_enabled = true
-region_rect = Rect2(32, 32, 16, 16)
+region_rect = Rect2(32, 80, 16, 16)
+
+[node name="FunSettingsButton" type="Sprite2D" parent="." unique_id=1906800311]
+position = Vector2(216, 16)
+texture = ExtResource("3_p6dhs")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 80, 16, 16)
 
 [node name="Ground" type="Sprite2D" parent="." unique_id=1323005298]
 texture_repeat = 2
@@ -76,7 +83,7 @@ position = Vector2(128, 120)
 zoom = Vector2(4, 4)
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=1399946094]
-position = Vector2(128, 152)
+position = Vector2(224, 16)
 texture = ExtResource("3_p6dhs")
 region_enabled = true
 region_rect = Rect2(80, 32, 16, 16)
