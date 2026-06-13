@@ -1,14 +1,14 @@
 extends Sprite2D
 
 @onready var area_2d: Area2D = $Area2D
-
+@onready var main : Node2D = $"../.."
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	area_2d.area_entered.connect(entered_screen)
 
 func entered_screen(area: Area2D) -> void:
 	if area.is_in_group("triggersNStuff"):
-		Global.fade_scene("res://scenes/title.tscn",true,false)
+		Global.fade_scene("res://scenes/level_complete.tscn",true,false,{"practiceMode":main.practiceMode,"attempts":main.tile_map_layer.attempts,"jumps":0})
 		if get_parent().get_parent().practiceMode:
 			write_percent_practice()
 		else:

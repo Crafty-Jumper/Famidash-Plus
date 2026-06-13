@@ -15,7 +15,7 @@ var save_data : Dictionary = {
 	}
 }
 
-
+var extraData : Variant = 0
 var fade = ColorRect.new()
 var music = AudioStreamPlayer.new()
 var sfx = AudioStreamPlayer.new()
@@ -85,7 +85,8 @@ func play_sfx(id) -> void:
 		sfx.stream = load("res://sfx/" + id)
 	sfx.play()
 
-func fade_scene(scene:String, instant:bool = false, reload:bool = false) -> void:
+func fade_scene(scene:String, instant:bool = false, reload:bool = false,extradata:Variant=0) -> void:
+	extraData = extradata
 	newScene = !reload
 	fadeIn = true
 	new_scene = load(scene)

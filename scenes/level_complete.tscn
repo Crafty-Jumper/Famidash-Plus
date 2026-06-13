@@ -1,9 +1,92 @@
 [gd_scene format=3 uid="uid://cxnea5xici4ec"]
 
+[ext_resource type="Texture2D" uid="uid://be2j5ut0jhnn0" path="res://spritesheets/DialogueBoxLarge.png" id="1_2e2w2"]
 [ext_resource type="Texture2D" uid="uid://dcrfq4ams44oy" path="res://Famidash - Crafty's Levels_012.png" id="1_hhoem"]
+[ext_resource type="Script" uid="uid://b1vntlj51vd3x" path="res://scripts/level_complete.gd" id="1_rovvh"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_rovvh"]
+[ext_resource type="Texture2D" uid="uid://bg1ejw4seneb1" path="res://spritesheets/coinSheet.png" id="5_3oeyx"]
+[ext_resource type="Texture2D" uid="uid://cgo2w1rqeyshg" path="res://spritesheets/levelcomplete.png" id="6_r8ohr"]
+[ext_resource type="Texture2D" uid="uid://bp31s2o5kelw" path="res://spritesheets/buttonsSheet2.png" id="7_1r4r6"]
+[ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="8_jv7kj"]
 
 [node name="Node2D" type="Node2D" unique_id=1737469120]
+script = ExtResource("1_rovvh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1023814226]
+offset_left = -931.0
+offset_right = 1187.0
+offset_bottom = 671.0
+color = Color(0, 0, 0, 1)
+
+[node name="DialogueBoxLarge" type="Sprite2D" parent="." unique_id=2012556369]
+position = Vector2(128, 120)
+texture = ExtResource("1_2e2w2")
 
 [node name="FamidashCrafty\'sLevels012" type="Sprite2D" parent="." unique_id=1675449335]
+visible = false
+modulate = Color(1, 1, 1, 0.23921569)
 position = Vector2(128, 120)
 texture = ExtResource("1_hhoem")
+
+[node name="Attempts" type="Label" parent="." unique_id=1013123496]
+offset_left = 72.0
+offset_top = 104.0
+offset_right = 232.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("3_rovvh")
+theme_override_font_sizes/font_size = 8
+text = "ATTEMPTS: "
+
+[node name="Jumps" type="Label" parent="." unique_id=1474596024]
+offset_left = 88.0
+offset_top = 120.0
+offset_right = 248.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_rovvh")
+theme_override_font_sizes/font_size = 8
+text = "JUMPS: "
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1743903668]
+position = Vector2(128, 120)
+zoom = Vector2(4, 4)
+
+[node name="Coin" type="Sprite2D" parent="." unique_id=2084655294]
+position = Vector2(96, 152)
+texture = ExtResource("5_3oeyx")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Coin2" type="Sprite2D" parent="." unique_id=1715261201]
+position = Vector2(128, 152)
+texture = ExtResource("5_3oeyx")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Coin3" type="Sprite2D" parent="." unique_id=1892239168]
+position = Vector2(160, 152)
+texture = ExtResource("5_3oeyx")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Levelcomplete" type="Sprite2D" parent="." unique_id=703378071]
+position = Vector2(124, 72)
+texture = ExtResource("6_r8ohr")
+
+[node name="Menu" type="Sprite2D" parent="." unique_id=1543248036]
+position = Vector2(184, 216)
+texture = ExtResource("7_1r4r6")
+region_enabled = true
+region_rect = Rect2(94, 0, 30, 30)
+
+[node name="Replay" type="Sprite2D" parent="." unique_id=1327930962]
+position = Vector2(72, 216)
+texture = ExtResource("7_1r4r6")
+region_enabled = true
+region_rect = Rect2(64, 0, 30, 30)
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=64433211]
+visible = false
+position = Vector2(72, 193)
+texture = ExtResource("8_jv7kj")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
