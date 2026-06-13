@@ -6,7 +6,9 @@ extends Node2D
 @onready var label_4: Label = $Label4
 @onready var banner_corner: Sprite2D = $BannerCorner
 @onready var banner_corner_2: Sprite2D = $BannerCorner2
+@onready var playing: Sprite2D = $Playing
 
+var animFrame : int = 0
 var song : int = 0
 var currSong : Dictionary = {
 		"song":"",
@@ -19,6 +21,12 @@ var music_meta = JSON.parse_string(FileAccess.open("res://music_data.json",FileA
 
 
 func _process(delta: float) -> void:
+	playing.frame = floor(animFrame/12)
+	animFrame = fmod(animFrame + 1,60)
+	if Global.songName == currSong["song"]:
+		playing.show()
+	else:
+		playing.hide()
 	if currSong["originalArtist"] is Array:
 		label_4.text = "SONG:\n\n\n\nORIGINAL ARTISTS:\n\n\n\nCOVERED BY:"
 	else:
