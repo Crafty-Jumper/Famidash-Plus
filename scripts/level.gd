@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	camera_2d.position.x = character_body_2d.position.x + 48
 	texture_progress_bar.value = (character_body_2d.position.x*6.1)/tile_map_layer.levelWidth
 	if Input.is_action_just_pressed("select"):
-		if !checkpoints.get_child(checkpoints.get_children().size()-1) == null:
+		if checkpoints.get_children().size():
 			checkpoints.get_child(checkpoints.get_children().size()-1).queue_free()
 	if character_body_2d.gamemode == -1:
 		if practiceMode:
