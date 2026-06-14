@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://utps2omw25j2"
-path="res://.godot/imported/ufo00.png-6f12d58c6a3a2de3d6134a4f2e3390d9.ctex"
+uid="uid://do78xxj11nc7b"
+path="res://.godot/imported/robot0.png-4892b768d4b2e5dd8f5830076290dfe7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/ufo00.png"
-dest_files=["res://.godot/imported/ufo00.png-6f12d58c6a3a2de3d6134a4f2e3390d9.ctex"]
+source_file="res://player/robots/robot0.png"
+dest_files=["res://.godot/imported/robot0.png-4892b768d4b2e5dd8f5830076290dfe7.ctex"]
 
 [params]
 

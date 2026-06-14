@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://crlnom2mndojg" path="res://player/cubes/cube14.png" id="20_ja7gl"]
 [ext_resource type="Texture2D" uid="uid://sr0o6flcnqki" path="res://player/cubes/cube15.png" id="21_r6vfd"]
 [ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="23_k26hn"]
+[ext_resource type="Texture2D" uid="uid://ckpc28kvpt8n6" path="res://spritesheets/iconSelection.png" id="24_l57dw"]
+[ext_resource type="Shader" uid="uid://c4knthwwyim1l" path="res://colors.gdshader" id="25_clwdu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fwahj"]
 shader = ExtResource("5_l57dw")
@@ -30,8 +32,26 @@ shader_parameter/outline = Color(0, 0, 0, 1)
 shader_parameter/col1 = Color(0.64705884, 0.64705884, 0.64705884, 1)
 shader_parameter/col2 = Color(0.9372549, 0.9372549, 0.9372549, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8buvy"]
+shader = ExtResource("25_clwdu")
+shader_parameter/srcBG1 = Color(0.64705884, 0.64705884, 0.64705884, 1)
+shader_parameter/srcBG2 = Color(0.9372549, 0.9372549, 0.9372549, 1)
+shader_parameter/srcOBJ = Color(0, 0, 0, 1)
+shader_parameter/srcGND1 = Color(0, 0, 0, 1)
+shader_parameter/srcGND2 = Color(0, 0, 0, 1)
+shader_parameter/BG1 = Color(0.2901961, 0.70980394, 0.80784315, 1)
+shader_parameter/BG2 = Color(0.6784314, 0.87058824, 0.90588236, 1)
+shader_parameter/OBJ = Color(0, 0, 0, 1)
+shader_parameter/GND1 = Color(0, 0, 0, 1)
+shader_parameter/GND2 = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D" unique_id=1651070141]
 script = ExtResource("1_gpncu")
+
+[node name="TestHeader1" type="Sprite2D" parent="." unique_id=1849955415]
+visible = false
+position = Vector2(0, 120)
+texture = ExtResource("4_3w6sm")
 
 [node name="BannerCorner" type="Sprite2D" parent="." unique_id=663323518]
 position = Vector2(-128, 192)
@@ -74,12 +94,6 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 metadata/_edit_use_anchors_ = true
-
-[node name="TestHeader1" type="Sprite2D" parent="." unique_id=1849955415]
-visible = false
-modulate = Color(1, 1, 1, 0.28627452)
-position = Vector2(0, 120)
-texture = ExtResource("4_3w6sm")
 
 [node name="selectedicon" type="Sprite2D" parent="." unique_id=290675299]
 material = SubResource("ShaderMaterial_fwahj")
@@ -202,7 +216,18 @@ texture = ExtResource("21_r6vfd")
 hframes = 7
 
 [node name="Selector" type="Sprite2D" parent="." unique_id=1219721414]
-position = Vector2(-56, 136)
+position = Vector2(-96, 88)
 texture = ExtResource("23_k26hn")
 region_enabled = true
 region_rect = Rect2(80, 32, 16, 16)
+
+[node name="IconSelection" type="Sprite2D" parent="." unique_id=201229586]
+position = Vector2(0, 104)
+texture = ExtResource("24_l57dw")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1557290109]
+material = SubResource("ShaderMaterial_8buvy")
+offset_left = -102.0
+offset_top = 98.0
+offset_right = -90.0
+offset_bottom = 110.0

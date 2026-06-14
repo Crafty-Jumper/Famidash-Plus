@@ -51,10 +51,10 @@ var robotJump = 0x13
 const deathSpr : Texture2D = preload("res://player/explode.png")
 
 var cubeSpr : Texture2D = load("res://player/cubes/cube" + str(Global.save_data["icons"][0]) + ".png")
-const shipSpr : Texture2D = preload("res://player/ship00.png")
+var shipSpr : Texture2D = load("res://player/ships/ship" + str(Global.save_data["icons"][1]) + ".png")
 const ballSpr : Texture2D = preload("res://player/ball00.png")
 const ufoSpr : Texture2D = preload("res://player/ufo00.png")
-const robotSpr : Texture2D = preload("res://player/robot00.png")
+var robotSpr : Texture2D = load("res://player/robots/robot" + str(Global.save_data["icons"][5]) + ".png")
 const spiderSpr : Texture2D = preload("res://player/spider00.png")
 const waveSpr : Texture2D = preload("res://player/wave00.png")
 const ninjaSpr : Texture2D = preload("res://player/ninja00.png")
