@@ -154,9 +154,9 @@ func manage_cursor() -> void:
 		if Input.is_action_just_pressed("down"):
 			Global.save_data["colors"][hovered_color] -= 1
 		wrap(Global.save_data["colors"][hovered_color],0,Global.colors.size()-1)
-	
-	
+
 func change_page(mode:int=0):
 	max_icons = 0
 	gamemode = mode
-	selected_icon = Global.save_data["icons"][mode]
+	update_icon_list(gamemode_names[gamemode])
+	selected_icon = Global.save_data["icons"][gamemode]
