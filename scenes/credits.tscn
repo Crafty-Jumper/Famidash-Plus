@@ -35,8 +35,8 @@ texture = ExtResource("1_0bpdh")
 [node name="Label" type="Label" parent="." unique_id=985043054]
 offset_left = 48.0
 offset_top = 56.0
-offset_right = 160.0
-offset_bottom = 79.0
+offset_right = 256.0
+offset_bottom = 120.0
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("3_2fbfq")
 theme_override_font_sizes/font_size = 8
@@ -46,10 +46,8 @@ MADE BY CRAFTY JUMPER
 
  TOP CONTRIBUTORS
 
- -CRAFTY JUMPER
- - THATS PRETTY MUCH
-  IT LMAO
- -AT LEAST FOR NOW"
+-CRAFTY JUMPER - CODE
+-SAMBAM_8979 - ICONS"
 
 [node name="Label2" type="Label" parent="." unique_id=1974892077]
 offset_left = 8.0

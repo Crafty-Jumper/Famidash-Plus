@@ -54,6 +54,16 @@ func _process(delta: float) -> void:
 	label.text = currSong.get("text","")
 	original_artist()
 	overingArtist()
+	color_song_name()
+
+func color_song_name() -> void:
+	var category = currSong.get("category","")
+	if category == "":
+		label.add_theme_font_override("font",load("res://spritesheets/pusab.fnt"))
+	if category == "original":
+		label.add_theme_font_override("font",load("res://spritesheets/pusab_gold.fnt"))
+	if category == "original_plus":
+		label.add_theme_font_override("font",load("res://spritesheets/pusab_blue.fnt"))
 
 func original_artist() -> void:
 	if currSong.get("originalArtist","") is String:

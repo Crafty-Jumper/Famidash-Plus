@@ -189,7 +189,8 @@
 		"song":"cryogenic",
 		"text":"CRYOGENIC",
 		"originalArtist":"NERDBOY628",
-		"coveringArtist":"NERDBOY628"
+		"coveringArtist":"NERDBOY628",
+		"category":"original",
 	},
 	{
 		"song":"c_madness",
@@ -225,13 +226,21 @@
 		"song":"ground_to_space",
 		"text":"GROUND TO SPACE",
 		"originalArtist":"SEAGLOWINGPRO",
-		"coveringArtist":["SEAGLOWINGPRO","ELANGEL378"]
+		"coveringArtist":["SEAGLOWINGPRO","ELANGEL378"],
+		"category":"original",
 	},
 	{
 		"song":"just_right",
 		"text":"JUST RIGHT",
 		"originalArtist":["TESSA VIOLET","DAN HARRISON B"],
 		"coveringArtist":["SEAGLOWINGPRO","ELANGEL378"]
+	},
+	{
+		"song":"lucky_draw",
+		"text":"LUCKY DRAW",
+		"originalArtist":"TETHRARXITET",
+		"coveringArtist":"TETHRARXITET",
+		"category":"original_plus",
 	},
 	{
 		"song":"meowstuff",
@@ -249,7 +258,8 @@
 		"song":"new_dash_city",
 		"text":"NEW DASH CITY",
 		"originalArtist":"SEAGLOWINGPRO",
-		"coveringArtist":"SEAGLOWINGPRO"
+		"coveringArtist":"SEAGLOWINGPRO",
+		"category":"original",
 	},
 	{
 		"song":"nine_circles",
@@ -267,19 +277,22 @@
 		"song":"pyrophoric/original",
 		"text":"PYROPHORIC",
 		"originalArtist":"NERDBOY628",
-		"coveringArtist":"NERDBOY628"
+		"coveringArtist":"NERDBOY628",
+		"category":"original",
 	},
 	{
 		"song":"pyrophoric/legacy_rmx",
 		"text":"PYROPHORIC LEGACY REMIX",
 		"originalArtist":"NERDBOY628",
-		"coveringArtist":["NERDBOY628","DAJINKOSA","SEAGLOWINGPRO"]
+		"coveringArtist":["NERDBOY628","DAJINKOSA","SEAGLOWINGPRO"],
+		"category":"original",
 	},
 	{
 		"song":"pyrophoric/dajinkosa_rmx",
 		"text":"PYROPHORIC DAJINKOSA REMIX",
 		"originalArtist":"NERDBOY628",
-		"coveringArtist":"DAJINKOSA"
+		"coveringArtist":"DAJINKOSA",
+		"category":"original",
 	},
 	{
 		"song":"rainbow_tylenol",
@@ -297,7 +310,8 @@
 		"song":"select_payment_type",
 		"text":"SELECT PAYMENT TYPE",
 		"originalArtist":"CRAFTY JUMPER",
-		"coveringArtist":"CRAFTY JUMPER"
+		"coveringArtist":"CRAFTY JUMPER",
+		"category":"original",
 	},
 	{
 		"song":"slash_inferno",

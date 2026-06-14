@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://c2wnc6k5ac8dm"
+path="res://.godot/imported/pusab_gold.fnt-dc96acd03839f8468641e571bdda766d.fontdata"
+
+[deps]
+
+source_file="res://spritesheets/pusab_gold.fnt"
+dest_files=["res://.godot/imported/pusab_gold.fnt-dc96acd03839f8468641e571bdda766d.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

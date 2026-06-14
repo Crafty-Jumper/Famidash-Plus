@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bvgo5aj70o8d"
+path="res://.godot/imported/pusab_blue.fnt-7333239e7bc77b8c8d66f40b6b055604.fontdata"
+
+[deps]
+
+source_file="res://spritesheets/pusab_blue.fnt"
+dest_files=["res://.godot/imported/pusab_blue.fnt-7333239e7bc77b8c8d66f40b6b055604.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
