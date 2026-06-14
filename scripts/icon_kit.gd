@@ -43,7 +43,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	selectedicon.material.set_shader_parameter("outline",Global.get_color(Global.save_data["colors"][2]))
+	selectedicon.material.set_shader_parameter("col1",Global.get_color(Global.save_data["colors"][0]))
+	selectedicon.material.set_shader_parameter("col2",Global.get_color(Global.save_data["colors"][1]))
 	colors.self_modulate = Global.get_color(Global.save_data["colors"][0])
 	colors_2.self_modulate = Global.get_color(Global.save_data["colors"][1])
 	colors_3.self_modulate = Global.get_color(Global.save_data["colors"][2])

@@ -27,6 +27,12 @@
 [ext_resource type="Shader" uid="uid://c4knthwwyim1l" path="res://colors.gdshader" id="25_clwdu"]
 [ext_resource type="Texture2D" uid="uid://dy4fh8ioqsboq" path="res://spritesheets/colors.png" id="26_clwdu"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clwdu"]
+shader = ExtResource("5_l57dw")
+shader_parameter/outline = Color(0, 0, 0, 1)
+shader_parameter/col1 = Color(0, 0, 0, 1)
+shader_parameter/col2 = Color(0, 0, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fwahj"]
 shader = ExtResource("5_l57dw")
 shader_parameter/outline = Color(0, 0, 0, 1)
@@ -55,6 +61,7 @@ position = Vector2(0, 120)
 texture = ExtResource("4_3w6sm")
 
 [node name="selectedicon" type="Sprite2D" parent="." unique_id=290675299]
+material = SubResource("ShaderMaterial_clwdu")
 position = Vector2(0, 73)
 texture = ExtResource("10_3ge1s")
 hframes = 7
