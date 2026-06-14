@@ -52,5 +52,14 @@
 		"maxUp":397.0,
 		"pads":[0,0,0,0],
 		"size":[14,14]
-	}
+	},
+	"swing":{
+		"canHeadBonk":true,
+		"upVel":142.471,
+		"gravity":500,
+		"maxFall":150,
+		"maxUp":397.0,
+		"pads":[0,0,0,0],
+		"size":[14,14]
+	},
 }

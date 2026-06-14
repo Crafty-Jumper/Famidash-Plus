@@ -5,4 +5,4 @@
 
 [node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_esvaj")]
 script = ExtResource("2_fn4ih")
-modifier = 0.666
+modifier = 0.66

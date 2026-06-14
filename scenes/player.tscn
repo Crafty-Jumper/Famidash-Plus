@@ -32,6 +32,9 @@ material = SubResource("ShaderMaterial_dqkch")
 texture = ExtResource("3_qhqgy")
 hframes = 7
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1229565260]
+material = SubResource("ShaderMaterial_dqkch")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140290215]
 shape = SubResource("RectangleShape2D_qhqgy")
 

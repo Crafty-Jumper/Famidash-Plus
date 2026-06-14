@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d_2: Sprite2D = $Sprite2D2
 
 var gamemode : int = 0
 var dashing : bool = false
@@ -51,12 +52,14 @@ var robotJump = 0x13
 const deathSpr : Texture2D = preload("res://player/explode.png")
 
 var cubeSpr : Texture2D = load("res://player/cubes/cube" + str(Global.save_data["icons"][0]) + ".png")
+var shipCubeSpr : Texture2D = load("res://player/cubes/ship" + str(Global.save_data["icons"][0]) + ".png")
 var shipSpr : Texture2D = load("res://player/ships/ship" + str(Global.save_data["icons"][1]) + ".png")
 var ballSpr : Texture2D = load("res://player/balls/ball" + str(Global.save_data["icons"][2]) + ".png")
 var ufoSpr : Texture2D = load("res://player/ufos/ufo" + str(Global.save_data["icons"][3]) + ".png")
 var robotSpr : Texture2D = load("res://player/robots/robot" + str(Global.save_data["icons"][5]) + ".png")
 var spiderSpr : Texture2D = load("res://player/spiders/spider" + str(Global.save_data["icons"][6]) + ".png")
 var waveSpr : Texture2D = load("res://player/waves/wave" + str(Global.save_data["icons"][4]) + ".png")
+var swingSpr : Texture2D = load("res://player/swings/swing" + str(Global.save_data["icons"][7]) + ".png")
 var ninjaSpr : Texture2D = load("res://player/ninjas/ninja" + str(Global.save_data["icons"][9]) + ".png")
 
 const jimshipSpr : Texture2D = preload("res://player/jim/ship.png")
@@ -76,6 +79,7 @@ func _ready() -> void:
 	sprite_2d.material.set_shader_parameter("col2",Global.get_color(Global.save_data["colors"][1]))
 
 func _physics_process(delta: float) -> void:
+	sprite_2d_2.visible = false
 	collision_shape_2d.disabled = gamemode == -1
 	if gamemode == -1:
 		rotation_frame += 1
@@ -94,6 +98,7 @@ func _physics_process(delta: float) -> void:
 	flippedMult = -1 if flipped else 1
 	up_direction.y = -flippedMult
 	sprite_2d.flip_v = flipped if gamemode != 0 else false
+	sprite_2d_2.flip_v = flipped
 	if !(Input.is_action_pressed("A") or Input.is_action_pressed("up")):
 		clickDisabler = false
 	if !clickDisabler:
@@ -124,6 +129,8 @@ func _physics_process(delta: float) -> void:
 		handle_spider(delta)
 	if gamemode == 6:
 		handle_wave(delta)
+	if gamemode == 7:
+		handle_swing(delta)
 	if gamemode == 8:
 		if Global.retro:
 			handle_robot(delta)
@@ -160,21 +167,27 @@ func animate_cube(texture: Texture2D=cubeSpr,rotate:bool=true) -> void:
 		sprite_2d.rotation = 0
 	rotation_frame = wrap(rotation_frame,0,48)
 
-func animate_ship(texture:Texture2D=shipSpr):
-	sprite_2d.texture = texture
+func animate_ship(texture:Texture2D=shipSpr,flip:bool=true):
+	sprite_2d.texture = shipCubeSpr
+	sprite_2d_2.visible = true
 	sprite_2d.hframes = 5
+	sprite_2d_2.hframes = 5
+	sprite_2d_2.texture = texture
 	rotation_frame = 2
 	sprite_2d.rotation = 0
 	if velocity.y < -50:
 		if velocity.y > -100:
-			rotation_frame += flippedMult
+			rotation_frame += (flippedMult if flip else 1)
 		else:
-			rotation_frame += 2*flippedMult
+			rotation_frame += 2 * (flippedMult if flip else 1)
 	elif velocity.y > 50:
-		rotation_frame -= flippedMult
+		rotation_frame -= (flippedMult if flip else 1)
 		if velocity.y > 100:
-			rotation_frame -= 2 * flippedMult 
+			rotation_frame -= 2 * (flippedMult if flip else 1)
 	sprite_2d.frame = clamp(rotation_frame,0,4)
+	sprite_2d_2.frame = clamp(rotation_frame,0,4)
+	if !flip:
+		sprite_2d.flip_v = false
 
 func animate_ball(texture:Texture2D=ballSpr):
 	sprite_2d.texture = texture
@@ -323,10 +336,10 @@ func handle_spider(delta:float) -> void:
 	animate_robot(spiderSpr)
 	if not is_on_floor():
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult * 0.9
-	if velocity.y > physicsTable["maxFall"]:
-		velocity.y = physicsTable["maxFall"]
-	if velocity.y < -physicsTable["maxUp"]:
-		velocity.y = -physicsTable["maxUp"]
+	if velocity.y * flippedMult  > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"] * flippedMult 
+	if velocity.y * flippedMult  < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"] * flippedMult 
 
 func handle_wave(delta:float) -> void:
 	animate_wave()
@@ -334,6 +347,23 @@ func handle_wave(delta:float) -> void:
 		velocity.y = -abs(velocity.x)
 	else:
 		velocity.y = abs(velocity.x)
+
+func handle_swing(delta:float) -> void:
+	update_physics("swing")
+	if Global.retro:
+		animate_ship(jimufoSpr)
+	else:
+		animate_ship(swingSpr,false)
+	sprite_2d.flip_v = false
+	
+	if not is_on_floor():
+		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
+	if first_click:
+		flipped = !flipped
+	if velocity.y * flippedMult > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"] * flippedMult 
+	if velocity.y * flippedMult  < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"] * flippedMult 
 
 func handle_ninja(delta:float) -> void:
 	update_physics()
@@ -353,10 +383,10 @@ func handle_ninja(delta:float) -> void:
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	else:
 		ninjaJumps = 3
-	if velocity.y > physicsTable["maxFall"]:
-		velocity.y = physicsTable["maxFall"]
-	if velocity.y < -physicsTable["maxUp"]:
-		velocity.y = -physicsTable["maxUp"]
+	if velocity.y * flippedMult  > physicsTable["maxFall"]:
+		velocity.y = physicsTable["maxFall"] * flippedMult 
+	if velocity.y  * flippedMult < -physicsTable["maxUp"]:
+		velocity.y = -physicsTable["maxUp"] * flippedMult 
 
 func die() -> void:
 	collision_shape_2d.disabled = true
