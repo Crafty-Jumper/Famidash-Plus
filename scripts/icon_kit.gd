@@ -10,13 +10,21 @@ const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_si
 @onready var banner_corner_2: Sprite2D = $BannerCorner2
 @onready var color_rect: ColorRect = $ColorRect
 @onready var color_rect_3: ColorRect = $ColorRect3
+
+@onready var colors: Sprite2D = $Colors
+@onready var colors_2: Sprite2D = $Colors2
+@onready var colors_3: Sprite2D = $Colors3
+@onready var color_selector: Sprite2D = $ColorSelector
+@onready var label_2: Label = $Label2
+var hovered_color : int = 0
+
 var max_icons = 0
 var icon_meta = JSON.parse_string(FileAccess.open("res://icons.json",FileAccess.READ).get_as_text())
 
 var selected_icon : int = 0
 var menu_state : int = 1
-const gamemode_frames = [7,5,4,1,3,5,5,6,1,7,2,3,7]
-const gamemode_frame_idx = [0,2,0,0,1,1,0,3,0,0,0,1,0]
+const gamemode_frames = [7,5,4,1,3,5,5,5,1,7,2,3,7]
+const gamemode_frame_idx = [0,2,0,0,1,1,0,2,0,0,0,1,0]
 const gamemode_names = ["cube","ship","ball","ufo","wave","robot","spider","swing","jetpack","ninja","pogo","snake","football"]
 var gamemode = 0
 var hovered_gamemode = 0
@@ -35,6 +43,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	colors.self_modulate = Global.get_color(Global.save_data["colors"][0])
+	colors_2.self_modulate = Global.get_color(Global.save_data["colors"][1])
+	colors_3.self_modulate = Global.get_color(Global.save_data["colors"][2])
+	
 	banner_corner.position.x = get_viewport_rect().size.x/-8
 	banner_corner_2.position.x = get_viewport_rect().size.x/8
 	color_rect.position.x = get_viewport_rect().size.x/-8
@@ -74,6 +87,9 @@ func update_icon_list(mode:String = "cube",frame=0) -> void:
 				selected_icon = int(floor(selected_icon/16.0)*16 + i)-1
 
 func manage_cursor() -> void:
+	selector.visible = true
+	color_selector.visible = false
+	label_2.visible = false
 	color_rect_3.position.x = gamemode * 16 - 102
 	if menu_state == 0:
 		selector.position.x = hovered_gamemode * 16 - 96
@@ -110,10 +126,34 @@ func manage_cursor() -> void:
 		if Input.is_action_just_pressed("down"):
 			if fmod(selected_icon,16) < 8:
 				selected_icon += 8
+			else:
+				menu_state = 2
 		if selected_icon < 0:
 			selected_icon = 0
 		if selected_icon > max_icons and max_icons != 0:
 			selected_icon = max_icons
+	elif menu_state == 2:
+		selector.visible = false
+		color_selector.visible = true
+		label_2.visible = true
+		color_selector.position.x = 48 * hovered_color - 48
+		if Input.is_action_just_pressed("left"):
+			if hovered_color == 0:
+				menu_state = 1
+			else:
+				hovered_color -= 1
+		if Input.is_action_just_pressed("right"):
+			if hovered_color == 2:
+				menu_state = 1
+			else:
+				hovered_color += 1
+		if Input.is_action_just_pressed("up"):
+			Global.save_data["colors"][hovered_color] += 1
+		if Input.is_action_just_pressed("down"):
+			Global.save_data["colors"][hovered_color] -= 1
+		wrap(Global.save_data["colors"][hovered_color],0,Global.colors.size()-1)
+	
+	
 func change_page(mode:int=0):
 	max_icons = 0
 	gamemode = mode

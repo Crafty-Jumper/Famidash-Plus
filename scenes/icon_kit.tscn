@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="23_k26hn"]
 [ext_resource type="Texture2D" uid="uid://ckpc28kvpt8n6" path="res://spritesheets/iconSelection.png" id="24_l57dw"]
 [ext_resource type="Shader" uid="uid://c4knthwwyim1l" path="res://colors.gdshader" id="25_clwdu"]
+[ext_resource type="Texture2D" uid="uid://dy4fh8ioqsboq" path="res://spritesheets/colors.png" id="26_clwdu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fwahj"]
 shader = ExtResource("5_l57dw")
@@ -52,6 +53,23 @@ script = ExtResource("1_gpncu")
 visible = false
 position = Vector2(0, 120)
 texture = ExtResource("4_3w6sm")
+
+[node name="selectedicon" type="Sprite2D" parent="." unique_id=290675299]
+position = Vector2(0, 73)
+texture = ExtResource("10_3ge1s")
+hframes = 7
+
+[node name="Colors" type="Sprite2D" parent="." unique_id=1105761518]
+position = Vector2(-48, 208)
+texture = ExtResource("26_clwdu")
+
+[node name="Colors2" type="Sprite2D" parent="." unique_id=2000210917]
+position = Vector2(0, 208)
+texture = ExtResource("26_clwdu")
+
+[node name="Colors3" type="Sprite2D" parent="." unique_id=37943333]
+position = Vector2(48, 208)
+texture = ExtResource("26_clwdu")
 
 [node name="BannerCorner" type="Sprite2D" parent="." unique_id=663323518]
 position = Vector2(-128, 192)
@@ -84,6 +102,7 @@ uppercase = true
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1424033048]
+self_modulate = Color(1, 1, 1, 0.49803922)
 offset_left = -72.0
 offset_top = 120.0
 offset_right = 71.0
@@ -94,12 +113,6 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 metadata/_edit_use_anchors_ = true
-
-[node name="selectedicon" type="Sprite2D" parent="." unique_id=290675299]
-material = SubResource("ShaderMaterial_fwahj")
-position = Vector2(0, 73)
-texture = ExtResource("10_3ge1s")
-hframes = 7
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=652408370]
 position = Vector2(0, 120)
@@ -221,6 +234,19 @@ texture = ExtResource("23_k26hn")
 region_enabled = true
 region_rect = Rect2(80, 32, 16, 16)
 
+[node name="ColorSelector" type="Sprite2D" parent="." unique_id=1756041424]
+position = Vector2(-48, 228)
+texture = ExtResource("23_k26hn")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
+
+[node name="ColorSelector" type="Sprite2D" parent="ColorSelector" unique_id=1022851403]
+position = Vector2(0, -40)
+texture = ExtResource("23_k26hn")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
+
 [node name="IconSelection" type="Sprite2D" parent="." unique_id=201229586]
 position = Vector2(0, 104)
 texture = ExtResource("24_l57dw")
@@ -231,3 +257,15 @@ offset_left = -102.0
 offset_top = 98.0
 offset_right = -90.0
 offset_bottom = 110.0
+
+[node name="Label2" type="Label" parent="." unique_id=1981152546]
+offset_left = -128.0
+offset_top = 228.0
+offset_right = 128.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("2_gpncu")
+theme_override_font_sizes/font_size = 8
+text = "Press left to return"
+horizontal_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true

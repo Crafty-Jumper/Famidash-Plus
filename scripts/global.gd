@@ -4,7 +4,7 @@ extends CanvasLayer
 const savePath = "user://save.json"
 var save_data : Dictionary = {
 	"settings":[],
-	"colors":[0,0,0],
+	"colors":[41,44,15],
 	"icons":[0,0,0,0,0,0,0,0,0,0,0,0,0],
 	"funsettings":[],
 	"levels":{}

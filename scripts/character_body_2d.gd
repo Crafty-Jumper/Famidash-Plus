@@ -55,7 +55,7 @@ var shipSpr : Texture2D = load("res://player/ships/ship" + str(Global.save_data[
 var ballSpr : Texture2D = load("res://player/balls/ball" + str(Global.save_data["icons"][2]) + ".png")
 var ufoSpr : Texture2D = load("res://player/ufos/ufo" + str(Global.save_data["icons"][3]) + ".png")
 var robotSpr : Texture2D = load("res://player/robots/robot" + str(Global.save_data["icons"][5]) + ".png")
-var spiderSpr : Texture2D = load("res://player/spiders/" + str(Global.save_data["icons"][6]) + ".png")
+var spiderSpr : Texture2D = load("res://player/spiders/spider" + str(Global.save_data["icons"][6]) + ".png")
 var waveSpr : Texture2D = load("res://player/waves/wave" + str(Global.save_data["icons"][4]) + ".png")
 var ninjaSpr : Texture2D = load("res://player/ninjas/ninja" + str(Global.save_data["icons"][9]) + ".png")
 
@@ -71,6 +71,9 @@ func _ready() -> void:
 	var json = JSON.parse_string(icons.get_as_text())
 	iconRotates = json[Global.save_data["icons"][0]]["rotate"]
 	icons.close()
+	sprite_2d.material.set_shader_parameter("outline",Global.get_color(Global.save_data["colors"][2]))
+	sprite_2d.material.set_shader_parameter("col1",Global.get_color(Global.save_data["colors"][0]))
+	sprite_2d.material.set_shader_parameter("col2",Global.get_color(Global.save_data["colors"][1]))
 
 func _physics_process(delta: float) -> void:
 	collision_shape_2d.disabled = gamemode == -1
