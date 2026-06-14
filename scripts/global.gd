@@ -4,15 +4,10 @@ extends CanvasLayer
 const savePath = "user://save.json"
 var save_data : Dictionary = {
 	"settings":[],
-	"icons":[0,0,0,0,0,0,0,0,0,0,0,0],
+	"colors":[0,0,0],
+	"icons":[0,0,0,0,0,0,0,0,0,0,0,0,0],
 	"funsettings":[],
-	"levels":{
-		"stereomadness":{
-			"normal":69,
-			"practice":42,
-			"coins":[false,true,false]
-		}
-	}
+	"levels":{}
 }
 
 var extraData : Variant = 0
@@ -107,5 +102,11 @@ func load_file() -> void:
 		var file = FileAccess.open(savePath,FileAccess.READ)
 		save_data = file.get_var()
 		file.close()
-	else:
-		save_file()
+
+const colors : Array = [
+	"6B6B6B","001084","08008C","42007B","63005A","6B0010","600000","4F3500","314E18","005A21","215A10","085242","003973","000000","000000","000000",
+	"A5A5A5","0042C6","4229CE","6B00BD","942994","9C1042","9C3900","845E21","5F7B21","2D8C29","188E10","2E8663","29739C","000000","000000","000000",
+	"EFEFEF","5A8CFF","7B6BFF","A55AFF","D64AFF","E7639C","DE7B52","CE9C29","FFDA31","7BCE31","5ACE52","4AC694","4AB5CE","525252","000000","000000"]
+
+func get_color(index:int=0) -> Color:
+	return Color("#" + colors[clamp(index,0,colors.size()-1)])

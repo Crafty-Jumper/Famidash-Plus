@@ -19,16 +19,15 @@ func _on_bg_color(index) -> void:
 	var secondary = index - 16
 	if secondary < 0:
 		secondary = 15
-	color_rect.material.set_shader_parameter("BG1",Color("#" + colors[index]))
-	DisplayServer.window_set_color(Color("#" + colors[index]))
-	color_rect.material.set_shader_parameter("BG2",Color("#" + colors[secondary]))
+	color_rect.material.set_shader_parameter("BG1",Global.get_color(index))
+	color_rect.material.set_shader_parameter("BG2",Global.get_color(secondary))
 
 func _on_gnd_color(index) -> void:
 	var secondary = index - 16
 	if secondary < 0:
 		secondary = 15
-	color_rect.material.set_shader_parameter("GND1",Color("#" + colors[index]))
-	color_rect.material.set_shader_parameter("GND2",Color("#" + colors[secondary]))
+	color_rect.material.set_shader_parameter("GND1",Global.get_color(index))
+	color_rect.material.set_shader_parameter("GND2",Global.get_color(secondary))
 
 func _on_gravity_mod(mod: float) -> void:
 	character_body_2d.gravMult = mod

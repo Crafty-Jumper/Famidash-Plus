@@ -14,7 +14,7 @@ var max_icons = 0
 var icon_meta = JSON.parse_string(FileAccess.open("res://icons.json",FileAccess.READ).get_as_text())
 
 var selected_icon : int = 0
-var selectingIcon : bool = true
+var menu_state : int = 1
 const gamemode_frames = [7,5,4,1,3,5,5,6,1,7,2,3,7]
 const gamemode_frame_idx = [0,2,0,0,1,1,0,3,0,0,0,1,0]
 const gamemode_names = ["cube","ship","ball","ufo","wave","robot","spider","swing","jetpack","ninja","pogo","snake","football"]
@@ -42,6 +42,10 @@ func _process(delta: float) -> void:
 	selectedicon.texture = load("res://player/" + gamemode_names[gamemode] + "s/" + gamemode_names[gamemode] + str(Global.save_data["icons"][gamemode]) + ".png")
 	selectedicon.hframes = gamemode_frames[gamemode]
 	selectedicon.frame = gamemode_frame_idx[gamemode]
+	if gamemode == 5 or gamemode == 6:
+		selectedicon.offset.x = -4
+	else:
+		selectedicon.offset.x = 0
 	manage_cursor()
 	update_icon_list(gamemode_names[gamemode])
 	
@@ -53,6 +57,10 @@ func _process(delta: float) -> void:
 func update_icon_list(mode:String = "cube",frame=0) -> void:
 	for i in canvas_group.get_children().size():
 		var icon : Sprite2D = canvas_group.get_child(i)
+		if gamemode == 5 or gamemode == 6:
+			icon.offset.x = -4
+		else:
+			icon.offset.x = 0
 		if FileAccess.file_exists("res://player/" + mode + "s/" + mode + str(int(floor(selected_icon/16.0)*16 + i)) + ".png"):
 			icon.texture = load("res://player/" + mode + "s/" + mode + str(int(floor(selected_icon/16.0)*16 + i)) + ".png")
 			icon.frame = icon_meta[int(floor(selected_icon/16.0)*16 + i)]["previewFrame"]
@@ -67,7 +75,7 @@ func update_icon_list(mode:String = "cube",frame=0) -> void:
 
 func manage_cursor() -> void:
 	color_rect_3.position.x = gamemode * 16 - 102
-	if !selectingIcon:
+	if menu_state == 0:
 		selector.position.x = hovered_gamemode * 16 - 96
 		selector.position.y = 96
 		selector.region_rect.position.x = 64
@@ -78,9 +86,9 @@ func manage_cursor() -> void:
 		if Input.is_action_just_pressed("right"):
 			hovered_gamemode += 1
 		if Input.is_action_just_pressed("down"):
-			selectingIcon = true
+			menu_state = 1
 			return
-	else:
+	elif menu_state == 1:
 		selector.region_rect.position.x = 80
 		selector.position.x = fmod(selected_icon,8)*16-56
 		selector.position.y = fmod(floor(selected_icon/8.0),2)*16+136.0
@@ -98,7 +106,7 @@ func manage_cursor() -> void:
 			if fmod(selected_icon,16) > 7:
 				selected_icon -= 8
 			else:
-				selectingIcon = false
+				menu_state = 0
 		if Input.is_action_just_pressed("down"):
 			if fmod(selected_icon,16) < 8:
 				selected_icon += 8
