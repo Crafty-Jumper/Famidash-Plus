@@ -14,7 +14,7 @@ hframes = 4
 vframes = 12
 frame = 8
 script = ExtResource("3_ilhmv")
-speed = 189.961
+speed = 222.0
 
 [node name="Area2D" parent="." index="0" unique_id=1803678054]
 position = Vector2(8, 8)
