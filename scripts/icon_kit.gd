@@ -78,7 +78,7 @@ func update_icon_list(mode:String = "cube",frame=0) -> void:
 			icon.offset.x = 0
 		if FileAccess.file_exists("res://player/" + mode + "s/" + mode + str(int(floor(selected_icon/16.0)*16 + i)) + ".png"):
 			icon.texture = load("res://player/" + mode + "s/" + mode + str(int(floor(selected_icon/16.0)*16 + i)) + ".png")
-			icon.frame = icon_meta["cube"][int(floor(selected_icon/16.0)*16 + i)]["previewFrame"]
+			icon.frame = icon_meta["cube"][int(floor(selected_icon/16.0)*16 + i)].get("previewFrame",0)
 			icon.frame = gamemode_frame_idx[gamemode]
 			icon.hframes = gamemode_frames[gamemode]
 		else:

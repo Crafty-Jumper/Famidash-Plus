@@ -15,6 +15,7 @@ var clickDisabler : bool = false
 @onready var trigger_manager: Area2D = $"../Area2D"
 
 var iconRotates : bool = true
+var iconSpeed : float = 1.0
 
 const speeds : Array = [
 	166, # 1x
@@ -73,6 +74,7 @@ func _ready() -> void:
 	var icons = FileAccess.open("res://icons.json",FileAccess.READ)
 	var json = JSON.parse_string(icons.get_as_text())
 	iconRotates = json["cube"][Global.save_data["icons"][0]].get("rotate",true)
+	iconSpeed = json["cube"][Global.save_data["icons"][0]].get("animSpeed",1.0)
 	icons.close()
 	sprite_2d.material.set_shader_parameter("outline",Global.get_color(Global.save_data["colors"][2]))
 	sprite_2d.material.set_shader_parameter("col1",Global.get_color(Global.save_data["colors"][0]))
@@ -154,9 +156,9 @@ func animate_cube(texture: Texture2D=cubeSpr,rotate:bool=true) -> void:
 	sprite_2d.hframes = 7
 	
 	if !is_on_floor():
-		rotation_frame += flippedMult
+		rotation_frame += flippedMult * iconSpeed
 		if dashing:
-			rotation_frame += flippedMult
+			rotation_frame += flippedMult * iconSpeed
 	else:
 		if !clicking:
 			rotation_frame = round(rotation_frame/12.0)*12
