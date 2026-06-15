@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 		await Global.sfx.finished
 		Global.fade_scene("res://scenes/level.tscn")
 	
-	center_level.position.x /= 1.25
+	center_level.position.x /= 75 * delta
 	left_level.position.x = center_level.position.x-get_viewport_rect().size.x/4
 	right_level.position.x = center_level.position.x+get_viewport_rect().size.x/4
 	
