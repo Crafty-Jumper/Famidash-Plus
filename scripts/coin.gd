@@ -3,13 +3,24 @@ extends Sprite2D
 @export var id = 0
 @onready var level = get_parent().get_parent()
 var velY : float = -5.0
-
+var origPos : Vector2 = position
 var collected : bool = false
+@onready var animated_object: AnimatedObject = $AnimatedObject
 
 func _ready() -> void:
+	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})
+	origPos = position
 	$Area2D.body_entered.connect(detect)
-	if level.coins[id]:
+	Global.refreshed.connect(blue)
+	if level_save["coins"][id]:
 		frame_coords.y = 0
+		animated_object.startFrame = frame
+
+func blue() -> void:
+	position = origPos
+	collected = false
+	level.coins[id] = false
+	velY = -5.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
