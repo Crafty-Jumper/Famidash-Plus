@@ -28,6 +28,7 @@ var levelIdx : int = 0
 # fun settings
 var retro : bool = false
 var blind : bool = false
+var delta_time : float = 1/60
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,7 +42,8 @@ func _ready() -> void:
 	fade.size = Vector2(4000,4000)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	delta_time = delta
 	if (!music.stream_paused) and !music.playing:
 		if songLoop:
 			music.play()
@@ -56,9 +58,9 @@ func _process(_delta: float) -> void:
 func fade_effect() -> void:
 	fadeAmnt = clamp(fadeAmnt,0,10)
 	if fadeIn:
-		fadeAmnt += 0.1
+		fadeAmnt += 6 * delta_time
 	if !fadeIn:
-		fadeAmnt -= 0.1
+		fadeAmnt -= 6 * delta_time
 	fade.color.a = floor((fadeAmnt*3))/3
 
 func change_song(song: String = "menu_theme",loop:bool=false):
