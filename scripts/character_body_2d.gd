@@ -188,6 +188,7 @@ func animate_ship(texture:Texture2D=shipSpr,flip:bool=true):
 	sprite_2d_2.frame = clamp(rotation_frame,0,4)
 	if !flip:
 		sprite_2d.flip_v = false
+		sprite_2d_2.flip_v = false
 
 func animate_ball(texture:Texture2D=ballSpr):
 	sprite_2d.texture = texture
