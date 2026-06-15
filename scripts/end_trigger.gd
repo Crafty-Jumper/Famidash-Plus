@@ -13,7 +13,14 @@ func entered_screen(area: Area2D) -> void:
 			write_percent_practice()
 		else:
 			write_percent()
+			write_coins()
 		Global.play_sfx(2)
+
+func write_coins():
+	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})
+	level_save["coins"] = main.coins
+	Global.save_data["levels"][Global.levelName] = level_save
+	Global.save_file()
 
 func write_percent() -> void:
 	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})

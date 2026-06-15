@@ -91,7 +91,7 @@ func _process(delta: float) -> void:
 		set_level_progress()
 
 func get_level_data(index:int):
-	var file = FileAccess.open("res://LEVELS/lvlset_HUGE_metadata.json",FileAccess.READ)
+	var file = FileAccess.open("res://level_header.json",FileAccess.READ)
 	var text = file.get_as_text()
 	file.close()
 	json = JSON.parse_string(text)
@@ -111,3 +111,6 @@ func set_level_progress(node:Node2D=$CenterLevel) -> void:
 	node.get_child(8).text = str(int(ceil(level_save["normal"]))) + "%"
 	node.get_child(4).value = level_save["practice"]
 	node.get_child(9).text = str(int(ceil(level_save["practice"]))) + "%"
+	node.get_child(11).region_rect.position.x = int(level_save["coins"][0])*8+8.0
+	node.get_child(12).region_rect.position.x = int(level_save["coins"][1])*8+8.0
+	node.get_child(13).region_rect.position.x = int(level_save["coins"][2])*8+8.0
