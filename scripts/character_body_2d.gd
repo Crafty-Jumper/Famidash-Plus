@@ -17,10 +17,14 @@ var clickDisabler : bool = false
 var iconRotates : bool = true
 var iconSpeed : float = 1.0
 
+const base_speed = 166
 const speeds : Array = [
-	166, # 1x
-	132, # 0.5x
-	208, # 2x
+	base_speed, # 1x
+	base_speed * 0.8068, # 0.5x
+	base_speed * 1.2444, # 2x
+	base_speed * 1.5042, # 3x
+	base_speed * 1.8503, # 4x
+	base_speed * 0.5179 # 0.25
 	]
 var speedIdx = 0
 
