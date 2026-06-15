@@ -153,7 +153,7 @@ func manage_cursor() -> void:
 			Global.save_data["colors"][hovered_color] += 1
 		if Input.is_action_just_pressed("down"):
 			Global.save_data["colors"][hovered_color] -= 1
-		wrap(Global.save_data["colors"][hovered_color],0,Global.colors.size()-1)
+		Global.save_data["colors"][hovered_color] = wrap(Global.save_data["colors"][hovered_color],0,Global.colors.size()-1)
 
 func change_page(mode:int=0):
 	max_icons = 0
