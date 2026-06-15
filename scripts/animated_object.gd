@@ -1,23 +1,17 @@
 extends Node2D
 class_name AnimatedObject
 
-@export var frames = 2
+@export var frames = 1
 @export var fps = 1
-@onready var sprite = get_parent()
+@onready var sprite : Sprite2D = get_parent()
 var frame_idx = 0
 var startFrame = 0
 
 var timer = Timer.new()
 
 func _ready() -> void:
-	add_child(timer)
-	timer.one_shot = true
-	timer.start(1.0/fps)
-	timer.timeout.connect(looped)
 	startFrame = sprite.frame
 
-func looped() -> void:
-	timer.start(fps/60.0)
+func _process(delta: float) -> void:
 	sprite.frame = startFrame + frame_idx
-	if frame_idx > frames:
-		frame_idx = 0
+	frame_idx = fmod(floor(Time.get_ticks_msec()/1000.0*fps),frames)

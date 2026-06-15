@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_12l14"]
 [ext_resource type="Texture2D" uid="uid://bcaxe31mxerqw" path="res://spritesheets/padSheet.png" id="2_8stu3"]
 [ext_resource type="Script" uid="uid://cix2vdvev0gqt" path="res://scripts/pad.gd" id="3_8stu3"]
+[ext_resource type="Script" uid="uid://xhfs56536gpk" path="res://scripts/animated_object.gd" id="4_o5u4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5u4r"]
 size = Vector2(15, 3)
@@ -14,7 +15,14 @@ vframes = 6
 frame = 8
 script = ExtResource("3_8stu3")
 
-[node name="Area2D" parent="." index="0" unique_id=1803678054]
+[node name="AnimatedObject" type="Node2D" parent="." index="0" unique_id=2123750249]
+position = Vector2(7.5, 14.5)
+script = ExtResource("4_o5u4r")
+frames = 4
+fps = 8
+metadata/_custom_type_script = "uid://xhfs56536gpk"
+
+[node name="Area2D" parent="." index="1" unique_id=1803678054]
 position = Vector2(7.5, 14.5)
 
 [node name="CollisionShape2D" parent="Area2D" index="0" unique_id=545990553]
