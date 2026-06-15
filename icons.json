@@ -1,4 +1,6 @@
-[	{"rotate":true,"previewFrame":0},
+{
+	"cube":[
+	{"rotate":true,"previewFrame":0},
 	{"rotate":true,"previewFrame":0},
 	{"rotate":true,"previewFrame":0},
 	{"rotate":true,"previewFrame":0},
@@ -32,4 +34,7 @@
 	{"rotate":true,"previewFrame":0},
 	{"rotate":true,"previewFrame":0},
 	{"rotate":true,"previewFrame":0},
-]
+	{"rotate":true,"previewFrame":0},
+	{"rotate":false,"previewFrame":0},
+	]
+}

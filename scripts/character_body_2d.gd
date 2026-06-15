@@ -72,7 +72,7 @@ func update_physics(mode:String="cube") -> void:
 func _ready() -> void:
 	var icons = FileAccess.open("res://icons.json",FileAccess.READ)
 	var json = JSON.parse_string(icons.get_as_text())
-	iconRotates = json[Global.save_data["icons"][0]]["rotate"]
+	iconRotates = json["cube"][Global.save_data["icons"][0]].get("rotate",true)
 	icons.close()
 	sprite_2d.material.set_shader_parameter("outline",Global.get_color(Global.save_data["colors"][2]))
 	sprite_2d.material.set_shader_parameter("col1",Global.get_color(Global.save_data["colors"][0]))
