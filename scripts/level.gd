@@ -19,6 +19,8 @@ const freeModes : Array = [0,4,8,9,10,11]
 
 func _ready() -> void:
 	Global.refreshed.connect(respawn_player)
+	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})
+	coins = level_save["coins"]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -92,9 +94,9 @@ func _process(delta: float) -> void:
 func write_percent() -> void:
 	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})
 	if level_save["normal"] < texture_progress_bar.value:
-			level_save["normal"] = texture_progress_bar.value
-			Global.save_data["levels"][Global.levelName] = level_save
-			Global.save_file()
+		level_save["normal"] = texture_progress_bar.value
+		Global.save_data["levels"][Global.levelName] = level_save
+		Global.save_file()
 
 func write_percent_practice() -> void:
 	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})
