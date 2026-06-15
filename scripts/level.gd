@@ -13,6 +13,7 @@ var freeCam : bool = false
 var gamePause : bool = false
 var practiceMode : bool = false
 var checkpoint : PackedScene = load("uid://6qiilp7m3aai")
+var coins : Array = [false,false,false]
 
 const freeModes : Array = [0,4,8,9,10,11]
 

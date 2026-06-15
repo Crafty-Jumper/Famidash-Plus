@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_lg1st"]
 [ext_resource type="Texture2D" uid="uid://bg1ejw4seneb1" path="res://spritesheets/coinSheet.png" id="2_81pew"]
 [ext_resource type="Script" uid="uid://xhfs56536gpk" path="res://scripts/animated_object.gd" id="3_81pew"]
+[ext_resource type="Script" uid="uid://1nfi1qgj08ei" path="res://scripts/coin.gd" id="3_j7cg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7cg7"]
 size = Vector2(16, 16)
@@ -12,6 +13,7 @@ texture = ExtResource("2_81pew")
 hframes = 9
 vframes = 2
 frame = 9
+script = ExtResource("3_j7cg7")
 
 [node name="Area2D" parent="." index="0" unique_id=1803678054]
 position = Vector2(8, 8)

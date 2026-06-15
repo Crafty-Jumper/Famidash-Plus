@@ -5,10 +5,19 @@ var tween = create_tween()
 var canInput : bool = false
 var retray : bool = false
 @onready var arrow: Sprite2D = $Arrow
+@onready var coin: Sprite2D = $Coin
+@onready var coin_2: Sprite2D = $Coin2
+@onready var coin_3: Sprite2D = $Coin3
+var data = {"practiceMode":false,"attempts":1,"jumps":0,"coins":[false,false,false]}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Global.extraData is Dictionary:
+		data = Global.extraData
 	camera_2d.position.y += 240
+	coin.region_rect.position.y = int(data.get("coins",[false,false,false])[0])*16
+	coin_2.region_rect.position.y = int(data.get("coins",[false,false,false])[1])*16
+	coin_3.region_rect.position.y = int(data.get("coins",[false,false,false])[2])*16
 	tween.tween_property(camera_2d,"position",camera_2d.position-Vector2(0,240),2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
