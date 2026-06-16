@@ -46,10 +46,10 @@ text = " SPACE/CONTROLLER A TO [font=spritesheets/pusab_blue.fnt]JUMP/FLY[/font]
 [/font]
 
    PAUSE THEN PRESS LSHIFT OR
- CONTROLLER B TO ENTER PRACTICE
+ CONTROLLER B TO [font=spritesheets/pusab_blue.fnt]ENTER PRACTICE[/font]
 
-LSHIFT OR CONTROLLER B TO PLACE
-        NEW CHECKPOINTS
+LSHIFT OR CONTROLLER B TO [font=spritesheets/pusab_blue.fnt]PLACE
+        NEW CHECKPOINTS[/font]
 
  RSHIFT OR CONTROLLER SELECT TO
      DELETE LAST CHECKPOINT
