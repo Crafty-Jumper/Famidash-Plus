@@ -2,6 +2,7 @@ extends Node2D
 
 var robtop : bool = false
 var robtopLvlCnt = 26
+@onready var color_rect_2: ColorRect = $ColorRect2
 
 const difficulties = {
 	"AUTO":1,
@@ -50,7 +51,7 @@ func _process(delta: float) -> void:
 		Global.change_song("")
 		await Global.sfx.finished
 		Global.fade_scene("res://scenes/level.tscn")
-	
+	color_rect_2.material.set_shader_parameter("BG1",Global.get_color(fmod(Global.levelIdx,12)+17))
 	center_level.position.x = lerp(center_level.position.x,0.0,delta * 12)
 	left_level.position.x = center_level.position.x-get_viewport_rect().size.x/4
 	right_level.position.x = center_level.position.x+get_viewport_rect().size.x/4

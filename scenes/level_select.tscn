@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckrdbab4mc12s" path="res://spritesheets/ground.png" id="1_chg43"]
 [ext_resource type="Texture2D" uid="uid://brebaa50dfwoh" path="res://spritesheets/level_select_bg.png" id="2_r77uv"]
 [ext_resource type="Texture2D" uid="uid://cgld67xuw6j22" path="res://spritesheets/difficultySheet.png" id="3_4nqmc"]
+[ext_resource type="Shader" uid="uid://c4knthwwyim1l" path="res://colors.gdshader" id="3_htctk"]
 [ext_resource type="Texture2D" uid="uid://cc8se21vv3mpd" path="res://spritesheets/banner_corner.png" id="5_ckc44"]
 [ext_resource type="Texture2D" uid="uid://bfeqc3l7a7yru" path="res://spritesheets/levelSelectSheet.png" id="5_o2xx4"]
 [ext_resource type="Texture2D" uid="uid://b87h3j47hr0bh" path="res://spritesheets/progressbar-empty.png" id="6_4nqmc"]
@@ -11,8 +12,27 @@
 [ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="8_ckc44"]
 [ext_resource type="Texture2D" uid="uid://irm1d6hgufth" path="res://spritesheets/banner_top.png" id="11_htctk"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6tf7"]
+shader = ExtResource("3_htctk")
+shader_parameter/srcBG1 = Color(0, 0.25882354, 0.7764706, 1)
+shader_parameter/srcBG2 = Color(0, 0.0627451, 0.5176471, 1)
+shader_parameter/srcOBJ = Color(0, 0, 0, 1)
+shader_parameter/srcGND1 = Color(0, 0, 0, 1)
+shader_parameter/srcGND2 = Color(0, 0, 0, 1)
+shader_parameter/BG1 = Color(1, 0, 0, 1)
+shader_parameter/BG2 = Color(0, 0, 0, 1)
+shader_parameter/OBJ = Color(0, 0, 0, 1)
+shader_parameter/GND1 = Color(0, 0, 0, 1)
+shader_parameter/GND2 = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D" unique_id=1829594306]
 script = ExtResource("1_7plkq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=77235650]
+offset_left = -512.0
+offset_right = 512.0
+offset_bottom = 256.0
+color = Color(0, 0.25882354, 0.7764706, 1)
 
 [node name="Ground" type="Sprite2D" parent="." unique_id=62749408]
 texture_repeat = 2
@@ -21,32 +41,29 @@ texture = ExtResource("1_chg43")
 region_enabled = true
 region_rect = Rect2(0, 0, 1024, 64)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=77235650]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1592077700]
+z_index = 1
+material = SubResource("ShaderMaterial_s6tf7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = -512.0
 offset_right = 512.0
-offset_bottom = 192.0
-color = Color(0, 0.25882354, 0.7764706, 1)
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1390204358]
 position = Vector2(0, 120)
 zoom = Vector2(4, 4)
 
-[node name="BannerCorner" type="Sprite2D" parent="." unique_id=107037172]
-position = Vector2(-104, 216)
-texture = ExtResource("5_ckc44")
-centered = false
-offset = Vector2(0, -24)
-
 [node name="BannerCorner2" type="Sprite2D" parent="." unique_id=70265134]
+z_index = 1
 position = Vector2(104, 216)
 texture = ExtResource("5_ckc44")
 centered = false
 offset = Vector2(-48, -24)
 flip_h = true
-
-[node name="BannerTop" type="Sprite2D" parent="." unique_id=726215493]
-position = Vector2(0, 8)
-texture = ExtResource("11_htctk")
 
 [node name="LeftLevel" type="Node2D" parent="." unique_id=80565624]
 position = Vector2(-256, 0)
@@ -445,3 +462,15 @@ position = Vector2(68, 100)
 texture = ExtResource("5_o2xx4")
 region_enabled = true
 region_rect = Rect2(8, 0, 8, 8)
+
+[node name="BannerCorner" type="Sprite2D" parent="." unique_id=107037172]
+z_index = 1
+position = Vector2(-104, 216)
+texture = ExtResource("5_ckc44")
+centered = false
+offset = Vector2(0, -24)
+
+[node name="BannerTop" type="Sprite2D" parent="." unique_id=726215493]
+z_index = 1
+position = Vector2(0, 8)
+texture = ExtResource("11_htctk")
