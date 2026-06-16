@@ -55,6 +55,12 @@ shader_parameter/GND2 = Color(0, 0, 0, 1)
 [node name="Node2D" type="Node2D" unique_id=1651070141]
 script = ExtResource("1_gpncu")
 
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=160329848]
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 240.0
+color = Color(0.41960785, 0.41960785, 0.41960785, 1)
+
 [node name="TestHeader1" type="Sprite2D" parent="." unique_id=1849955415]
 visible = false
 position = Vector2(0, 120)

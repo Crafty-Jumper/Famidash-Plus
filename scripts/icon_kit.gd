@@ -10,6 +10,7 @@ const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_si
 @onready var banner_corner_2: Sprite2D = $BannerCorner2
 @onready var color_rect: ColorRect = $ColorRect
 @onready var color_rect_3: ColorRect = $ColorRect3
+@onready var color_rect_4: ColorRect = $ColorRect4
 
 @onready var colors: Sprite2D = $Colors
 @onready var colors_2: Sprite2D = $Colors2
@@ -49,7 +50,8 @@ func _process(delta: float) -> void:
 	colors.self_modulate = Global.get_color(Global.save_data["colors"][0])
 	colors_2.self_modulate = Global.get_color(Global.save_data["colors"][1])
 	colors_3.self_modulate = Global.get_color(Global.save_data["colors"][2])
-	
+	color_rect_4.size.x = get_viewport_rect().size.x/4
+	color_rect_4.position.x = get_viewport_rect().size.x/-8
 	banner_corner.position.x = get_viewport_rect().size.x/-8
 	banner_corner_2.position.x = get_viewport_rect().size.x/8
 	color_rect.position.x = get_viewport_rect().size.x/-8
