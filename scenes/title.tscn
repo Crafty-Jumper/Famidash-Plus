@@ -61,7 +61,7 @@ position = Vector2(168, 144)
 texture = ExtResource("3_p6dhs")
 centered = false
 region_enabled = true
-region_rect = Rect2(32, 80, 16, 16)
+region_rect = Rect2(32, 32, 16, 16)
 
 [node name="FunSettingsButton" type="Sprite2D" parent="." unique_id=1906800311]
 position = Vector2(216, 16)

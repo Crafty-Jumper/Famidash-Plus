@@ -24,6 +24,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pause_management()
 	camera_2d.position.x = character_body_2d.position.x + 48
 	texture_progress_bar.value = (character_body_2d.position.x*6.1)/tile_map_layer.levelWidth
 	if Input.is_action_just_pressed("select"):
@@ -70,26 +71,7 @@ func _process(delta: float) -> void:
 	background.position.y = floor(fmod(camera_2d.position.y*-0.2,72)+camera_2d.position.y-72*5)
 	color_rect.position = background.position
 	
-	if Input.is_action_just_pressed("start"):
-		gamePause = !gamePause
 	
-	if gamePause:
-		character_body_2d.process_mode = Node.PROCESS_MODE_DISABLED
-		Global.music.stream_paused = true
-		if !Global.fadeIn:
-			Global.fadeAmnt = 0.6
-	else:
-		character_body_2d.process_mode = Node.PROCESS_MODE_ALWAYS
-		Global.music.stream_paused = false
-	
-	if Input.is_action_just_pressed("select") and gamePause:
-		Global.play_sfx(7)
-		Global.fadeIn = true
-		Global.fade_scene("res://scenes/level_select.tscn")
-	if Input.is_action_just_pressed("B") and gamePause:
-		practiceMode = true
-		gamePause = false
-		Global.change_song("practice",true)
 
 func write_percent() -> void:
 	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})
@@ -110,3 +92,28 @@ func respawn_player() -> void:
 		tile_map_layer.respawn_at_checkpoint()
 	else:
 		tile_map_layer.reset_level()
+
+func pause_management() -> void:
+	if Input.is_action_just_pressed("start"):
+		gamePause = !gamePause
+	if gamePause:
+		character_body_2d.process_mode = Node.PROCESS_MODE_DISABLED
+		Global.music.stream_paused = true
+		if !Global.fadeIn:
+			Global.sfx.stream_paused = true
+			Global.fadeAmnt = 0.6
+		else:
+			return
+		if Input.is_action_just_pressed("select"):
+			Global.play_sfx(7)
+			Global.sfx.stream_paused = false
+			Global.fadeIn = true
+			Global.fade_scene("res://scenes/level_select.tscn")
+		if Input.is_action_just_pressed("B"):
+			practiceMode = true
+			gamePause = false
+			Global.change_song("practice",true)
+	else:
+		character_body_2d.process_mode = Node.PROCESS_MODE_ALWAYS
+		Global.music.stream_paused = false
+		Global.sfx.stream_paused = false

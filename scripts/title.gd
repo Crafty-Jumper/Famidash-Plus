@@ -56,6 +56,10 @@ func _process(delta: float) -> void:
 			Global.change_song("")
 			Global.fade_scene("res://scenes/sound_test.tscn")
 			return
+		
+		if selection == 5:
+			Global.fade_scene("res://scenes/help.tscn")
+			return
 	
 		if selection == 0:
 			Global.fade_scene("res://scenes/icon_kit.tscn")

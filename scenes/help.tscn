@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c0b2s7x4kdhbb"]
+
+[ext_resource type="Script" uid="uid://2e4ypatcefiw" path="res://scripts/help.gd" id="1_2by0i"]
+[ext_resource type="Texture2D" uid="uid://dgiu8k6lmwe4m" path="res://Famidash - Huge Man_001.png" id="1_chmrd"]
+[ext_resource type="Texture2D" uid="uid://c1fuxf407227j" path="res://spritesheets/logo.png" id="2_2by0i"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_oar4r"]
+
+[node name="Node2D" type="Node2D" unique_id=1474957544]
+script = ExtResource("1_2by0i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1897075771]
+offset_left = -512.0
+offset_right = 512.0
+offset_bottom = 960.0
+color = Color(0, 0.22352941, 0.4509804, 1)
+
+[node name="FamidashHugeMan001" type="Sprite2D" parent="." unique_id=1839414784]
+visible = false
+modulate = Color(1, 1, 1, 0.20784314)
+position = Vector2(0, 120)
+texture = ExtResource("1_chmrd")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=543722266]
+position = Vector2(9, 21)
+texture = ExtResource("2_2by0i")
+offset = Vector2(0.5, 0)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1450205891]
+offset_left = -128.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 241.0
+focus_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_oar4r")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+bbcode_enabled = true
+text = " SPACE/CONTROLLER A TO [font=spritesheets/pusab_blue.fnt]JUMP/FLY[/font]
+
+ ENTER/CONTROLLER START TO [font=spritesheets/pusab_blue.fnt]PAUSE[/font]
+
+[font=spritesheets/pusab_gold.fnt]         PRACTICE MODE
+[/font]
+
+   PAUSE THEN PRESS LSHIFT OR
+ CONTROLLER B TO ENTER PRACTICE
+
+LSHIFT OR CONTROLLER B TO PLACE
+        NEW CHECKPOINTS
+
+ RSHIFT OR CONTROLLER SELECT TO
+     DELETE LAST CHECKPOINT
+
+          [font=spritesheets/pusab_gold.fnt]EXIT LEVEL[/font]
+
+      PAUSE THEN RSHIFT OR
+        CONTROLLER SELECT
+"
+selection_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2113388336]
+position = Vector2(0, 120)
+zoom = Vector2(4, 4)
