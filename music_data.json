@@ -186,6 +186,12 @@
 		"coveringArtist":"ELANGEL378"
 	},
 	{
+		"song":"blacklight",
+		"text":"BLACKLIGHT",
+		"originalArtist":"",
+		"coveringArtist":""
+	},
+	{
 		"song":"cryogenic",
 		"text":"CRYOGENIC",
 		"originalArtist":"NERDBOY628",
@@ -197,6 +203,12 @@
 		"text":"C MADNESS",
 		"originalArtist":["FOREVERBOUND","CRAFTY JUMPER"],
 		"coveringArtist":["ZENITH302","USERSNIPER","NERDBOY628"]
+	},
+	{
+		"song":"death_moon",
+		"text":"DEATH MOON",
+		"originalArtist":"I FORGOT!!1!",
+		"coveringArtist":"ELANGEL378"
 	},
 	{
 		"song":"endgame",
@@ -228,6 +240,19 @@
 		"originalArtist":"SEAGLOWINGPRO",
 		"coveringArtist":["SEAGLOWINGPRO","ELANGEL378"],
 		"category":"original",
+	},
+	{
+		"song":"ground_to_retray",
+		"text":"GROUND TO RETRAY",
+		"originalArtist":["SEAGLOWINGPRO","DETIOUSMUSIC"],
+		"coveringArtist":"CRAFTY JUMPER",
+		"category":"original",
+	},
+	{
+		"song":"hungryman_adventures",
+		"text":"ELECTROMAN MY VERSION",
+		"originalArtist":"IM HONESTLY TOO LAZY TO CHECK",
+		"coveringArtist":"SEAGLOWINGPRO"
 	},
 	{
 		"song":"just_right",
@@ -281,6 +306,12 @@
 		"coveringArtist":["CRAFTY JUMPER","COSMICSPACE33"]
 	},
 	{
+		"song":"okiba_crackdown",
+		"text":"OKIBA CRACKDOWN",
+		"originalArtist":"",
+		"coveringArtist":""
+	},
+	{
 		"song":"pyrophoric/original",
 		"text":"PYROPHORIC",
 		"originalArtist":"NERDBOY628",
@@ -299,6 +330,13 @@
 		"text":"PYROPHORIC DAJINKOSA REMIX",
 		"originalArtist":"NERDBOY628",
 		"coveringArtist":"DAJINKOSA",
+		"category":"original",
+	},
+	{
+		"song":"pyrophoric_xl",
+		"text":"PYROPHORIC XL",
+		"originalArtist":"NERDBOY628",
+		"coveringArtist":["NERDBOY628","DAJINKOSA","SEAGLOWINGPRO"],
 		"category":"original",
 	},
 	{
@@ -327,6 +365,12 @@
 		"coveringArtist":"SEAGLOWINGPRO"
 	},
 	{
+		"song":"somewhere_in_a_forest",
+		"text":"SOMEWHERE IN A FOREST",
+		"originalArtist":"",
+		"coveringArtist":"SEAGLOWINGPRO"
+	},
+	{
 		"song":"stereo_madness_2",
 		"text":"STEREO MADNESS 2",
 		"originalArtist":"FOREVERBOUND",
@@ -341,14 +385,20 @@
 	{
 		"song":"ultimatedestruction",
 		"text":"ULTIMATE DESTRUCTION",
-		"originalArtist":"FOREVERBOUND",
-		"coveringArtist":"ELANGEL378"
+		"originalArtist":"",
+		"coveringArtist":""
 	},
 	{
 		"song":"unity",
 		"text":"UNITY, RANDOM",
 		"originalArtist":"THEFATRAT",
 		"coveringArtist":"WHO KNOWS"
+	},
+	{
+		"song":"unity/crafty",
+		"text":"UNITY, CRAFTY COVER",
+		"originalArtist":"THEFATRAT",
+		"coveringArtist":"CRAFTY JUMPER"
 	},
 	{
 		"song":"unity/elangel",
@@ -380,4 +430,10 @@
 		"originalArtist":"THEFATRAT",
 		"coveringArtist":"SUSSYSY"
 	},
+	{
+		"song":"youve_been_trolled",
+		"text":"YOUVE BEEN TROLLED",
+		"originalArtist":"",
+		"coveringArtist":""
+	}
 ]
