@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c3b5iwtldunv3"]
 
 [ext_resource type="Texture2D" uid="uid://c1fuxf407227j" path="res://spritesheets/logo.png" id="1_0bpdh"]
-[ext_resource type="Texture2D" uid="uid://bh8ongyj8gcd6" path="res://Famidash - Huge Man_000.png" id="1_0ctdu"]
-[ext_resource type="Script" uid="uid://c5oh7lcx3kngh" path="res://scripts/credits.gd" id="1_2fbfq"]
+[ext_resource type="Texture2D" path="res://Famidash - Huge Man_000.png" id="1_0ctdu"]
+[ext_resource type="Script" uid="uid://c5oh7lcx3kngh" path="res://scripts/menus/credits.gd" id="1_2fbfq"]
 [ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_2fbfq"]
 
 [node name="Node2D" type="Node2D" unique_id=838024476]

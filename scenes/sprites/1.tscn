@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_4d4x4"]
 [ext_resource type="Texture2D" uid="uid://d1j6xhx1wmv2k" path="res://spritesheets/portalSheet.png" id="2_evqky"]
-[ext_resource type="Script" uid="uid://bui25xr8s11iu" path="res://scripts/gamemode_portal.gd" id="2_t41oa"]
+[ext_resource type="Script" uid="uid://bui25xr8s11iu" path="res://scripts/sprites/gamemode_portal.gd" id="2_t41oa"]
 
 [node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_4d4x4")]
 texture = ExtResource("2_evqky")

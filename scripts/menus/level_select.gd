@@ -44,13 +44,13 @@ func _process(delta: float) -> void:
 	banner_corner.position.x = -get_viewport_rect().size.x/8
 	banner_corner_2.position.x = get_viewport_rect().size.x/8
 	if Input.is_action_just_pressed("B"):
-		Global.fade_scene("res://scenes/title.tscn")
+		Global.fade_scene("uid://du82hjkyi5nln")
 	
 	if Input.is_action_just_pressed("A"):
 		Global.play_sfx(8)
 		Global.change_song("")
 		await Global.sfx.finished
-		Global.fade_scene("res://scenes/level.tscn")
+		Global.fade_scene("uid://c0332ymehycxl")
 	color_rect_2.material.set_shader_parameter("BG1",Global.get_color(fmod(Global.levelIdx,12)+17))
 	center_level.position.x = lerp(center_level.position.x,0.0,delta * 12)
 	left_level.position.x = center_level.position.x-get_viewport_rect().size.x/4

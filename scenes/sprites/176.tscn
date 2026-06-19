@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btyldxl3j1ru1"]
 
 [ext_resource type="PackedScene" uid="uid://bljjgfswa0kr6" path="res://scenes/sprites/trigger.tscn" id="1_c2i0m"]
-[ext_resource type="Script" uid="uid://drt6fvn73ecsx" path="res://scripts/obj_color_trig.gd" id="2_qu0s6"]
+[ext_resource type="Script" uid="uid://drt6fvn73ecsx" path="res://scripts/sprites/obj_color_trig.gd" id="2_qu0s6"]
 
 [node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_c2i0m")]
 script = ExtResource("2_qu0s6")

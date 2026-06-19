@@ -1,71 +1,71 @@
 [gd_scene format=3 uid="uid://du82hjkyi5nln"]
 
-[ext_resource type="Script" uid="uid://d2kayb5lndwsy" path="res://scripts/title.gd" id="1_b3w7a"]
-[ext_resource type="Texture2D" uid="uid://cn4qdf5bta7v3" path="res://spritesheets/parallax1.png" id="1_wosw1"]
-[ext_resource type="Texture2D" uid="uid://c1fuxf407227j" path="res://spritesheets/logo.png" id="2_p6dhs"]
-[ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="3_p6dhs"]
-[ext_resource type="Texture2D" uid="uid://ckrdbab4mc12s" path="res://spritesheets/ground.png" id="4_pyl7j"]
+[ext_resource type="Script" uid="uid://d2kayb5lndwsy" path="res://scripts/menus/title.gd" id="1_gb2o3"]
+[ext_resource type="Texture2D" uid="uid://cn4qdf5bta7v3" path="res://spritesheets/parallax1.png" id="2_3q1jb"]
+[ext_resource type="Texture2D" uid="uid://c1fuxf407227j" path="res://spritesheets/logo.png" id="3_8sw12"]
+[ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="4_yjpe6"]
+[ext_resource type="Texture2D" uid="uid://ckrdbab4mc12s" path="res://spritesheets/ground.png" id="5_3i8nk"]
 
 [node name="Node2D" type="Node2D" unique_id=1086577605]
-script = ExtResource("1_b3w7a")
+script = ExtResource("1_gb2o3")
 
 [node name="Parallax1" type="Sprite2D" parent="." unique_id=2038470989]
 texture_repeat = 2
-texture = ExtResource("1_wosw1")
+texture = ExtResource("2_3q1jb")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 800, 240)
 
 [node name="Logo" type="Sprite2D" parent="." unique_id=236942420]
 position = Vector2(64, 32)
-texture = ExtResource("2_p6dhs")
+texture = ExtResource("3_8sw12")
 centered = false
 
 [node name="IconButton" type="Sprite2D" parent="." unique_id=1856794814]
 position = Vector2(64, 96)
-texture = ExtResource("3_p6dhs")
+texture = ExtResource("4_yjpe6")
 centered = false
 region_enabled = true
 region_rect = Rect2(32, 0, 32, 32)
 
 [node name="PlayButton" type="Sprite2D" parent="." unique_id=1519905424]
 position = Vector2(112, 96)
-texture = ExtResource("3_p6dhs")
+texture = ExtResource("4_yjpe6")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="CreatorButton" type="Sprite2D" parent="." unique_id=490992745]
 position = Vector2(160, 96)
-texture = ExtResource("3_p6dhs")
+texture = ExtResource("4_yjpe6")
 centered = false
 region_enabled = true
 region_rect = Rect2(64, 0, 32, 32)
 
 [node name="SoundtestButton" type="Sprite2D" parent="." unique_id=1218509378]
 position = Vector2(72, 144)
-texture = ExtResource("3_p6dhs")
+texture = ExtResource("4_yjpe6")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 32, 16, 16)
 
 [node name="SettingsButton" type="Sprite2D" parent="." unique_id=2140268603]
 position = Vector2(120, 144)
-texture = ExtResource("3_p6dhs")
+texture = ExtResource("4_yjpe6")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 80, 16, 16)
 
 [node name="HelpButton" type="Sprite2D" parent="." unique_id=752289741]
 position = Vector2(168, 144)
-texture = ExtResource("3_p6dhs")
+texture = ExtResource("4_yjpe6")
 centered = false
 region_enabled = true
 region_rect = Rect2(32, 32, 16, 16)
 
 [node name="FunSettingsButton" type="Sprite2D" parent="." unique_id=1906800311]
 position = Vector2(216, 16)
-texture = ExtResource("3_p6dhs")
+texture = ExtResource("4_yjpe6")
 centered = false
 region_enabled = true
 region_rect = Rect2(80, 80, 16, 16)
@@ -73,7 +73,7 @@ region_rect = Rect2(80, 80, 16, 16)
 [node name="Ground" type="Sprite2D" parent="." unique_id=1323005298]
 texture_repeat = 2
 position = Vector2(-1152, 177)
-texture = ExtResource("4_pyl7j")
+texture = ExtResource("5_3i8nk")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 2560, 64)
@@ -84,6 +84,6 @@ zoom = Vector2(4, 4)
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=1399946094]
 position = Vector2(224, 16)
-texture = ExtResource("3_p6dhs")
+texture = ExtResource("4_yjpe6")
 region_enabled = true
 region_rect = Rect2(80, 32, 16, 16)

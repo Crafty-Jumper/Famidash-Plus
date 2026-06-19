@@ -47,10 +47,10 @@ func _process(delta: float) -> void:
 			Global.change_song("")
 			canInput = false
 			await Global.sfx.finished
-			Global.fade_scene("res://scenes/level.tscn")
+			Global.fade_scene("uid://c0332ymehycxl")
 		else:
 			Global.play_sfx(7)
-			Global.fade_scene("res://scenes/level_select.tscn")
+			Global.fade_scene("uid://ckrwwrc62vbnd")
 
 func timeout() -> void:
 	if revealedCoin == 3:

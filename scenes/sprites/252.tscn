@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bedemm2kni7s7"]
 
 [ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_lvnvh"]
-[ext_resource type="Script" uid="uid://dm5oi6egl4ql5" path="res://scripts/gravity_portal.gd" id="2_s4eek"]
+[ext_resource type="Script" uid="uid://dm5oi6egl4ql5" path="res://scripts/sprites/gravity_portal.gd" id="2_s4eek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjnns"]
 size = Vector2(16, 16)

@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("select"):
-		Global.fade_scene("res://scenes/credits.tscn")
+		Global.fade_scene("uid://c3b5iwtldunv3")
 	scroll -= 120*delta
 	parallax_1.position.x = round(fmod(scroll/6,144))-144
 	ground.position.x = round(fmod(scroll,64))-128
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 			Global.music.stream_paused = true
 			Global.levelIdx = 0
 			await Global.sfx.finished
-			Global.fade_scene("res://scenes/level_select.tscn")
+			Global.fade_scene("uid://ckrwwrc62vbnd")
 			Global.music.stream_paused = false
 			return
 		
@@ -48,21 +48,21 @@ func _process(delta: float) -> void:
 			Global.music.stream_paused = true
 			Global.levelIdx = 27
 			await Global.sfx.finished
-			Global.fade_scene("res://scenes/level_select.tscn")
+			Global.fade_scene("uid://ckrwwrc62vbnd")
 			Global.music.stream_paused = false
 			return
 	
 		if selection == 3:
 			Global.change_song("")
-			Global.fade_scene("res://scenes/sound_test.tscn")
+			Global.fade_scene("uid://ce55h62s85vjj")
 			return
 		
 		if selection == 5:
-			Global.fade_scene("res://scenes/help.tscn")
+			Global.fade_scene("uid://c0b2s7x4kdhbb")
 			return
 	
 		if selection == 0:
-			Global.fade_scene("res://scenes/icon_kit.tscn")
+			Global.fade_scene("uid://blfpe35rtmm2e")
 			return
 		
 		Global.play_sfx(9)

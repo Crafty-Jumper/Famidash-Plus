@@ -10,4 +10,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_anything_pressed():
-		Global.fade_scene("res://scenes/credits.tscn")
+		Global.fade_scene("uid://c3b5iwtldunv3")

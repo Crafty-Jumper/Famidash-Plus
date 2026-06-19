@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckrwwrc62vbnd"]
 
-[ext_resource type="Script" uid="uid://c75yejatjx14u" path="res://scripts/level_select.gd" id="1_7plkq"]
+[ext_resource type="Script" uid="uid://c75yejatjx14u" path="res://scripts/menus/level_select.gd" id="1_7plkq"]
 [ext_resource type="Texture2D" uid="uid://ckrdbab4mc12s" path="res://spritesheets/ground.png" id="1_chg43"]
 [ext_resource type="Texture2D" uid="uid://brebaa50dfwoh" path="res://spritesheets/level_select_bg.png" id="2_r77uv"]
 [ext_resource type="Texture2D" uid="uid://cgld67xuw6j22" path="res://spritesheets/difficultySheet.png" id="3_4nqmc"]

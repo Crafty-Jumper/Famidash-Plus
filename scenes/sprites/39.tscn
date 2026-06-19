@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://666tc5xexcod" path="res://scenes/sprites/sprite.tscn" id="1_oypt2"]
 [ext_resource type="Texture2D" uid="uid://bldvb2khhbycs" path="res://spritesheets/orbSheet.png" id="2_18wbg"]
-[ext_resource type="Script" uid="uid://8r5q4f6n22fs" path="res://scripts/orb.gd" id="3_18wbg"]
-[ext_resource type="Script" uid="uid://xhfs56536gpk" path="res://scripts/animated_object.gd" id="4_blgsc"]
+[ext_resource type="Script" uid="uid://8r5q4f6n22fs" path="res://scripts/sprites/orb.gd" id="3_18wbg"]
+[ext_resource type="Script" uid="uid://xhfs56536gpk" path="res://scripts/sprites/animated_object.gd" id="4_blgsc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blgsc"]
 size = Vector2(16, 16)

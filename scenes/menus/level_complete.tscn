@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://cxnea5xici4ec"]
 
 [ext_resource type="Texture2D" uid="uid://be2j5ut0jhnn0" path="res://spritesheets/DialogueBoxLarge.png" id="1_2e2w2"]
-[ext_resource type="Texture2D" uid="uid://dcrfq4ams44oy" path="res://Famidash - Crafty's Levels_012.png" id="1_hhoem"]
-[ext_resource type="Script" uid="uid://b1vntlj51vd3x" path="res://scripts/level_complete.gd" id="1_rovvh"]
+[ext_resource type="Script" uid="uid://b1vntlj51vd3x" path="res://scripts/menus/level_complete.gd" id="1_rovvh"]
 [ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_rovvh"]
 [ext_resource type="Texture2D" uid="uid://bg1ejw4seneb1" path="res://spritesheets/coinSheet.png" id="5_3oeyx"]
 [ext_resource type="Texture2D" uid="uid://cgo2w1rqeyshg" path="res://spritesheets/levelcomplete.png" id="6_r8ohr"]
@@ -21,12 +20,6 @@ color = Color(0, 0, 0, 1)
 [node name="DialogueBoxLarge" type="Sprite2D" parent="." unique_id=2012556369]
 position = Vector2(128, 120)
 texture = ExtResource("1_2e2w2")
-
-[node name="FamidashCrafty\'sLevels012" type="Sprite2D" parent="." unique_id=1675449335]
-visible = false
-modulate = Color(1, 1, 1, 0.23921569)
-position = Vector2(128, 120)
-texture = ExtResource("1_hhoem")
 
 [node name="Attempts" type="Label" parent="." unique_id=1013123496]
 offset_left = 72.0

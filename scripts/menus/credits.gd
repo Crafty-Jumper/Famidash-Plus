@@ -13,8 +13,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("A") and canSkip:
-		Global.fade_scene("res://scenes/title.tscn")
+		Global.fade_scene("uid://du82hjkyi5nln")
 
 
 func _on_timer_timeout() -> void:
-	Global.fade_scene("res://scenes/title.tscn")
+	Global.fade_scene("uid://du82hjkyi5nln")

@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	banner_corner.position.x = -get_viewport_rect().size.x/8
 	banner_corner_2.position.x = get_viewport_rect().size.x/8
 	if Input.is_action_just_pressed("B"):
-		Global.fade_scene("res://scenes/title.tscn")
+		Global.fade_scene("uid://du82hjkyi5nln")
 	if song >= music_meta.size():
 		song = 0
 	if song < 0:

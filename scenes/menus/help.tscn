@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0b2s7x4kdhbb"]
 
-[ext_resource type="Script" uid="uid://2e4ypatcefiw" path="res://scripts/help.gd" id="1_2by0i"]
+[ext_resource type="Script" uid="uid://2e4ypatcefiw" path="res://scripts/menus/help.gd" id="1_2by0i"]
 [ext_resource type="Texture2D" uid="uid://dgiu8k6lmwe4m" path="res://Famidash - Huge Man_001.png" id="1_chmrd"]
 [ext_resource type="Texture2D" uid="uid://c1fuxf407227j" path="res://spritesheets/logo.png" id="2_2by0i"]
 [ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_oar4r"]
