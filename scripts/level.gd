@@ -107,8 +107,7 @@ func pause_management() -> void:
 		if Input.is_action_just_pressed("select"):
 			Global.play_sfx(7)
 			Global.sfx.stream_paused = false
-			Global.fadeIn = true
-			Global.fade_scene("res://scenes/level_select.tscn")
+			Global.fade_scene("uid://ckrwwrc62vbnd")
 		if Input.is_action_just_pressed("B"):
 			practiceMode = true
 			gamePause = false
