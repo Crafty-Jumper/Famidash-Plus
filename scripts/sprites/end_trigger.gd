@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func entered_screen(area: Area2D) -> void:
 	if area.is_in_group("triggersNStuff"):
-		Global.fade_scene("res://scenes/level_complete.tscn",true,false,{"practiceMode":main.practiceMode,"attempts":main.tile_map_layer.attempts,"jumps":0,"coins":main.coins})
+		Global.fade_scene("uid://cxnea5xici4ec",true,false,{"practiceMode":main.practiceMode,"attempts":main.tile_map_layer.attempts,"jumps":0,"coins":main.coins})
 		if get_parent().get_parent().practiceMode:
 			write_percent_practice()
 		else:
