@@ -7,6 +7,7 @@ extends Node2D
 var scroll = 0
 var selection = 1
 const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_sides","menu_e_sides"]
+var selected : bool = false
 
 func _ready() -> void:
 	Global.save_file()
@@ -23,12 +24,16 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("select"):
 		Global.fade_scene("uid://c3b5iwtldunv3")
 	scroll -= 120*delta
-	parallax_1.position.x = round(fmod(scroll/6,144))-144
-	ground.position.x = round(fmod(scroll,64))-128
+	if !Global.sfx.playing or !selected:
+		parallax_1.position.x = round(fmod(scroll/6,144))-144
+		ground.position.x = round(fmod(scroll,64))-128
 	handle_cursor()
 	
 	if Input.is_action_just_pressed("A"):
+		if selected:
+			return
 		if selection == 1:
+			selected = true
 			if randi_range(1,256) == 1:
 				Global.play_sfx("fire.wav")
 			else:
@@ -41,6 +46,7 @@ func _process(delta: float) -> void:
 			return
 		
 		if selection == 2:
+			selected = true
 			if randi_range(1,256) == 1:
 				Global.play_sfx("gofuckyourself.wav")
 			else:
@@ -53,21 +59,26 @@ func _process(delta: float) -> void:
 			return
 	
 		if selection == 3:
+			selected = true
 			Global.change_song("")
 			Global.fade_scene("uid://ce55h62s85vjj")
 			return
 		
 		if selection == 5:
+			selected = true
 			Global.fade_scene("uid://c0b2s7x4kdhbb")
 			return
 	
 		if selection == 0:
+			selected = true
 			Global.fade_scene("uid://blfpe35rtmm2e")
 			return
 		
 		Global.play_sfx(9)
 
 func handle_cursor() -> void:
+	if selected:
+		return
 	if Input.is_action_just_pressed("left"):
 		selection -= 1
 	if Input.is_action_just_pressed("right"):
