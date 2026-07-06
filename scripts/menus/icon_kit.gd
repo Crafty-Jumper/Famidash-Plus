@@ -80,15 +80,19 @@ func update_icon_list(mode:String = "cube",frame=0) -> void:
 			icon.offset.x = 0
 		if FileAccess.file_exists("res://player/" + mode + "s/" + mode + str(int(floor(selected_icon/16.0)*16 + i)) + ".png"):
 			icon.texture = load("res://player/" + mode + "s/" + mode + str(int(floor(selected_icon/16.0)*16 + i)) + ".png")
-			icon.frame = icon_meta["cube"][int(floor(selected_icon/16.0)*16 + i)].get("previewFrame",0)
-			icon.frame = gamemode_frame_idx[gamemode]
-			icon.hframes = gamemode_frames[gamemode]
+			if icon_meta["cube"].get(int(floor(selected_icon/16.0)*16 + i)) != null:
+				icon.frame = icon_meta["cube"][int(floor(selected_icon/16.0)*16 + i)].get("previewFrame",0)
+				icon.frame = gamemode_frame_idx[gamemode]
+				icon.hframes = gamemode_frames[gamemode]
+			else:
+				max_icons
 		else:
 			icon.texture = Texture.new()
 		if !FileAccess.file_exists("res://player/" + mode + "s/" + mode + str(int(floor(selected_icon/16.0)*16 + i)) + ".png"):
 			if max_icons == 0:
 				max_icons = int(floor(selected_icon/16.0)*16 + i)-1
-				selected_icon = int(floor(selected_icon/16.0)*16 + i)-1
+				if selected_icon > max_icons:
+					selected_icon = max_icons
 
 func manage_cursor() -> void:
 	selector.visible = true
@@ -128,6 +132,9 @@ func manage_cursor() -> void:
 			else:
 				menu_state = 0
 		if Input.is_action_just_pressed("down"):
+			if selected_icon + 8 > max_icons:
+				menu_state = 2
+				return
 			if fmod(selected_icon,16) < 8:
 				selected_icon += 8
 			else:

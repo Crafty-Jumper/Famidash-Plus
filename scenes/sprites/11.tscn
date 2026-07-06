@@ -13,7 +13,6 @@ texture = ExtResource("2_u5qnn")
 hframes = 4
 vframes = 12
 script = ExtResource("3_u5qnn")
-speed = 295.495
 
 [node name="Area2D" parent="." index="0" unique_id=1803678054]
 position = Vector2(8, 8)

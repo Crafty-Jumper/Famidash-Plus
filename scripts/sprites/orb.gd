@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @onready var area_2d: Area2D = $Area2D
-@export var speed: float = 284.942
+@export var speed: float = 300.0
 @export var flipGrav: bool = false
 
 var activated : bool = false
