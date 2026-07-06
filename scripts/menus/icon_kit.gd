@@ -109,6 +109,7 @@ func manage_cursor() -> void:
 			hovered_gamemode -= 1
 		if Input.is_action_just_pressed("right"):
 			hovered_gamemode += 1
+		hovered_gamemode = wrapi(hovered_gamemode,0,13)
 		if Input.is_action_just_pressed("down"):
 			menu_state = 1
 			return
