@@ -23,7 +23,7 @@ var originalArtist : String = ""
 func _ready() -> void:
 	DiscordRich.set_activity("In the Soundtest","Listening to nothing")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	playing.frame = floor(animFrame/12)
 	animFrame = fmod(animFrame + 1,60)
 	if Global.songName == currSong["song"]:
