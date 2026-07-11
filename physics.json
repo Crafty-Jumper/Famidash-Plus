@@ -10,8 +10,8 @@
 	},
 	"ship":{
 		"canHeadBonk":true,
-		"upVel":750,
-		"gravity":420,
+		"upVel":540,
+		"gravity":540,
 		"maxFall":198.5,
 		"maxUp":198.5,
 		"pads":[0,0,0,0],

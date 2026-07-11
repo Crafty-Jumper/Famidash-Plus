@@ -20,6 +20,7 @@ config/icon="uid://bqxa88ba07f16"
 [autoload]
 
 Global="*uid://ccrr51pfevnww"
+DiscordRich="*uid://fxvakqh2o1pm"
 
 [display]
 

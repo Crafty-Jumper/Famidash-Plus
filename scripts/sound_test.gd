@@ -18,7 +18,10 @@ var currSong : Dictionary = {
 	}
 var music_meta = JSON.parse_string(FileAccess.open("res://music_data.json",FileAccess.READ).get_as_text())
 
+var originalArtist : String = ""
 
+func _ready() -> void:
+	DiscordRich.set_activity("In the Soundtest","Listening to nothing")
 
 func _process(delta: float) -> void:
 	playing.frame = floor(animFrame/12)
@@ -46,7 +49,8 @@ func _process(delta: float) -> void:
 		if Global.songName == currSong["song"]:
 			Global.change_song("")
 		else:
-			Global.change_song(currSong["song"],true)
+			Global.change_song(currSong["song"],false)
+		set_rich_presence()
 	if Input.is_action_just_pressed("left"):
 		song -= 1
 	if Input.is_action_just_pressed("right"):
@@ -64,13 +68,23 @@ func color_song_name() -> void:
 	if category == "original_plus":
 		label.add_theme_font_override("font",load("res://spritesheets/pusab_blue.fnt"))
 
+func set_rich_presence() -> void:
+	var action : String = ""
+	if Global.songName == "" or !Global.music.playing:
+		action = "Listening to nothing"
+	else:
+		action = "Listening to " + currSong.get("text","").capitalize() + " by " + originalArtist
+	DiscordRich.set_activity("In the Soundtest",action)
+
 func original_artist() -> void:
+	originalArtist = ""
 	if currSong.get("originalArtist","") is String:
-		label_2.text = currSong.get("originalArtist","")
+		originalArtist = currSong.get("originalArtist","")
 	if currSong.get("originalArtist","") is Array:
-		label_2.text = ""
+		originalArtist = ""
 		for i in currSong.get("originalArtist","").size():
-			label_2.text += (", " if i > 0 else "") + currSong.get("originalArtist",[])[i]
+			originalArtist += ((", " if i > 0 else "") if i != currSong.get("originalArtist","").size()-1 else ", and ") + currSong.get("originalArtist",[])[i]
+	label_2.text = originalArtist
 
 func overingArtist() -> void:
 	if currSong.get("coveringArtist","") is String:

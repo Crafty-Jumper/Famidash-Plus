@@ -58,6 +58,7 @@ theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("1_5se8y")
 theme_override_font_sizes/font_size = 8
 autowrap_mode = 3
+uppercase = true
 
 [node name="Label" type="Label" parent="." unique_id=527218864]
 offset_left = -80.0
@@ -79,6 +80,7 @@ theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("1_5se8y")
 theme_override_font_sizes/font_size = 8
 autowrap_mode = 3
+uppercase = true
 
 [node name="BannerCorner" type="Sprite2D" parent="." unique_id=649975211]
 position = Vector2(-128, 176)

@@ -31,6 +31,7 @@ var gamemode = 0
 var hovered_gamemode = 0
 
 func _ready() -> void:
+	DiscordRich.set_activity("In the menu","Customizing the icons")
 	selected_icon = Global.save_data.get("icons",[0,0,0,0,0,0,0,0,0,0,0,0])[0]
 	if Global.songName.contains("menu") or Global.songName.contains("unem"):
 		return

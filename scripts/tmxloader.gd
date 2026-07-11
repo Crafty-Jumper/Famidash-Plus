@@ -55,7 +55,6 @@ func reset_level() -> void:
 	character_body_2d.velocity = Vector2.ZERO
 	character_body_2d.rotation_frame = 0
 	character_body_2d.speedIdx = ohgodthelag["startingSpeed"]
-	character_body_2d.gamemode = ohgodthelag["startingGameMode"]
 	character_body_2d.sprite_2d.show()
 	camera_2d.position.y = levelHeight*16 - 72
 	area_2d.bg_color.emit(ohgodthelag["startingBackgroundColor"])
@@ -63,6 +62,7 @@ func reset_level() -> void:
 	if !node_2d.practiceMode:
 		Global.change_song(ohgodthelag["songID"].replace("song_",""))
 	node_2d.camLock = camera_2d.position.y
+	character_body_2d.gamemode = ohgodthelag["startingGameMode"]
 
 func respawn_at_checkpoint() -> void:
 	var checkpoint = checkpoints.get_child(checkpoints.get_children().size()-1)

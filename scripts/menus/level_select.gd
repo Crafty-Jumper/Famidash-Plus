@@ -32,6 +32,7 @@ const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_si
 var json
 
 func _ready() -> void:
+	DiscordRich.set_activity("In the menu","Choosing a level")
 	set_level_data(get_level_data(0))
 	robtop = Global.levelIdx <= robtopLvlCnt
 	if Global.songName.contains("menu") or Global.songName.contains("unem"):
@@ -108,6 +109,7 @@ func get_level_data(index:int):
 func set_level_data(data:Dictionary,node:Node2D=$CenterLevel):
 	node.get_child(1).frame = difficulties.get(data["difficulty"],0)
 	Global.levelName = data["level"]
+	Global.correct_levelName = data.get("upperText","") + " " + data["lowerText"]
 	node.get_child(6).text = data.get("upperText","") + (" \n" if fmod(data.get("upperText","").length(),2) == 1 else "\n")
 	node.get_child(6).text += data["lowerText"] + (" " if fmod(data["lowerText"].length(),2) == 1 else "")
 	node.get_child(7).text = str(int(data["stars"]) if floor(data["stars"]) == data["stars"] else data["stars"])

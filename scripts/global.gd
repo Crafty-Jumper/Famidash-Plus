@@ -25,6 +25,8 @@ signal refreshed
 var levelName : String = "stereomadness"
 var levelIdx : int = 0
 
+var correct_levelName : String = "Stereo Madness"
+
 # fun settings
 var retro : bool = false
 var blind : bool = false

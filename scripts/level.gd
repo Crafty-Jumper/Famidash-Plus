@@ -18,6 +18,7 @@ var coins : Array = [false,false,false]
 const freeModes : Array = [0,4,8,9,10,11]
 
 func _ready() -> void:
+	DiscordRich.set_activity("Playing a level",Global.correct_levelName.capitalize())
 	Global.refreshed.connect(respawn_player)
 	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})
 	coins = level_save["coins"]

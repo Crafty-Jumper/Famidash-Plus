@@ -2,188 +2,188 @@
 	{
 		"song":"menu_theme",
 		"text":"MENU THEME",
-		"originalArtist":"ROBTOP",
-		"coveringArtist":"ZENITH302"
+		"originalArtist":"RobTop",
+		"coveringArtist":"Zenith302"
 	},
 	{
 		"song":"menu_b_sides",
 		"text":"MENU THEME B SIDES",
-		"originalArtist":["ROBTOP","MUDSTEP","TOBY FOX"],
-		"coveringArtist":"JAEZU"
+		"originalArtist":["RobTop","Mudstep","Toby Fox"],
+		"coveringArtist":"Jaezu"
 	},
 	{
 		"song":"emeht_unem",
 		"text":"EMEHT UNEM",
-		"originalArtist":"ROBTOP",
-		"coveringArtist":"CRAFTY JUMPER"
+		"originalArtist":"RobTop",
+		"coveringArtist":"Crafty Jumper"
 	},
 	{
 		"song":"menu_d_sides",
 		"text":"MENU THEME D SIDES",
-		"originalArtist":["ROBTOP","TOBY FOX"],
-		"coveringArtist":"SEAGLOWINGPRO"
+		"originalArtist":["RobTop","Toby Fox"],
+		"coveringArtist":"SeaGlowingPro"
 	},
 	{
 		"song":"stereo_madness",
 		"text":"STEREO MADNESS",
-		"originalArtist":"FOREVERBOUND",
-		"coveringArtist":["ZENITH302","USERSNIPER"]
+		"originalArtist":"ForeverBound",
+		"coveringArtist":["Zenith302","UserSniper"]
 	},
 	{
 		"song":"back_on_track",
 		"text":"BACK ON TRACK",
 		"originalArtist":"DJVI",
-		"coveringArtist":["ZENITH302","USERSNIPER","VIKIRNOX"]
+		"coveringArtist":["Zenith302","UserSniper","Vikrinox"]
 	},
 	{
 		"song":"polargeist",
 		"text":"POLARGEIST",
-		"originalArtist":"STEP",
-		"coveringArtist":"AQUAMARINE"
+		"originalArtist":"Step",
+		"coveringArtist":"Aquamarine"
 	},
 	{
 		"song":"dry_out",
 		"text":"DRY OUT",
 		"originalArtist":"DJVI",
-		"coveringArtist":["USERSNIPER","CRAFTY JUMPER"]
+		"coveringArtist":["UserSniper","Crafty Jumper"]
 	},
 	{
 		"song":"base_after_base",
 		"text":"BASE AFTER BASE",
 		"originalArtist":"DJVI",
-		"coveringArtist":["ZENITH302","USERSNIPER","VIKIRNOX","DAJINKOSA"]
+		"coveringArtist":["Zenith302","UserSniper","Vikrinox","Dajinkosa"]
 	},
 	{
 		"song":"cant_let_go",
 		"text":"CANT LET GO",
 		"originalArtist":"DJVI",
-		"coveringArtist":["USERSNIPER","VIKIRNOX"]
+		"coveringArtist":["UserSniper","Vikrinox"]
 	},
 	{
 		"song":"jumper",
 		"text":"JUMPER",
-		"originalArtist":"WATERFLAME",
-		"coveringArtist":["ZENITH302","USERSNIPER","ZUKINNYK"]
+		"originalArtist":"Waterflame",
+		"coveringArtist":["Zenith302","UserSniper","ZUKINNYK"]
 	},
 	{
 		"song":"time_machine",
 		"text":"TIME MACHINE",
 		"originalArtist":"DJVI",
-		"coveringArtist":["ZENITH302","VIKRINOX","DAJINKOSA"]
+		"coveringArtist":["Zenith302","Vikrinox","Dajinkosa"]
 	},
 	{
 		"song":"cycles",
 		"text":"CYCLES",
 		"originalArtist":"DJVI",
-		"coveringArtist":["AQUAMARINE","DAJINKOSA"]
+		"coveringArtist":["Aquamarine","Dajinkosa"]
 	},
 	{
 		"song":"xstep",
 		"text":"XSTEP",
 		"originalArtist":"DJVI",
-		"coveringArtist":["VIKRINOX","DAJINKOSA"]
+		"coveringArtist":["Vikrinox","Dajinkosa"]
 	},
 	{
 		"song":"clutterfunk",
 		"text":"CLUTTERFUNK",
-		"originalArtist":"WATERFLAME",
-		"coveringArtist":["AQUAMARINE","VIKRINOX","ZENITH302"]
+		"originalArtist":"Waterflame",
+		"coveringArtist":["Aquamarine","Vikrinox","Zenith302"]
 	},
 	{
 		"song":"theory_of_everything",
 		"text":"THEORY OF EVERYTHING",
 		"originalArtist":"DJ-N",
-		"coveringArtist":"ELANGEL378"
+		"coveringArtist":"ElAngel378"
 	},
 	{
 		"song":"electroman_adventures",
 		"text":"ELECTROMAN ADVENTURES",
-		"originalArtist":"WATERFLAME",
-		"coveringArtist":["CLOUD54","USERSNIPER","DAJINKOSA","CRAFTY JUMPER"]
+		"originalArtist":"Waterflame",
+		"coveringArtist":["cloud54","UserSniper","Dajinkosa","Crafty Jumper"]
 	},
 	{
 		"song":"clubstep",
 		"text":"CLUBSTEP",
 		"originalArtist":"DJ-N",
-		"coveringArtist":"CLOUD54"
+		"coveringArtist":"cloud54"
 	},
 	{
 		"song":"electrodynamix",
 		"text":"ELECTRODYNAIX",
 		"originalArtist":"DJ-N",
-		"coveringArtist":"AQUAMARINE"
+		"coveringArtist":"Aquamarine"
 	},
 	{
 		"song":"hexagon_force",
 		"text":"HEXAGON FORCE",
-		"originalArtist":"WATERFLAME",
-		"coveringArtist":["VIKRINOX","DAJINKOSA"]
+		"originalArtist":"Waterflame",
+		"coveringArtist":["Vikrinox","Dajinkosa"]
 	},
 	{
 		"song":"blast_processing",
 		"text":"BLAST PROCESSING",
-		"originalArtist":"WATERFLAME",
-		"coveringArtist":["ELANGEL378","CRAFTY JUMPER"]
+		"originalArtist":"Waterflame",
+		"coveringArtist":["ElAngel378","Crafty Jumper"]
 	},
 	{
 		"song":"toe_2",
 		"text":"THEORY OF EVERYTHING 2",
 		"originalArtist":"DJ-N",
-		"coveringArtist":["ABSTRACT64","USERSNIPER"]
+		"coveringArtist":["ABSTRACT64","UserSniper"]
 	},
 	{
 		"song":"geometrical_dominator",
 		"text":"GEOMETRICAL DOMINATOR",
-		"originalArtist":"WATERFLAME",
-		"coveringArtist":["CLOUD54","VIKRINOX"]
+		"originalArtist":"Waterflame",
+		"coveringArtist":["cloud54","Vikrinox"]
 	},
 	{
 		"song":"deadlocked",
 		"text":"DEADLOCKED",
 		"originalArtist":"F-777",
-		"coveringArtist":"ELANGEL378"
+		"coveringArtist":"ElAngel378"
 	},
 	{
 		"song":"fingerdash",
 		"text":"FINGERDASH",
 		"originalArtist":"MDK",
-		"coveringArtist":"ELANGEL378"
+		"coveringArtist":"ElAngel378"
 	},
 	{
 		"song":"dash",
 		"text":"DASH",
 		"originalArtist":"MDK",
-		"coveringArtist":"CRAFTY JUMPER"
+		"coveringArtist":"Crafty Jumper"
 	},
 	{
 		"song":"explorers",
 		"text":"EXPLORERS",
-		"originalArtist":"HINKIK",
-		"coveringArtist":"CRAFTY JUMPER"
+		"originalArtist":"Hinkik",
+		"coveringArtist":"Crafty Jumper"
 	},
 	{
 		"song":"scheming_weasel",
 		"text":"SCHEMING WEASEL",
-		"originalArtist":"KEVIN MACLEOD",
-		"coveringArtist":"USERSNIPER"
+		"originalArtist":"Kevin Macleod",
+		"coveringArtist":"UserSniper"
 	},
 	{
 		"song":"desert_city",
 		"text":"DESERT CITY",
-		"originalArtist":"KEVIN MACLEOD",
-		"coveringArtist":"NERDBOY628"
+		"originalArtist":"Kevin Macleod",
+		"coveringArtist":"NerdBoy628"
 	},
 	{
 		"song":"practice",
 		"text":"PRACTICE MODE: STAY INSIDE ME",
-		"originalArtist":"OCULARNEBULA",
-		"coveringArtist":"JAEZU"
+		"originalArtist":"OcularNebula",
+		"coveringArtist":"Jaezu"
 	},
 	{
 		"song":"atthespeedoflightfull",
 		"text":"AT THE SPEED OF LIGHT",
 		"originalArtist":"DIMRAIN47",
-		"coveringArtist":"ELANGEL378"
+		"coveringArtist":"ElAngel378"
 	},
 	{
 		"song":"blacklight",
@@ -194,116 +194,116 @@
 	{
 		"song":"cryogenic",
 		"text":"CRYOGENIC",
-		"originalArtist":"NERDBOY628",
-		"coveringArtist":"NERDBOY628",
+		"originalArtist":"NerdBoy628",
+		"coveringArtist":"NerdBoy628",
 		"category":"original",
 	},
 	{
 		"song":"c_madness",
 		"text":"C MADNESS",
-		"originalArtist":["FOREVERBOUND","CRAFTY JUMPER"],
-		"coveringArtist":["ZENITH302","USERSNIPER","NERDBOY628"]
+		"originalArtist":["ForeverBound","Crafty Jumper"],
+		"coveringArtist":["Zenith302","UserSniper","NerdBoy628"]
 	},
 	{
 		"song":"death_moon",
 		"text":"DEATH MOON",
 		"originalArtist":"I FORGOT!!1!",
-		"coveringArtist":"ELANGEL378"
+		"coveringArtist":"ElAngel378"
 	},
 	{
 		"song":"endgame",
 		"text":"ENDGAME",
-		"originalArtist":"WATERFLAME",
-		"coveringArtist":"VIKRINOX"
+		"originalArtist":"Waterflame",
+		"coveringArtist":"Vikrinox"
 	},
 	{
 		"song":"factory_time",
 		"text":"FACTORY TIME",
-		"originalArtist":"VISAGER",
-		"coveringArtist":"NERDBOY628"
+		"originalArtist":"Visager",
+		"coveringArtist":"NerdBoy628"
 	},
 	{
 		"song":"glitch_gremlin",
 		"text":"GLITCH GREMLIN",
-		"originalArtist":"BOSSFIGHT",
-		"coveringArtist":"SEAGLOWINGPRO"
+		"originalArtist":"Bossfight",
+		"coveringArtist":"SeaGlowingPro"
 	},
 	{
 		"song":"golden_haze",
 		"text":"GOLDEN HAZE",
-		"originalArtist":"DETIOUSMUSIC",
-		"coveringArtist":["CRAFTY JUMPER","ELANGEL378"]
+		"originalArtist":"DetiousMusic",
+		"coveringArtist":["Crafty Jumper","ElAngel378"]
 	},
 	{
 		"song":"ground_to_space",
 		"text":"GROUND TO SPACE",
-		"originalArtist":"SEAGLOWINGPRO",
-		"coveringArtist":["SEAGLOWINGPRO","ELANGEL378"],
+		"originalArtist":"SeaGlowingPro",
+		"coveringArtist":["SeaGlowingPro","ElAngel378"],
 		"category":"original",
 	},
 	{
 		"song":"ground_to_retray",
 		"text":"GROUND TO RETRAY",
-		"originalArtist":["SEAGLOWINGPRO","DETIOUSMUSIC"],
-		"coveringArtist":"CRAFTY JUMPER",
+		"originalArtist":["SeaGlowingPro","DetiousMusic"],
+		"coveringArtist":"Crafty Jumper",
 		"category":"original",
 	},
 	{
 		"song":"hungryman_adventures",
 		"text":"ELECTROMAN MY VERSION",
 		"originalArtist":"IM HONESTLY TOO LAZY TO CHECK",
-		"coveringArtist":"SEAGLOWINGPRO"
+		"coveringArtist":"SeaGlowingPro"
 	},
 	{
 		"song":"just_right",
 		"text":"JUST RIGHT",
-		"originalArtist":["TESSA VIOLET","DAN HARRISON B"],
-		"coveringArtist":["SEAGLOWINGPRO","ELANGEL378"]
+		"originalArtist":["Tessa Violet","Dan Harrison B"],
+		"coveringArtist":["SeaGlowingPro","ElAngel378"]
 	},
 	{
 		"song":"lucky_draw",
 		"text":"LUCKY DRAW",
-		"originalArtist":"TETHRARXITET",
-		"coveringArtist":"TETHRARXITET",
+		"originalArtist":"Tethrarxitet",
+		"coveringArtist":"Tethrarxitet",
 		"category":"original_plus",
 	},
 	{
 		"song":"mayhem_renes",
 		"text":"MAYHEM",
-		"originalArtist":"CRAFTY JUMPER",
-		"coveringArtist":"CRAFTY JUMPER",
+		"originalArtist":"Crafty Jumper",
+		"coveringArtist":"Crafty Jumper",
 		"category":"original"
 	},
 	{
 		"song":"meowstuff",
 		"text":"MEOWSTUFF",
-		"originalArtist":"DAVINCE",
-		"coveringArtist":"ELANGEL378"
+		"originalArtist":"Davince",
+		"coveringArtist":"ElAngel378"
 	},
 	{
 		"song":"miami_hotline_vol_3",
 		"text":"MIAMI HOTLINE VOL. 3",
-		"originalArtist":"DEMONOCITY",
-		"coveringArtist":"NERDBOY628"
+		"originalArtist":"Demonocity",
+		"coveringArtist":"NerdBoy628"
 	},
 	{
 		"song":"new_dash_city",
 		"text":"NEW DASH CITY",
-		"originalArtist":"SEAGLOWINGPRO",
-		"coveringArtist":"SEAGLOWINGPRO",
+		"originalArtist":"SeaGlowingPro",
+		"coveringArtist":"SeaGlowingPro",
 		"category":"original",
 	},
 	{
 		"song":"nine_circles",
 		"text":"NINE CIRCLES",
-		"originalArtist":"RUKKUS",
-		"coveringArtist":"CLOUD54"
+		"originalArtist":"Rukkus",
+		"coveringArtist":"cloud54"
 	},
 	{
 		"song":"off_to_mars",
 		"text":"OFF TO MARS",
-		"originalArtist":"COSMICSPACE33",
-		"coveringArtist":["CRAFTY JUMPER","COSMICSPACE33"]
+		"originalArtist":"cosmicspace33",
+		"coveringArtist":["Crafty Jumper","cosmicspace33"]
 	},
 	{
 		"song":"okiba_crackdown",
@@ -314,72 +314,72 @@
 	{
 		"song":"pyrophoric/original",
 		"text":"PYROPHORIC",
-		"originalArtist":"NERDBOY628",
-		"coveringArtist":"NERDBOY628",
+		"originalArtist":"NerdBoy628",
+		"coveringArtist":"NerdBoy628",
 		"category":"original",
 	},
 	{
 		"song":"pyrophoric/legacy_rmx",
 		"text":"PYROPHORIC LEGACY REMIX",
-		"originalArtist":"NERDBOY628",
-		"coveringArtist":["NERDBOY628","DAJINKOSA","SEAGLOWINGPRO"],
+		"originalArtist":"NerdBoy628",
+		"coveringArtist":["NerdBoy628","Dajinkosa","SeaGlowingPro"],
 		"category":"original",
 	},
 	{
 		"song":"pyrophoric/dajinkosa_rmx",
-		"text":"PYROPHORIC DAJINKOSA REMIX",
-		"originalArtist":"NERDBOY628",
-		"coveringArtist":"DAJINKOSA",
+		"text":"PYROPHORIC Dajinkosa REMIX",
+		"originalArtist":"NerdBoy628",
+		"coveringArtist":"Dajinkosa",
 		"category":"original",
 	},
 	{
 		"song":"pyrophoric_xl",
 		"text":"PYROPHORIC XL",
-		"originalArtist":"NERDBOY628",
-		"coveringArtist":["NERDBOY628","DAJINKOSA","SEAGLOWINGPRO"],
+		"originalArtist":"NerdBoy628",
+		"coveringArtist":["NerdBoy628","Dajinkosa","SeaGlowingPro"],
 		"category":"original",
 	},
 	{
 		"song":"rainbow_tylenol",
 		"text":"RAINBOW TYLENOL",
-		"originalArtist":"KITSUNE2",
-		"coveringArtist":"CLICKERTY"
+		"originalArtist":"Kitsune2",
+		"coveringArtist":"Clickerty"
 	},
 	{
 		"song":"raining_tacos",
 		"text":"RAINING TACOS",
-		"originalArtist":"PARRY GRIPP",
-		"coveringArtist":"SEAGLOWINGPRO"
+		"originalArtist":"Parry Gripp",
+		"coveringArtist":"SeaGlowingPro"
 	},
 	{
 		"song":"select_payment_type",
 		"text":"SELECT PAYMENT TYPE",
-		"originalArtist":"CRAFTY JUMPER",
-		"coveringArtist":"CRAFTY JUMPER",
+		"originalArtist":"Crafty Jumper",
+		"coveringArtist":"Crafty Jumper",
 		"category":"original",
 	},
 	{
 		"song":"slash_inferno",
 		"text":"SLASH INFERNO",
-		"originalArtist":["WATERFLAME","TEMINITE","BOOM KITTY"],
-		"coveringArtist":"SEAGLOWINGPRO"
+		"originalArtist":["Waterflame","Teminite","Boom Kitty"],
+		"coveringArtist":"SeaGlowingPro"
 	},
 	{
 		"song":"somewhere_in_a_forest",
 		"text":"SOMEWHERE IN A FOREST",
 		"originalArtist":"",
-		"coveringArtist":"SEAGLOWINGPRO"
+		"coveringArtist":"SeaGlowingPro"
 	},
 	{
 		"song":"stereo_madness_2",
 		"text":"STEREO MADNESS 2",
-		"originalArtist":"FOREVERBOUND",
-		"coveringArtist":"ELANGEL378"
+		"originalArtist":"ForeverBound",
+		"coveringArtist":"ElAngel378"
 	},
 	{
 		"song":"subtle_oddities",
 		"text":"SUBTLE ODDITIES",
-		"originalArtist":"LEMON DEMON",
+		"originalArtist":"Lemon Demon",
 		"coveringArtist":""
 	},
 	{
@@ -391,44 +391,44 @@
 	{
 		"song":"unity",
 		"text":"UNITY, RANDOM",
-		"originalArtist":"THEFATRAT",
+		"originalArtist":"TheFatRat",
 		"coveringArtist":"WHO KNOWS"
 	},
 	{
 		"song":"unity/crafty",
 		"text":"UNITY, CRAFTY COVER",
-		"originalArtist":"THEFATRAT",
-		"coveringArtist":"CRAFTY JUMPER"
+		"originalArtist":"TheFatRat",
+		"coveringArtist":"Crafty Jumper"
 	},
 	{
 		"song":"unity/elangel",
 		"text":"UNITY, ELANGEL COVER",
-		"originalArtist":"THEFATRAT",
-		"coveringArtist":"ELANGEL378"
+		"originalArtist":"TheFatRat",
+		"coveringArtist":"ElAngel378"
 	},
 	{
 		"song":"unity/kabez",
 		"text":"UNITY, KABEZ COVER",
-		"originalArtist":"THEFATRAT",
+		"originalArtist":"TheFatRat",
 		"coveringArtist":"KABEZ"
 	},
 	{
 		"song":"unity/nerdboy",
 		"text":"UNITY, NERDBOY COVER",
-		"originalArtist":"THEFATRAT",
-		"coveringArtist":"NERDBOY628"
+		"originalArtist":"TheFatRat",
+		"coveringArtist":"NerdBoy628"
 	},
 	{
 		"song":"unity/okujassu",
 		"text":"UNITY, OKUJASSU COVER",
-		"originalArtist":"THEFATRAT",
-		"coveringArtist":"OKUJASSU"
+		"originalArtist":"TheFatRat",
+		"coveringArtist":"okujassu"
 	},
 	{
 		"song":"unity/sussysy",
 		"text":"UNITY, SUSSYSY COVER",
-		"originalArtist":"THEFATRAT",
-		"coveringArtist":"SUSSYSY"
+		"originalArtist":"TheFatRat",
+		"coveringArtist":"sussysy"
 	},
 	{
 		"song":"youve_been_trolled",
