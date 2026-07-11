@@ -49,7 +49,7 @@ func _on_rich_presence_updated(result: DiscordClientResult) -> void:
 	if result.successful():
 		print("✅ Rich presence updated!")
 
-func set_activity(details:String="In Game",state:String=""):
+func set_activity(details:String="In Game",state:String="",imagekey:String=""):
 	client.set_application_id(application_id)
 	client.add_log_callback(_on_log, DiscordLoggingSeverity.INFO)
 	
@@ -58,6 +58,12 @@ func set_activity(details:String="In Game",state:String=""):
 	
 	activity.set_details(details)
 	activity.set_state(state)
+	
+	if imagekey != "":
+		var assets := DiscordActivityAssets.new()
+		assets.set_small_image(imagekey.to_lower())
+		assets.set_small_text(imagekey.capitalize())
+		activity.set_assets(assets)
 	
 	activity.set_status_display_type(DiscordStatusDisplayTypes.STATE)
 	

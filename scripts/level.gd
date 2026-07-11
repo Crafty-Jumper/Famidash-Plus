@@ -17,8 +17,16 @@ var coins : Array = [false,false,false]
 
 const freeModes : Array = [0,4,8,9,10,11]
 
+func set_rich_presence(index:int):
+	var file = FileAccess.open("res://level_header.json",FileAccess.READ)
+	var text = file.get_as_text()
+	file.close()
+	var json = JSON.parse_string(text)
+	var data = json[clamp(index,0,json.size()-1)]
+	DiscordRich.set_activity("Playing a level",Global.correct_levelName.capitalize(),data["difficulty"])
+
 func _ready() -> void:
-	DiscordRich.set_activity("Playing a level",Global.correct_levelName.capitalize())
+	set_rich_presence(Global.levelIdx)
 	Global.refreshed.connect(respawn_player)
 	var level_save = Global.save_data["levels"].get(Global.levelName,{"normal":0,"practice":0,"coins":[false,false,false]})
 	coins = level_save["coins"]
