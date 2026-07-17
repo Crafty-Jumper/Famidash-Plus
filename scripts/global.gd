@@ -30,6 +30,8 @@ var correct_levelName : String = "Stereo Madness"
 # fun settings
 var retro : bool = false
 var blind : bool = false
+var random = false
+
 var delta_time : float = 1/60
 
 # Called when the node enters the scene tree for the first time.
@@ -84,7 +86,7 @@ func change_song(song: String = "menu_theme",loop:bool=false):
 
 func play_sfx(id) -> void:
 	if id is int:
-		sfx.stream = load("res://sfx/" + str(id) + ".mp3")
+		sfx.stream = load("res://sfx/" + str(id) + ("_retro.mp3" if retro and FileAccess.file_exists("res://sfx/" + str(id) + "_retro.mp3") else ".mp3"))
 	elif id is String:
 		sfx.stream = load("res://sfx/" + id)
 	sfx.play()

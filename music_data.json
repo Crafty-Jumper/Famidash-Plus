@@ -207,7 +207,7 @@
 	{
 		"song":"death_moon",
 		"text":"DEATH MOON",
-		"originalArtist":"I FORGOT!!1!",
+		"originalArtist":"SoundHolicK",
 		"coveringArtist":"ElAngel378"
 	},
 	{
@@ -232,7 +232,8 @@
 		"song":"golden_haze",
 		"text":"GOLDEN HAZE",
 		"originalArtist":"DetiousMusic",
-		"coveringArtist":["Crafty Jumper","ElAngel378"]
+		"coveringArtist":["Crafty Jumper","ElAngel378"],
+		"category":"retray"
 	},
 	{
 		"song":"ground_to_space",
@@ -246,7 +247,7 @@
 		"text":"GROUND TO RETRAY",
 		"originalArtist":["SeaGlowingPro","DetiousMusic"],
 		"coveringArtist":"Crafty Jumper",
-		"category":"original",
+		"category":"retray",
 	},
 	{
 		"song":"hungryman_adventures",
@@ -367,7 +368,7 @@
 	{
 		"song":"somewhere_in_a_forest",
 		"text":"SOMEWHERE IN A FOREST",
-		"originalArtist":"",
+		"originalArtist":["Toby Fox","Temmie Chang","Camellia"],
 		"coveringArtist":"SeaGlowingPro"
 	},
 	{

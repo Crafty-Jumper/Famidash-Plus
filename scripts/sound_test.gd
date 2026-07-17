@@ -24,6 +24,9 @@ func _ready() -> void:
 	DiscordRich.set_activity("In the Soundtest","Listening to nothing")
 
 func _process(_delta: float) -> void:
+	if !Global.music.playing:
+		Global.change_song("",true)
+		DiscordRich.set_activity("In the Soundtest","Listening to nothing")
 	playing.frame = floor(animFrame/12)
 	animFrame = fmod(animFrame + 1,60)
 	if Global.songName == currSong["song"]:
@@ -67,6 +70,8 @@ func color_song_name() -> void:
 		label.add_theme_font_override("font",load("res://spritesheets/pusab_gold.fnt"))
 	if category == "original_plus":
 		label.add_theme_font_override("font",load("res://spritesheets/pusab_blue.fnt"))
+	if category == "retray":
+		label.add_theme_font_override("font",load("res://spritesheets/pusab_green.fnt"))
 
 func set_rich_presence() -> void:
 	var action : String = ""
