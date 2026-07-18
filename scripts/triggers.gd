@@ -5,6 +5,11 @@ extends Area2D
 
 var tpExitY = 0
 
+var gndIdx = 0
+var bgIdx = 0
+var discoIdx = 0
+var disco_timer = Global.disco_frame
+
 const colors : Array = [
 	"6B6B6B","001084","08008C","42007B","63005A","6B0010","600000","4F3500","314E18","005A21","215A10","085242","003973","000000","000000","000000",
 	"A5A5A5","0042C6","4229CE","6B00BD","942994","9C1042","9C3900","845E21","5F7B21","2D8C29","188E10","2E8663","29739C","000000","000000","000000",
@@ -15,7 +20,27 @@ signal gnd_color(index)
 signal gravity_mod(mod:float)
 signal kill_player
 
+func _process(delta: float) -> void:
+	if Global.disco:
+		if disco_timer > -1:
+			disco_timer -= 1
+			if disco_timer == 0:
+				disco_timer = Global.disco_frame
+				discoIdx += 1
+				_on_bg_color(-1)
+				_on_gnd_color(-1)
+	discoIdx = fmod(discoIdx,11)
+
 func _on_bg_color(index) -> void:
+	if index != -1:
+		bgIdx = floor(index/16)
+	if index == 15:
+		bgIdx = -1
+	if Global.disco:
+		if bgIdx != -1:
+			index = discoIdx+(bgIdx*16)
+		else:
+			index = 15
 	var secondary = index - 16
 	if secondary < 0:
 		secondary = 15
@@ -23,6 +48,15 @@ func _on_bg_color(index) -> void:
 	color_rect.material.set_shader_parameter("BG2",Global.get_color(secondary))
 
 func _on_gnd_color(index) -> void:
+	if index != -1:
+		gndIdx = floor(index/16)
+	if index == 15:
+		gndIdx = -1
+	if Global.disco:
+		if gndIdx != -1:
+			index = discoIdx+(gndIdx*16)
+		else:
+			index = 15
 	var secondary = index - 16
 	if secondary < 0:
 		secondary = 15

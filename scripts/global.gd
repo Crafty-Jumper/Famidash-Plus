@@ -30,7 +30,10 @@ var correct_levelName : String = "Stereo Madness"
 # fun settings
 var retro : bool = false
 var blind : bool = false
-var random = false
+var random : bool = false
+var disco : int = 0
+
+var disco_frame : int = 0
 
 var delta_time : float = 1/60
 
@@ -47,6 +50,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if disco > 0:
+		disco_frame = 0x3F >> (disco - 1)
+	else:
+		disco_frame = -1
 	if Input.is_action_just_pressed("fullscreen"):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
