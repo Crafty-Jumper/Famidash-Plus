@@ -38,7 +38,7 @@ func _on_bg_color(index) -> void:
 		bgIdx = -1
 	if Global.disco:
 		if bgIdx != -1:
-			index = discoIdx+(bgIdx*16)
+			index = 1+discoIdx+(bgIdx*16)
 		else:
 			index = 15
 	var secondary = index - 16
@@ -54,7 +54,7 @@ func _on_gnd_color(index) -> void:
 		gndIdx = -1
 	if Global.disco:
 		if gndIdx != -1:
-			index = discoIdx+(gndIdx*16)
+			index = 1+discoIdx+(gndIdx*16)
 		else:
 			index = 15
 	var secondary = index - 16
