@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clol7k2esrjip"]
 
-[ext_resource type="Script" uid="uid://cnuoy7b0klkuv" path="res://scripts/sprites/character_body_2d.gd" id="1_qhqgy"]
+[ext_resource type="Script" uid="uid://cnuoy7b0klkuv" path="res://scripts/sprites/player.gd" id="1_qhqgy"]
 [ext_resource type="Shader" uid="uid://c0meobq1wnqn6" path="res://playercolors.gdshader" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://dkmpvo71oneu6" path="res://player/cubes/cube0.png" id="3_qhqgy"]
 
@@ -9,10 +9,6 @@ shader = ExtResource("2_qhqgy")
 shader_parameter/outline = Color(0, 0, 0, 1)
 shader_parameter/col1 = Color(0, 1, 0, 1)
 shader_parameter/col2 = Color(0, 1, 1, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-custom_solver_bias = 1.0
-size = Vector2(10, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4ue"]
 custom_solver_bias = 1.0
@@ -36,10 +32,11 @@ hframes = 7
 material = SubResource("ShaderMaterial_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140290215]
-shape = SubResource("RectangleShape2D_qhqgy")
+disabled = true
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1997052640]
 collision_mask = 2
+monitoring = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DetectionArea" unique_id=1676803979]
 shape = SubResource("RectangleShape2D_0b4ue")
@@ -47,5 +44,34 @@ debug_color = Color(0.70196074, 0, 0.6317644, 0.41960785)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1589084587]
 target_position = Vector2(0, 256)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1446966046]
+
+[node name="br" type="RayCast2D" parent="Node2D" unique_id=1505468966]
+target_position = Vector2(7, 7)
+
+[node name="b" type="RayCast2D" parent="Node2D" unique_id=432114417]
+target_position = Vector2(0, 7)
+
+[node name="bl" type="RayCast2D" parent="Node2D" unique_id=570243008]
+target_position = Vector2(-7, 7)
+
+[node name="cr" type="RayCast2D" parent="Node2D" unique_id=1601674911]
+target_position = Vector2(7, 0)
+
+[node name="c" type="RayCast2D" parent="Node2D" unique_id=1246794805]
+target_position = Vector2(0, 0)
+
+[node name="cl" type="RayCast2D" parent="Node2D" unique_id=1583370270]
+target_position = Vector2(-7, 0)
+
+[node name="tr" type="RayCast2D" parent="Node2D" unique_id=1805024251]
+target_position = Vector2(7, -7)
+
+[node name="t" type="RayCast2D" parent="Node2D" unique_id=1956225843]
+target_position = Vector2(0, -7)
+
+[node name="tl" type="RayCast2D" parent="Node2D" unique_id=1506219089]
+target_position = Vector2(-7, -7)
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_area_2d_body_entered"]

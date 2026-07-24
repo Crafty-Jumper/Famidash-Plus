@@ -71,6 +71,11 @@ const jimshipSpr : Texture2D = preload("res://player/jim/ship.png")
 const jimufoSpr : Texture2D = preload("res://player/jim/ufo.png")
 const jimrobotSpr : Texture2D = preload("res://player/jim/robot.png")
 
+var on_floor : bool = false
+var on_left_wall : bool = false
+var on_right_wall : bool = false
+var on_ceil : bool = false
+
 func update_physics(mode:String="cube") -> void:
 	physicsTable = physics[mode]
 
@@ -85,6 +90,7 @@ func _ready() -> void:
 	sprite_2d.material.set_shader_parameter("col2",Global.get_color(Global.save_data["colors"][1]))
 
 func _physics_process(delta: float) -> void:
+	collision_handle()
 	sprite_2d_2.visible = false
 	collision_shape_2d.disabled = gamemode == -1
 	if gamemode == -1:
@@ -110,9 +116,9 @@ func _physics_process(delta: float) -> void:
 	if !clickDisabler:
 		clicking = (Input.is_action_pressed("A") or Input.is_action_pressed("up"))
 		first_click = (Input.is_action_just_pressed("A") or Input.is_action_just_pressed("up"))
-	if is_on_wall():
+	if on_left_wall or on_right_wall:
 		die()
-	if is_on_ceiling():
+	if on_ceil:
 		if !physicsTable["canHeadBonk"]:
 			die()
 	
@@ -159,7 +165,7 @@ func animate_cube(texture: Texture2D=cubeSpr,rotate:bool=true) -> void:
 	sprite_2d.texture = texture
 	sprite_2d.hframes = 7
 	
-	if !is_on_floor():
+	if !on_floor:
 		rotation_frame += flippedMult * iconSpeed
 		if dashing:
 			rotation_frame += flippedMult * iconSpeed
@@ -212,7 +218,7 @@ func animate_robot(texture: Texture2D=robotSpr,isThreeFrame:bool=false) -> void:
 	sprite_2d.texture = texture
 	sprite_2d.hframes = 5
 	sprite_2d.rotation = 0
-	if !is_on_floor():
+	if !on_floor:
 		sprite_2d.frame = 4
 	else:
 		if !clicking:
@@ -233,7 +239,7 @@ func animate_wave(texture:Texture2D=waveSpr):
 	sprite_2d.frame = rotation_frame
 
 func buffer() -> void:
-	if is_on_floor():
+	if on_floor:
 		buffering = false
 		return
 	if !clicking:
@@ -249,9 +255,9 @@ func handle_cube(delta:float) -> void:
 	
 	
 	animate_cube(cubeSpr,iconRotates)
-	if not is_on_floor():
+	if not on_floor:
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
-	if clicking and is_on_floor():
+	if clicking and on_floor:
 		velocity.y = -physicsTable["upVel"] * flippedMult
 	if velocity.y > physicsTable["maxFall"]:
 		velocity.y = physicsTable["maxFall"]
@@ -262,7 +268,7 @@ func handle_cube(delta:float) -> void:
 func handle_ship(delta:float) -> void:
 	update_physics("ship")
 	animate_ship()
-	if not is_on_floor() and !clicking:
+	if not on_floor and !clicking:
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	if clicking:
 		velocity.y -= physicsTable["upVel"] * delta * flippedMult * gravMult
@@ -275,11 +281,11 @@ func handle_ship(delta:float) -> void:
 
 func handle_ball(delta:float) -> void:
 	update_physics("ball")
-	if (first_click and is_on_floor()) or (buffering and is_on_floor()):
+	if (first_click and on_floor) or (buffering and on_floor):
 		flipped = !flipped
 		velocity.y = -physicsTable["upVel"] * flippedMult
 	animate_ball()
-	if not is_on_floor():
+	if not on_floor:
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	
 	if velocity.y > physicsTable["maxFall"]:
@@ -297,7 +303,7 @@ func handle_ufo(delta:float) -> void:
 	else:
 		animate_ufo()
 	
-	if not is_on_floor():
+	if not on_floor:
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	if first_click:
 		velocity.y = -physicsTable["upVel"] * flippedMult
@@ -315,7 +321,7 @@ func handle_robot(delta:float) -> void:
 		animate_robot(jimrobotSpr,true)
 	else:
 		animate_robot()
-	if not is_on_floor():
+	if not on_floor:
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 		if !clicking:
 			robotJump = 0
@@ -338,10 +344,10 @@ func handle_robot(delta:float) -> void:
 
 func handle_spider(delta:float) -> void:
 	update_physics("spider")
-	if (first_click and is_on_floor()) or (buffering and is_on_floor()):
+	if (first_click and on_floor) or (buffering and on_floor):
 		spider_teleport(!flipped)
 	animate_robot(spiderSpr)
-	if not is_on_floor():
+	if not on_floor:
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult * 0.9
 	if velocity.y * flippedMult  > physicsTable["maxFall"]:
 		velocity.y = physicsTable["maxFall"] * flippedMult 
@@ -363,7 +369,7 @@ func handle_swing(delta:float) -> void:
 		animate_ship(swingSpr,false)
 	sprite_2d.flip_v = false
 	
-	if not is_on_floor():
+	if not on_floor:
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	if first_click:
 		flipped = !flipped
@@ -386,7 +392,7 @@ func handle_ninja(delta:float) -> void:
 		velocity.y = -physicsTable["upVel"] * flippedMult
 		ninjaJumps -= 1
 	
-	if not is_on_floor():
+	if not on_floor:
 		velocity.y += physicsTable["gravity"] * delta * flippedMult * gravMult
 	else:
 		ninjaJumps = 3
@@ -436,3 +442,56 @@ func disable_clicks() -> void:
 func teleport(vel:float=velocity.y,off:float=0) -> void:
 	position.y = trigger_manager.tpExitY + off
 	velocity.y = vel
+
+@onready var node_2d: Node2D = $Node2D
+@onready var br: RayCast2D = $Node2D/br
+@onready var b: RayCast2D = $Node2D/b
+@onready var bl: RayCast2D = $Node2D/bl
+@onready var cr: RayCast2D = $Node2D/cr
+@onready var c: RayCast2D = $Node2D/c
+@onready var cl: RayCast2D = $Node2D/cl
+@onready var tr: RayCast2D = $Node2D/tr
+@onready var t: RayCast2D = $Node2D/t
+@onready var tl: RayCast2D = $Node2D/tl
+
+func collision_handle() -> void:
+	on_ceil = false
+	on_floor = false
+	on_left_wall = false
+	on_right_wall = false
+	for a in node_2d.get_children():
+		if a is RayCast2D:
+			a.force_raycast_update()
+	if velocity.y >= 0 and !flipped:
+		if br.is_colliding():
+			velocity.y = 0
+			position.y = br.get_collision_point().y - physicsTable["size"][0]/2
+			on_floor = true
+		if b.is_colliding():
+			velocity.y = 0
+			position.y = b.get_collision_point().y - physicsTable["size"][0]/2
+			on_floor = true
+		if bl.is_colliding():
+			velocity.y = 0
+			position.y = bl.get_collision_point().y - physicsTable["size"][0]/2
+			on_floor = true
+	if velocity.y <= 0 and flipped:
+		if tr.is_colliding():
+			velocity.y = 0
+			position.y = tr.get_collision_point().y - physicsTable["size"][0]/2
+			on_ceil = true
+		if t.is_colliding():
+			velocity.y = 0
+			position.y = t.get_collision_point().y - physicsTable["size"][0]/2
+			on_ceil = true
+		if tl.is_colliding():
+			velocity.y = 0
+			position.y = tl.get_collision_point().y - physicsTable["size"][0]/2
+			on_ceil = true
+	if gamemode != -1:
+		if cr.is_colliding():
+			on_right_wall = true
+		if c.is_colliding():
+			die()
+		if cl.is_colliding():
+			on_left_wall = true
