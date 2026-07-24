@@ -90,7 +90,6 @@ func _ready() -> void:
 	sprite_2d.material.set_shader_parameter("col2",Global.get_color(Global.save_data["colors"][1]))
 
 func _physics_process(delta: float) -> void:
-	collision_handle()
 	sprite_2d_2.visible = false
 	collision_shape_2d.disabled = gamemode == -1
 	if gamemode == -1:
@@ -106,6 +105,11 @@ func _physics_process(delta: float) -> void:
 		if rotation_frame == 40:
 			Global.fade_scene("res://scenes/level.tscn",false,true)
 		return
+	collision_handle()
+	if flipped:
+		var tmp = on_floor
+		on_floor = on_ceil
+		on_ceil = tmp
 	velocity.x = speeds[speedIdx]
 	flippedMult = -1 if flipped else 1
 	up_direction.y = -flippedMult
@@ -462,36 +466,41 @@ func collision_handle() -> void:
 	for a in node_2d.get_children():
 		if a is RayCast2D:
 			a.force_raycast_update()
-	if velocity.y >= 0 and !flipped:
+	if velocity.y >= -1:
 		if br.is_colliding():
-			velocity.y = 0
-			position.y = br.get_collision_point().y - physicsTable["size"][0]/2
-			on_floor = true
+			if !flipped:
+				velocity.y = 0
+				position.y = br.get_collision_point().y - physicsTable["size"][0]/2
+				on_floor = true
 		if b.is_colliding():
 			velocity.y = 0
 			position.y = b.get_collision_point().y - physicsTable["size"][0]/2
 			on_floor = true
 		if bl.is_colliding():
-			velocity.y = 0
-			position.y = bl.get_collision_point().y - physicsTable["size"][0]/2
-			on_floor = true
-	if velocity.y <= 0 and flipped:
+			if !flipped:
+				velocity.y = 0
+				position.y = bl.get_collision_point().y - physicsTable["size"][0]/2
+				on_floor = true
+	if velocity.y <= 0:
 		if tr.is_colliding():
-			velocity.y = 0
-			position.y = tr.get_collision_point().y - physicsTable["size"][0]/2
-			on_ceil = true
+			if flipped:
+				velocity.y = 0
+				position.y = tr.get_collision_point().y + physicsTable["size"][0]/2
+				on_ceil = true
 		if t.is_colliding():
 			velocity.y = 0
-			position.y = t.get_collision_point().y - physicsTable["size"][0]/2
+			position.y = t.get_collision_point().y + physicsTable["size"][0]/2
 			on_ceil = true
 		if tl.is_colliding():
-			velocity.y = 0
-			position.y = tl.get_collision_point().y - physicsTable["size"][0]/2
-			on_ceil = true
+			if flipped:
+				velocity.y = 0
+				position.y = tl.get_collision_point().y + physicsTable["size"][0]/2
+				on_ceil = true
 	if gamemode != -1:
 		if cr.is_colliding():
 			on_right_wall = true
 		if c.is_colliding():
 			die()
 		if cl.is_colliding():
-			on_left_wall = true
+			pass
+#			on_left_wall = true
