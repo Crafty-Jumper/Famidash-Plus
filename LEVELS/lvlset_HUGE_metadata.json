@@ -2930,7 +2930,7 @@
 	  "startingSpeed": 0,
 	  "startingBackgroundColor": 19,
 	  "startingGroundColor": 3,
-	  "parallax": 0,
+	  "parallax": 2,
 	  "maxFallSpeed": 7,
 	  "objectOffsets": [
 		{

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c3b5iwtldunv3"]
 
 [ext_resource type="Texture2D" uid="uid://c1fuxf407227j" path="res://spritesheets/logo.png" id="1_0bpdh"]
-[ext_resource type="Texture2D" path="res://Famidash - Huge Man_000.png" id="1_0ctdu"]
 [ext_resource type="Script" uid="uid://c5oh7lcx3kngh" path="res://scripts/menus/credits.gd" id="1_2fbfq"]
 [ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_2fbfq"]
 
@@ -18,11 +17,6 @@ offset_left = -1007.0
 offset_right = 1007.0
 offset_bottom = 1602.0
 color = Color(0, 0.22352941, 0.4509804, 1)
-
-[node name="FamidashHugeMan000" type="Sprite2D" parent="." unique_id=623907365]
-visible = false
-position = Vector2(128, 120)
-texture = ExtResource("1_0ctdu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1095961734]
 position = Vector2(128, 120)
@@ -47,7 +41,8 @@ MADE BY CRAFTY JUMPER
  TOP CONTRIBUTORS
 
 -CRAFTY JUMPER - CODE
--SAMBAM_8979 - ICONS"
+-SAMBAM_8979 - ICONS
+-SEAGLOWINGPRO - HEX BG"
 
 [node name="Label2" type="Label" parent="." unique_id=1974892077]
 offset_left = 8.0

@@ -17,12 +17,14 @@ var levelHeight = 0
 @onready var node_2d: Node2D = $".."
 @onready var label: Label = $"../Label"
 @onready var checkpoints: Node2D = $"../Checkpoints"
+@onready var background: Sprite2D = $"../Background"
 
 func _ready() -> void:
 	for i in JSON.parse_string(FileAccess.open("res://LEVELS/lvlset_HUGE_metadata.json",FileAccess.READ).get_as_text()):
 		if i["level"] == Global.levelName:
 			ohgodthelag = i
 			break
+	background.texture = load("res://spritesheets/parallax" + str(int(ohgodthelag["parallax"])) + ".png")
 	var atlas_source = tile_set.get_source(0) as TileSetAtlasSource
 	var spikeSet = ohgodthelag["spikeSet"]
 	var blockSet = ohgodthelag["blockSet"]
