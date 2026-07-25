@@ -6,6 +6,8 @@ extends Sprite2D
 
 var activated : bool = false
 
+@onready var player : CharacterBody2D = $"../../CharacterBody2D"
+
 func _ready() -> void:
 	area_2d.body_entered.connect(on_body_entered)
 	Global.refreshed.connect(blue)
@@ -15,7 +17,6 @@ func _process(_delta: float) -> void:
 	
 	if activated:
 		return
-	
 	for body in area_2d.get_overlapping_bodies():
 		if body.is_in_group("player"):
 			if !body.buffering:

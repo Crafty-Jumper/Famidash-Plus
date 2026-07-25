@@ -40,7 +40,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pause_management()
-	camera_2d.position.x = character_body_2d.position.x + 48
+	camera_2d.position.x = character_body_2d.position.x + 40
 	texture_progress_bar.value = (character_body_2d.position.x*6.1)/tile_map_layer.levelWidth
 	if Input.is_action_just_pressed("select"):
 		if checkpoints.get_children().size():

@@ -103,6 +103,7 @@ func _place_tiles() -> void:
 		tilePosY = -1
 		tilePosX += 1
 	var tileID : int = int((levelString.get_slice(",",index)))-1
+	tileID = fmod(tileID,256)
 	var tilePos = Vector2i(0,0)
 	index = (tilePosY+1) * levelWidth + tilePosX
 	# ok
@@ -124,16 +125,16 @@ func _place_tiles() -> void:
 func _place_sprites() -> void:
 	var tileID : int = int((spriteString.get_slice(",",index)))-1
 	var tilePos = Vector2i(tilePosX*16,(tilePosY)*16)
-	
-	if !FileAccess.file_exists("res://scenes/sprites/" + str(tileID-256) + ".tscn"):
+	tileID -= 256
+	tileID = fmod(tileID,256)
+	if !FileAccess.file_exists("res://scenes/sprites/" + str(tileID) + ".tscn"):
 		return
 	
-	if tileID > 255:
-		var sprite = load("res://scenes/sprites/" + str(tileID-256) + ".tscn")
-		var spriteNode = sprite.instantiate()
-		spriteNode.position = Vector2(tilePos) + get_sprite_offset(Vector2i(tilePosX,tilePosY))
-		
-		$"../Sprites".add_child(spriteNode)
+	var sprite = load("res://scenes/sprites/" + str(tileID) + ".tscn")
+	var spriteNode = sprite.instantiate()
+	spriteNode.position = Vector2(tilePos) + get_sprite_offset(Vector2i(tilePosX,tilePosY))
+	
+	$"../Sprites".add_child(spriteNode)
 	
 	if tilePosY >= levelHeight:
 		return
