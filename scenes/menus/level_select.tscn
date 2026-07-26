@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://c4knthwwyim1l" path="res://colors.gdshader" id="3_htctk"]
 [ext_resource type="Texture2D" uid="uid://cc8se21vv3mpd" path="res://spritesheets/banner_corner.png" id="5_ckc44"]
 [ext_resource type="Texture2D" uid="uid://bfeqc3l7a7yru" path="res://spritesheets/levelSelectSheet.png" id="5_o2xx4"]
+[ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="5_xl4el"]
 [ext_resource type="Texture2D" uid="uid://b87h3j47hr0bh" path="res://spritesheets/progressbar-empty.png" id="6_4nqmc"]
 [ext_resource type="Texture2D" uid="uid://cjofoldsbb4dt" path="res://spritesheets/progressbar-full.png" id="7_7plkq"]
 [ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="8_ckc44"]
@@ -64,6 +65,13 @@ texture = ExtResource("5_ckc44")
 centered = false
 offset = Vector2(-48, -24)
 flip_h = true
+
+[node name="Cursor" type="Sprite2D" parent="BannerCorner2" unique_id=25367505]
+position = Vector2(-16, -96)
+rotation = -1.5707964
+texture = ExtResource("5_xl4el")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
 
 [node name="LeftLevel" type="Node2D" parent="." unique_id=80565624]
 position = Vector2(-256, 0)
@@ -469,6 +477,13 @@ position = Vector2(-104, 216)
 texture = ExtResource("5_ckc44")
 centered = false
 offset = Vector2(0, -24)
+
+[node name="Cursor" type="Sprite2D" parent="BannerCorner" unique_id=1769596821]
+position = Vector2(16, -96)
+rotation = 1.5707964
+texture = ExtResource("5_xl4el")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
 
 [node name="BannerTop" type="Sprite2D" parent="." unique_id=726215493]
 z_index = 1
