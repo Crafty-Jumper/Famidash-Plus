@@ -10,6 +10,7 @@ const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_si
 var selected : bool = false
 
 func _ready() -> void:
+	parallax_1.texture = load("res://spritesheets/parallax" + str(Global.background) + ".png")
 	DiscordRich.set_activity("In the menu","On the title screen")
 	Global.save_file()
 	if Global.songName.contains("menu") or Global.songName.contains("unem"):
@@ -26,7 +27,7 @@ func _process(delta: float) -> void:
 		Global.fade_scene("uid://c3b5iwtldunv3")
 	scroll -= 120*delta
 	if !Global.sfx.playing or !selected:
-		parallax_1.position.x = round(fmod(scroll/6,144))-144
+		parallax_1.position.x = round(fmod(scroll/6,parallax_1.texture.get_size().x))-parallax_1.texture.get_size().x
 		ground.position.x = round(fmod(scroll,64))-128
 	handle_cursor()
 	

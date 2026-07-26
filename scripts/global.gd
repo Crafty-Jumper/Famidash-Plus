@@ -26,6 +26,7 @@ var levelName : String = "stereomadness"
 var levelIdx : int = 0
 
 var correct_levelName : String = "Stereo Madness"
+var background : int = 1
 
 # fun settings
 var retro : bool = false
