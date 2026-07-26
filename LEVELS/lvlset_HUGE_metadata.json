@@ -3375,7 +3375,7 @@
 	  "startingSpeed": 0,
 	  "startingBackgroundColor": 2,
 	  "startingGroundColor": 18,
-	  "parallax": 0,
+	  "parallax": 2,
 	  "objectOffsets": [
 		{
 		  "coordinates": [
