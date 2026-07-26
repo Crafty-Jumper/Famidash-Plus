@@ -82,8 +82,10 @@ func _process(delta: float) -> void:
 		camera_2d.position.x = get_viewport_rect().size.x/8
 	if camera_2d.position.x > tile_map_layer.levelWidth * 16 - get_viewport_rect().size.x/8:
 		camera_2d.position.x = tile_map_layer.levelWidth * 16 - get_viewport_rect().size.x/8
-	background.position.x = floor(fmod(camera_2d.position.x*-0.2,144)+camera_2d.position.x-144*5)
-	background.position.y = floor(fmod(camera_2d.position.y*-0.2,72)+camera_2d.position.y-72*5)
+	
+	var bg_size = background.texture.get_size()
+	background.position.x = floor(fmod(camera_2d.position.x*-0.2,bg_size.x)+camera_2d.position.x-144*5)
+	background.position.y = floor(fmod(camera_2d.position.y*-0.2,bg_size.y)+camera_2d.position.y-72*5)
 	color_rect.position = background.position
 	
 	

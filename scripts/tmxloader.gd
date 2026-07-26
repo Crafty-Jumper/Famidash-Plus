@@ -24,7 +24,7 @@ func _ready() -> void:
 		if i["level"] == Global.levelName:
 			ohgodthelag = i
 			break
-	background.texture = load("res://spritesheets/parallax" + str(int(ohgodthelag["parallax"])) + ".png")
+	background.texture = load("res://spritesheets/parallax" + str(int(ohgodthelag.get("parallax",1))) + ".png")
 	var atlas_source = tile_set.get_source(0) as TileSetAtlasSource
 	var spikeSet = ohgodthelag["spikeSet"]
 	var blockSet = ohgodthelag["blockSet"]
