@@ -36,7 +36,9 @@ var disco : int = 0
 
 var disco_frame : int = 0
 
-var delta_time : float = 1/60
+var delta_time : float = 1.0/60.0
+
+var debug : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

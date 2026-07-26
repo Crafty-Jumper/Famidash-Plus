@@ -513,6 +513,17 @@ limit_left = 0
 limit_top = 0
 limit_smoothed = true
 
+[node name="Label" type="Label" parent="Camera2D" unique_id=1895127626]
+visible = false
+offset_left = -128.0
+offset_top = -56.0
+offset_right = -64.0
+offset_bottom = -48.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("10_olg7q")
+theme_override_font_sizes/font_size = 8
+text = "DEBUG"
+
 [node name="Control" type="Control" parent="Camera2D" unique_id=401150744]
 layout_mode = 3
 anchors_preset = 0
@@ -550,9 +561,10 @@ visible = false
 texture = SubResource("CompressedTexture2D_b121j")
 
 [node name="Label" type="Label" parent="." unique_id=757192245]
-offset_left = 48.0
-offset_right = 112.0
-offset_bottom = 8.0
+offset_left = 49.0
+offset_top = 9.0
+offset_right = 113.0
+offset_bottom = 17.0
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("10_olg7q")
 theme_override_font_sizes/font_size = 8

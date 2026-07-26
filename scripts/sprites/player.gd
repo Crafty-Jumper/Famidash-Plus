@@ -90,6 +90,7 @@ func _ready() -> void:
 	sprite_2d.material.set_shader_parameter("col2",Global.get_color(Global.save_data["colors"][1]))
 
 func _physics_process(delta: float) -> void:
+	debug_mode()
 	sprite_2d_2.visible = false
 	collision_shape_2d.disabled = gamemode == -1
 	if gamemode == -1:
@@ -406,6 +407,8 @@ func handle_ninja(delta:float) -> void:
 		velocity.y = -physicsTable["maxUp"] * flippedMult 
 
 func die() -> void:
+	if Global.debug:
+		return
 	collision_shape_2d.disabled = true
 	if position.x < 32:
 		return
@@ -504,3 +507,9 @@ func collision_handle() -> void:
 		if cl.is_colliding():
 			pass
 #			on_left_wall = true
+
+func debug_mode() -> void:
+	if !Global.debug:
+		return
+	if Input.is_action_just_pressed("right"):
+		flipped = !flipped

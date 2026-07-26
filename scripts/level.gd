@@ -8,6 +8,7 @@ extends Node2D
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 @onready var texture_progress_bar: TextureProgressBar = $Camera2D/Control/TextureProgressBar
 @onready var checkpoints: Node2D = $Checkpoints
+@onready var label: Label = $Camera2D/Label
 var camLock = 0
 var freeCam : bool = false
 var gamePause : bool = false
@@ -39,12 +40,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	label.visible = Global.debug
 	pause_management()
 	camera_2d.position.x = character_body_2d.position.x + 40
 	texture_progress_bar.value = (character_body_2d.position.x*6.1)/tile_map_layer.levelWidth
 	if Input.is_action_just_pressed("select"):
-		if checkpoints.get_children().size():
-			checkpoints.get_child(checkpoints.get_children().size()-1).queue_free()
+		if practiceMode:
+			if checkpoints.get_children().size():
+				checkpoints.get_child(checkpoints.get_children().size()-1).queue_free()
+		elif !gamePause:
+			Global.debug = !Global.debug
 	if character_body_2d.gamemode == -1:
 		if practiceMode:
 			write_percent_practice()
