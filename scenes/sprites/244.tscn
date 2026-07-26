@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://64qf4t6ya0sn"]
+
+[ext_resource type="PackedScene" uid="uid://bljjgfswa0kr6" path="res://scenes/sprites/trigger.tscn" id="1_oo7yr"]
+[ext_resource type="Script" uid="uid://b8ee8g880mmat" path="res://scripts/sprites/timewarp.gd" id="2_7hsah"]
+
+[node name="Sprite2D" unique_id=1678419382 instance=ExtResource("1_oo7yr")]
+script = ExtResource("2_7hsah")
+speed = 0.5

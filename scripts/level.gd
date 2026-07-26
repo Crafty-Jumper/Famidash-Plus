@@ -127,6 +127,7 @@ func pause_management() -> void:
 		else:
 			return
 		if Input.is_action_just_pressed("select"):
+			Engine.time_scale = 1
 			Global.play_sfx(7)
 			Global.sfx.stream_paused = false
 			Global.fade_scene("uid://ckrwwrc62vbnd")
