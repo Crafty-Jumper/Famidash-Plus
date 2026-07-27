@@ -106,11 +106,6 @@ func _physics_process(delta: float) -> void:
 		if rotation_frame == 40:
 			Global.fade_scene("res://scenes/level.tscn",false,true)
 		return
-	collision_handle()
-	on_floor = get("on_floor")
-	on_ceil = get("on_ceil")
-	on_left_wall = get("on_left_wall")
-	on_right_wall = get("on_right_wall")
 	if flipped:
 		var tmp = on_floor
 		on_floor = on_ceil
@@ -169,6 +164,7 @@ func _physics_process(delta: float) -> void:
 	buffer()
 	
 	move_and_slide()
+	collision_handle()
 
 func animate_cube(texture: Texture2D=cubeSpr,rotate:bool=true) -> void:
 	sprite_2d.texture = texture
@@ -471,14 +467,12 @@ func collision_handle() -> void:
 	on_left_wall = false
 	on_right_wall = false
 	if gamemode != -1:
-		if velocity.y >= -1:
-			collide(br,"on_floor",!flipped or physicsTable["canHeadBonk"],!flipped or physicsTable["canHeadBonk"])
-			collide(b,"on_floor",true,!flipped or physicsTable["canHeadBonk"])
-			collide(bl,"on_floor",!flipped or physicsTable["canHeadBonk"],!flipped or physicsTable["canHeadBonk"])
-		if velocity.y <= 0:
-			collide(tr,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
-			collide(t,"on_ceil",true,flipped or physicsTable["canHeadBonk"])
-			collide(tl,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
+		collide(br,"on_floor",!flipped or physicsTable["canHeadBonk"],!flipped or physicsTable["canHeadBonk"])
+		collide(b,"on_floor",true,!flipped or physicsTable["canHeadBonk"])
+		collide(bl,"on_floor",!flipped or physicsTable["canHeadBonk"],!flipped or physicsTable["canHeadBonk"])
+		collide(tr,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
+		collide(t,"on_ceil",true,flipped or physicsTable["canHeadBonk"])
+		collide(tl,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
 		collide(cr,"on_right_wall",true,false)
 		if c.is_colliding():
 			die()
@@ -490,7 +484,6 @@ func collide(node:RayCast2D,surface:String,push:bool=true,surface_graze:bool=fal
 	node.enabled = true
 	var push_mask : Vector2 = node.target_position / physicsTable["size"][0]
 	if node.is_colliding():
-		print(node.get_collision_point() != position + node.target_position)
 		if (node.get_collision_point() == position + node.target_position and surface_graze) or (node.get_collision_point() != position + node.target_position):
 			if push:
 				position.y = node.get_collision_point().y - push_mask.y * physicsTable["size"][1]
