@@ -93,7 +93,7 @@ texture = ExtResource("4_yjpe6")
 region_enabled = true
 region_rect = Rect2(80, 32, 16, 16)
 
-[node name="Logo2" type="Label" parent="." unique_id=1937936099]
+[node name="Logo" type="Label" parent="." unique_id=1937936099]
 offset_left = 64.0
 offset_top = 30.0
 offset_right = 192.0
@@ -102,12 +102,12 @@ theme_override_fonts/font = ExtResource("6_3q1jb")
 theme_override_font_sizes/font_size = 24
 text = "FAMIDASH"
 
-[node name="LogoCaption" type="Label" parent="Logo2" unique_id=1945020928]
+[node name="LogoCaption" type="Label" parent="Logo" unique_id=1945020928]
 material = SubResource("ShaderMaterial_yjpe6")
 layout_mode = 0
 offset_left = 86.0
 offset_top = 16.0
-offset_right = 214.0
+offset_right = 150.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("6_3q1jb")
 theme_override_font_sizes/font_size = 24

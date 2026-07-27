@@ -3,6 +3,8 @@ extends Node2D
 @onready var cursor: Sprite2D = $Cursor
 @onready var parallax_1: Sprite2D = $Parallax1
 @onready var ground: Sprite2D = $Ground
+@onready var logo: Label = $Logo
+@onready var logo_caption: Label = $Logo/LogoCaption
 
 var scroll = 0
 var selection = 1
@@ -24,6 +26,8 @@ func _ready() -> void:
 	Global.change_song(menu_themes[Global.menuTheme],true)
 
 func _process(delta: float) -> void:
+	logo.position.x = -logo.size.x/2+128
+	logo_caption.position.x = logo.size.x/1.085-logo_caption.size.x/2
 	if Input.is_action_just_pressed("select"):
 		Global.fade_scene("uid://c3b5iwtldunv3")
 	scroll -= 120*delta
