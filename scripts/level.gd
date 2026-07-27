@@ -45,7 +45,6 @@ func _process(delta: float) -> void:
 	static_body_2d.position.x = character_body_2d.position.x
 	label.visible = Global.debug
 	pause_management()
-	camera_2d.position.x = character_body_2d.position.x + 40
 	texture_progress_bar.value = (character_body_2d.position.x*6.1)/tile_map_layer.levelWidth
 	if Input.is_action_just_pressed("select"):
 		if practiceMode:
@@ -61,7 +60,7 @@ func _process(delta: float) -> void:
 		if !practiceMode:
 			Global.change_song("")
 		return
-	
+	camera_2d.position.x = character_body_2d.position.x + 40
 	if character_body_2d.position.y < camera_2d.position.y-120:
 		character_body_2d.die()
 	if character_body_2d.position.y > camera_2d.position.y+120:
