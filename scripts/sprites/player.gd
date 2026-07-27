@@ -107,6 +107,10 @@ func _physics_process(delta: float) -> void:
 			Global.fade_scene("res://scenes/level.tscn",false,true)
 		return
 	collision_handle()
+	on_floor = get("on_floor")
+	on_ceil = get("on_ceil")
+	on_left_wall = get("on_left_wall")
+	on_right_wall = get("on_right_wall")
 	if flipped:
 		var tmp = on_floor
 		on_floor = on_ceil
@@ -121,7 +125,7 @@ func _physics_process(delta: float) -> void:
 	if !clickDisabler:
 		clicking = (Input.is_action_pressed("A") or Input.is_action_pressed("up"))
 		first_click = (Input.is_action_just_pressed("A") or Input.is_action_just_pressed("up"))
-	if on_left_wall or on_right_wall:
+	if on_right_wall:
 		die()
 	if on_ceil:
 		if !physicsTable["canHeadBonk"]:
@@ -466,47 +470,39 @@ func collision_handle() -> void:
 	on_floor = false
 	on_left_wall = false
 	on_right_wall = false
-	for a in node_2d.get_children():
-		if a is RayCast2D:
-			a.force_raycast_update()
-	if velocity.y >= -1:
-		if br.is_colliding():
-			if !flipped:
-				velocity.y = 0
-				position.y = br.get_collision_point().y - physicsTable["size"][0]/2
-				on_floor = true
-		if b.is_colliding():
-			velocity.y = 0
-			position.y = b.get_collision_point().y - physicsTable["size"][0]/2
-			on_floor = true
-		if bl.is_colliding():
-			if !flipped:
-				velocity.y = 0
-				position.y = bl.get_collision_point().y - physicsTable["size"][0]/2
-				on_floor = true
-	if velocity.y <= 0:
-		if tr.is_colliding():
-			if flipped:
-				velocity.y = 0
-				position.y = tr.get_collision_point().y + physicsTable["size"][0]/2
-				on_ceil = true
-		if t.is_colliding():
-			velocity.y = 0
-			position.y = t.get_collision_point().y + physicsTable["size"][0]/2
-			on_ceil = true
-		if tl.is_colliding():
-			if flipped:
-				velocity.y = 0
-				position.y = tl.get_collision_point().y + physicsTable["size"][0]/2
-				on_ceil = true
 	if gamemode != -1:
-		if cr.is_colliding():
-			on_right_wall = true
+		if velocity.y >= -1:
+			collide(br,"on_floor",!flipped or physicsTable["canHeadBonk"],!flipped or physicsTable["canHeadBonk"])
+			collide(b,"on_floor",true,!flipped or physicsTable["canHeadBonk"])
+			collide(bl,"on_floor",!flipped or physicsTable["canHeadBonk"],!flipped or physicsTable["canHeadBonk"])
+		if velocity.y <= 0:
+			collide(tr,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
+			collide(t,"on_ceil",true,flipped or physicsTable["canHeadBonk"])
+			collide(tl,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
+		collide(cr,"on_right_wall",false,false)
 		if c.is_colliding():
 			die()
-		if cl.is_colliding():
-			pass
-#			on_left_wall = true
+		collide(cr,"on_left_wall",false,false)
+
+func collide(node:RayCast2D,surface:String,push:bool=true,surface_graze:bool=false):
+	node.enabled = false
+	node.force_raycast_update()
+	node.enabled = true
+	var push_mask : Vector2 = node.target_position / physicsTable["size"][0]
+	if node.is_colliding():
+		print(node.get_collision_point() != position + node.target_position)
+		if (node.get_collision_point() == position + node.target_position and surface_graze) or (node.get_collision_point() != position + node.target_position):
+			if push:
+				position.y = node.get_collision_point().y - push_mask.y * physicsTable["size"][1]
+				velocity.y = 0
+				if surface == "on_ceil":
+					on_ceil = true
+				elif surface == "on_left_wall":
+					on_left_wall = true
+				elif surface == "on_right_wall":
+					on_right_wall = true
+				else:
+					on_floor = true
 
 func debug_mode() -> void:
 	if !Global.debug:
