@@ -479,7 +479,7 @@ func collision_handle() -> void:
 			collide(tr,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
 			collide(t,"on_ceil",true,flipped or physicsTable["canHeadBonk"])
 			collide(tl,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
-		collide(cr,"on_right_wall",false,false)
+		collide(cr,"on_right_wall",true,false)
 		if c.is_colliding():
 			die()
 		collide(cr,"on_left_wall",false,false)
