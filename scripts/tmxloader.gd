@@ -11,6 +11,8 @@ var levelPath = "res://LEVELS/" + Global.levelName + ".tmx"
 @onready var camera_2d: Camera2D = $"../Camera2D"
 var levelWidth = 0
 var levelHeight = 0
+@onready var ground: Sprite2D = $"../ground"
+@onready var static_body_2d: StaticBody2D = $"../StaticBody2D"
 @onready var sprites: Node2D = $"../Sprites"
 @onready var character_body_2d: CharacterBody2D = $"../CharacterBody2D"
 @onready var area_2d: Area2D = $"../Area2D"
@@ -25,7 +27,9 @@ func _ready() -> void:
 			ohgodthelag = i
 			break
 	Global.background = int(ohgodthelag.get("parallax",1))
-	background.texture = load("res://spritesheets/backgrounds/parallax" + str(int(ohgodthelag.get("parallax",1))) + ".png")
+	Global.ground = int(ohgodthelag.get("ground",1))
+	background.texture = load("res://spritesheets/backgrounds/parallax" + str(Global.background) + ".png")
+	ground.texture = load("res://spritesheets/grounds/ground" + str(Global.ground) + ".png")
 	var atlas_source = tile_set.get_source(0) as TileSetAtlasSource
 	var spikeSet = ohgodthelag["spikeSet"]
 	var blockSet = ohgodthelag["blockSet"]
@@ -36,6 +40,8 @@ func _ready() -> void:
 	levelString = get_layer(levelPath,"")
 	spriteString = get_layer(levelPath,"SP")
 	levelString = levelString.replace("\n","")
+	static_body_2d.position.y = levelHeight*16
+	ground.position.y = static_body_2d.position.y
 	for i in 30:
 		if tilePosX >= levelWidth:
 			return
@@ -89,8 +95,6 @@ func place_tile_column() -> void:
 		return
 	for i in levelHeight:
 		_place_tiles()
-		if tilePosY > levelHeight:
-			continue
 		_place_sprites()
 
 func _process(_delta: float) -> void:
@@ -102,25 +106,13 @@ func _place_tiles() -> void:
 	if tilePosX >= levelWidth:
 		levelString = ""
 		return
-	if tilePosY >= levelHeight+3:
+	if tilePosY >= levelHeight:
 		tilePosY = -1
 		tilePosX += 1
 	var tileID : int = int((levelString.get_slice(",",index)))-1
 	tileID = fmod(tileID,256)
 	var tilePos = Vector2i(0,0)
 	index = (tilePosY+1) * levelWidth + tilePosX
-	# ok
-	# add ground
-	if tilePosY > levelHeight:
-		if fmod(tilePosX,4) == 0:
-			tileID = 2
-		else:
-			tileID = 6
-	if tilePosY == levelHeight:
-		if fmod(tilePosX,4) == 0:
-			tileID = 136
-		else:
-			tileID = 137
 	tilePos = Vector2i(fmod(tileID,16),floor(tileID/16))
 	set_cell(Vector2i(tilePosX,tilePosY),0,tilePos)
 	tilePosY += 1

@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var ground: Sprite2D = $ground
+@onready var static_body_2d: StaticBody2D = $StaticBody2D
 @onready var background: Sprite2D = $Background
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var character_body_2d: CharacterBody2D = $CharacterBody2D
@@ -40,6 +42,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	static_body_2d.position.x = character_body_2d.position.x
 	label.visible = Global.debug
 	pause_management()
 	camera_2d.position.x = character_body_2d.position.x + 40
@@ -92,7 +95,7 @@ func _process(delta: float) -> void:
 	background.position.x = floor(fmod(camera_2d.position.x*-0.2,bg_size.x)+camera_2d.position.x-144*5)
 	background.position.y = floor(fmod(camera_2d.position.y*-0.2,bg_size.y)+camera_2d.position.y-72*5)
 	color_rect.position = background.position
-	
+	ground.position.x = floor(camera_2d.position.x/64)*64
 	
 
 func write_percent() -> void:

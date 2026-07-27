@@ -11,6 +11,7 @@ var selected : bool = false
 
 func _ready() -> void:
 	parallax_1.texture = load("res://spritesheets/backgrounds/parallax" + str(Global.background) + ".png")
+	ground.texture = load("res://spritesheets/grounds/ground" + str(Global.ground) + ".png")
 	DiscordRich.set_activity("In the menu","On the title screen")
 	Global.save_file()
 	if Global.songName.contains("menu") or Global.songName.contains("unem"):
@@ -27,7 +28,7 @@ func _process(delta: float) -> void:
 		Global.fade_scene("uid://c3b5iwtldunv3")
 	scroll -= 120*delta
 	if !Global.sfx.playing or !selected:
-		parallax_1.position.x = round(fmod(scroll/6,parallax_1.texture.get_size().x))-parallax_1.texture.get_size().x
+		parallax_1.position.x = round(fmod(scroll/6,parallax_1.texture.get_size().x))-144
 		ground.position.x = round(fmod(scroll,64))-128
 	handle_cursor()
 	

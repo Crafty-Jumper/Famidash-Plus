@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://bvp2m1q8ajt8w" path="res://scripts/triggers.gd" id="7_klq6b"]
 [ext_resource type="Texture2D" uid="uid://cjofoldsbb4dt" path="res://spritesheets/progressbar-full.png" id="8_olg7q"]
 [ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="10_olg7q"]
+[ext_resource type="Shader" uid="uid://crk71v5mnyl13" path="res://simplecolors.gdshader" id="11_8iemx"]
+[ext_resource type="Texture2D" uid="uid://d168dvyotch5j" path="res://spritesheets/grounds/ground1.png" id="11_t1rx8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("3_klq6b")
@@ -459,6 +461,15 @@ physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_vonw3")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_64w2a"]
+shader = ExtResource("11_8iemx")
+shader_parameter/s1 = Color(0, 0.25882354, 0.7764706, 1)
+shader_parameter/s2 = Color(0, 0.0627451, 0.5176471, 1)
+shader_parameter/s3 = Color(0, 0, 0, 1)
+shader_parameter/r1 = Color(0.6117647, 0.22352941, 0, 1)
+shader_parameter/r2 = Color(0.3764706, 0, 0, 1)
+shader_parameter/r3 = Color(0, 0, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_klq6b"]
 shader = ExtResource("5_2r41h")
 shader_parameter/srcBG1 = Color(0, 0.25882354, 0.7764706, 1)
@@ -478,6 +489,9 @@ size = Vector2(256, 240)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b121j"]
 load_path = "res://.godot/imported/AAH.png-31d53f87af4b8e71646957d15421911a.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qflbg"]
+size = Vector2(20, 66)
+
 [node name="Node2D" type="Node2D" unique_id=562772880]
 script = ExtResource("1_2r41h")
 
@@ -491,6 +505,14 @@ region_rect = Rect2(0, 0, 1310, 694)
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=700728413 groups=["level"]]
 tile_set = SubResource("TileSet_oi3di")
 script = ExtResource("2_vonw3")
+
+[node name="ground" type="Sprite2D" parent="." unique_id=360550168]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_64w2a")
+texture = ExtResource("11_t1rx8")
+offset = Vector2(0, 32)
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 64)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1683007804]
 material = SubResource("ShaderMaterial_klq6b")
@@ -569,6 +591,12 @@ theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("10_olg7q")
 theme_override_font_sizes/font_size = 8
 text = "ATTEMPT "
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1671630985]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=293650958]
+position = Vector2(0, 33)
+shape = SubResource("RectangleShape2D_qflbg")
 
 [connection signal="bg_color" from="Area2D" to="Area2D" method="_on_bg_color"]
 [connection signal="gnd_color" from="Area2D" to="Area2D" method="_on_gnd_color"]

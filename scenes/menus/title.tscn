@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cn4qdf5bta7v3" path="res://spritesheets/backgrounds/parallax1.png" id="2_3q1jb"]
 [ext_resource type="Texture2D" uid="uid://c1fuxf407227j" path="res://spritesheets/logo.png" id="3_8sw12"]
 [ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="4_yjpe6"]
-[ext_resource type="Texture2D" uid="uid://ckrdbab4mc12s" path="res://spritesheets/ground.png" id="5_3i8nk"]
+[ext_resource type="Texture2D" uid="uid://d168dvyotch5j" path="res://spritesheets/grounds/ground1.png" id="5_gb2o3"]
 
 [node name="Node2D" type="Node2D" unique_id=1086577605]
 script = ExtResource("1_gb2o3")
@@ -73,7 +73,7 @@ region_rect = Rect2(80, 80, 16, 16)
 [node name="Ground" type="Sprite2D" parent="." unique_id=1323005298]
 texture_repeat = 2
 position = Vector2(-1152, 177)
-texture = ExtResource("5_3i8nk")
+texture = ExtResource("5_gb2o3")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 2560, 64)

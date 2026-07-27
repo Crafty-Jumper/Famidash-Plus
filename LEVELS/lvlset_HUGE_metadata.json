@@ -2664,6 +2664,7 @@
 	  "startingGroundColor": 9,
 	  "maxFallSpeed": 7,
 	  "parallax": 3,
+	  "ground":2,
 	  "objectOffsets": [
 		{
 		  "coordinates": [
