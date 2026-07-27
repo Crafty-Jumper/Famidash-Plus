@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cct5rubig6d8l"
+path="res://.godot/imported/Oxygene1.fnt-3bb5ab448805ca04310fe7273f5e5594.fontdata"
+
+[deps]
+
+source_file="res://spritesheets/fonts/Oxygene1.fnt"
+dest_files=["res://.godot/imported/Oxygene1.fnt-3bb5ab448805ca04310fe7273f5e5594.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

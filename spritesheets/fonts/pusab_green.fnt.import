@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://sjp5xnoisctp"
+path="res://.godot/imported/pusab_green.fnt-648be092d8a3deef033a481ad2bc2436.fontdata"
+
+[deps]
+
+source_file="res://spritesheets/fonts/pusab_green.fnt"
+dest_files=["res://.godot/imported/pusab_green.fnt-648be092d8a3deef033a481ad2bc2436.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

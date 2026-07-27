@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://be2j5ut0jhnn0" path="res://spritesheets/DialogueBoxLarge.png" id="1_2e2w2"]
 [ext_resource type="Script" uid="uid://b1vntlj51vd3x" path="res://scripts/menus/level_complete.gd" id="1_rovvh"]
-[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_rovvh"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/fonts/pusab.fnt" id="3_rovvh"]
 [ext_resource type="Texture2D" uid="uid://bg1ejw4seneb1" path="res://spritesheets/coinSheet.png" id="5_3oeyx"]
-[ext_resource type="Texture2D" uid="uid://cgo2w1rqeyshg" path="res://spritesheets/levelcomplete.png" id="6_r8ohr"]
 [ext_resource type="Texture2D" uid="uid://bp31s2o5kelw" path="res://spritesheets/buttonsSheet2.png" id="7_1r4r6"]
+[ext_resource type="FontFile" uid="uid://cct5rubig6d8l" path="res://spritesheets/fonts/Oxygene1.fnt" id="7_3fuk6"]
 [ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="8_jv7kj"]
 
 [node name="Node2D" type="Node2D" unique_id=1737469120]
@@ -61,10 +61,6 @@ texture = ExtResource("5_3oeyx")
 region_enabled = true
 region_rect = Rect2(48, 0, 16, 16)
 
-[node name="Levelcomplete" type="Sprite2D" parent="." unique_id=703378071]
-position = Vector2(124, 72)
-texture = ExtResource("6_r8ohr")
-
 [node name="Menu" type="Sprite2D" parent="." unique_id=1543248036]
 position = Vector2(184, 216)
 texture = ExtResource("7_1r4r6")
@@ -83,3 +79,21 @@ position = Vector2(72, 193)
 texture = ExtResource("8_jv7kj")
 region_enabled = true
 region_rect = Rect2(64, 32, 16, 16)
+
+[node name="Label" type="Label" parent="." unique_id=1953127108]
+offset_left = 96.0
+offset_top = 48.0
+offset_right = 160.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("7_3fuk6")
+theme_override_font_sizes/font_size = 24
+text = "level"
+
+[node name="Label2" type="Label" parent="." unique_id=1798473230]
+offset_left = 56.0
+offset_top = 72.0
+offset_right = 192.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("7_3fuk6")
+theme_override_font_sizes/font_size = 24
+text = "complete!"

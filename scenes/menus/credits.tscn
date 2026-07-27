@@ -1,8 +1,18 @@
 [gd_scene format=3 uid="uid://c3b5iwtldunv3"]
 
-[ext_resource type="Texture2D" uid="uid://c1fuxf407227j" path="res://spritesheets/logo.png" id="1_0bpdh"]
 [ext_resource type="Script" uid="uid://c5oh7lcx3kngh" path="res://scripts/menus/credits.gd" id="1_2fbfq"]
-[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_2fbfq"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/fonts/pusab.fnt" id="3_2fbfq"]
+[ext_resource type="FontFile" uid="uid://cct5rubig6d8l" path="res://spritesheets/fonts/Oxygene1.fnt" id="3_yrcfj"]
+[ext_resource type="Shader" uid="uid://crk71v5mnyl13" path="res://simplecolors.gdshader" id="4_44wmd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvxbb"]
+shader = ExtResource("4_44wmd")
+shader_parameter/s1 = Color(0.3529412, 0.80784315, 0.32156864, 1)
+shader_parameter/s2 = Color(0.70980394, 0.90588236, 0.6784314, 1)
+shader_parameter/s3 = Color(0, 0, 0, 1)
+shader_parameter/r1 = Color(0.80784315, 0.6117647, 0.16078432, 1)
+shader_parameter/r2 = Color(1, 0.85490197, 0.19215687, 1)
+shader_parameter/r3 = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D" unique_id=838024476]
 script = ExtResource("1_2fbfq")
@@ -21,10 +31,6 @@ color = Color(0, 0.22352941, 0.4509804, 1)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1095961734]
 position = Vector2(128, 120)
 zoom = Vector2(4, 4)
-
-[node name="Logo" type="Sprite2D" parent="." unique_id=524977347]
-position = Vector2(137, 27)
-texture = ExtResource("1_0bpdh")
 
 [node name="Label" type="Label" parent="." unique_id=985043054]
 offset_left = 48.0
@@ -56,5 +62,25 @@ text = "BETA 1.0.0
     FAMIDASH IS 2024 TFDSOFT
        GEOMETRY DASH IS
         2013 ROBTOPGAMES"
+
+[node name="Logo2" type="Label" parent="." unique_id=1356688577]
+offset_left = 64.0
+offset_top = 6.0
+offset_right = 192.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("3_yrcfj")
+theme_override_font_sizes/font_size = 24
+text = "FAMIDASH"
+
+[node name="LogoCaption" type="Label" parent="Logo2" unique_id=486368190]
+material = SubResource("ShaderMaterial_xvxbb")
+layout_mode = 0
+offset_left = 86.0
+offset_top = 16.0
+offset_right = 214.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("3_yrcfj")
+theme_override_font_sizes/font_size = 24
+text = "PLUS"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

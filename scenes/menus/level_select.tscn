@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b3c05g2mdbowd" path="res://spritesheets/buttonsSheet1.png" id="5_xl4el"]
 [ext_resource type="Texture2D" uid="uid://b87h3j47hr0bh" path="res://spritesheets/progressbar-empty.png" id="6_4nqmc"]
 [ext_resource type="Texture2D" uid="uid://cjofoldsbb4dt" path="res://spritesheets/progressbar-full.png" id="7_7plkq"]
-[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="8_ckc44"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/fonts/pusab.fnt" id="8_ckc44"]
 [ext_resource type="Texture2D" uid="uid://irm1d6hgufth" path="res://spritesheets/banner_top.png" id="11_htctk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s6tf7"]

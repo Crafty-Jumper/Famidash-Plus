@@ -65,13 +65,13 @@ func _process(_delta: float) -> void:
 
 func color_song_name() -> void:
 	var category = currSong.get("category","")
-	label.add_theme_font_override("font",load("res://spritesheets/pusab.fnt"))
+	label.add_theme_font_override("font",load("res://spritesheets/fonts/pusab.fnt"))
 	if category == "original":
-		label.add_theme_font_override("font",load("res://spritesheets/pusab_gold.fnt"))
+		label.add_theme_font_override("font",load("res://spritesheets/fonts/pusab_gold.fnt"))
 	if category == "original_plus":
-		label.add_theme_font_override("font",load("res://spritesheets/pusab_blue.fnt"))
+		label.add_theme_font_override("font",load("res://spritesheets/fonts/pusab_blue.fnt"))
 	if category == "retray":
-		label.add_theme_font_override("font",load("res://spritesheets/pusab_green.fnt"))
+		label.add_theme_font_override("font",load("res://spritesheets/fonts/pusab_green.fnt"))
 
 func set_rich_presence() -> void:
 	var action : String = ""

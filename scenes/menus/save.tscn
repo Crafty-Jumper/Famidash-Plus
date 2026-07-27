@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://de78l06nctlsf" path="res://spritesheets/DialogueBox.png" id="1_7obqq"]
 [ext_resource type="Script" uid="uid://dc87ditprpxag" path="res://scripts/menus/save.gd" id="1_wsf25"]
 [ext_resource type="Texture2D" uid="uid://brebaa50dfwoh" path="res://spritesheets/level_select_bg.png" id="2_wsf25"]
-[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/pusab.fnt" id="3_th0i3"]
+[ext_resource type="FontFile" uid="uid://blxax0xic8t6i" path="res://spritesheets/fonts/pusab.fnt" id="3_th0i3"]
 
 [node name="Node2D" type="Node2D" unique_id=548115526]
 script = ExtResource("1_wsf25")
