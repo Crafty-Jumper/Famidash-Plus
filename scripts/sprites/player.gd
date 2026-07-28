@@ -466,14 +466,16 @@ func collision_handle() -> void:
 	on_floor = false
 	on_left_wall = false
 	on_right_wall = false
+	var up : bool = flipped or physicsTable["canHeadBonk"]
+	var down : bool = !flipped or physicsTable["canHeadBonk"]
 	if gamemode != -1:
-		collide(br,"on_floor",!flipped or physicsTable["canHeadBonk"],!flipped or physicsTable["canHeadBonk"])
-		collide(b,"on_floor",true,!flipped or physicsTable["canHeadBonk"])
-		collide(bl,"on_floor",!flipped or physicsTable["canHeadBonk"],!flipped or physicsTable["canHeadBonk"])
-		collide(tr,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
-		collide(t,"on_ceil",true,flipped or physicsTable["canHeadBonk"])
-		collide(tl,"on_ceil",flipped or physicsTable["canHeadBonk"],flipped or physicsTable["canHeadBonk"])
-		collide(cr,"on_right_wall",true,false)
+		collide(br,"on_floor",down,down)
+		collide(b,"on_floor",true,down)
+		collide(bl,"on_floor",down,down)
+		collide(tr,"on_ceil",up,up)
+		collide(t,"on_ceil",true,up)
+		collide(tl,"on_ceil",up,up)
+		collide(cr,"on_right_wall",true,true)
 		if c.is_colliding():
 			die()
 		collide(cr,"on_left_wall",false,false)
@@ -482,20 +484,19 @@ func collide(node:RayCast2D,surface:String,push:bool=true,surface_graze:bool=fal
 	node.enabled = false
 	node.force_raycast_update()
 	node.enabled = true
-	var push_mask : Vector2 = node.target_position / physicsTable["size"][0]
+	var push_mask : Vector2 = node.target_position / physicsTable["size"][1]
 	if node.is_colliding():
-		if (node.get_collision_point() == position + node.target_position and surface_graze) or (node.get_collision_point() != position + node.target_position):
-			if push:
-				position.y = node.get_collision_point().y - push_mask.y * physicsTable["size"][1]
-				velocity.y = 0
-				if surface == "on_ceil":
-					on_ceil = true
-				elif surface == "on_left_wall":
-					on_left_wall = true
-				elif surface == "on_right_wall":
-					on_right_wall = true
-				else:
-					on_floor = true
+		if push:
+			position.y = node.get_collision_point().y - push_mask.y * physicsTable["size"][1]
+			velocity.y = 0
+			if surface == "on_ceil":
+				on_ceil = surface_graze
+			elif surface == "on_left_wall":
+				on_left_wall = surface_graze
+			elif surface == "on_right_wall":
+				on_right_wall = surface_graze
+			else:
+				on_floor = surface_graze
 
 func debug_mode() -> void:
 	if !Global.debug:
