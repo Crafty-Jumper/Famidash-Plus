@@ -11,7 +11,31 @@ var selection = 1
 const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_sides","menu_e_sides"]
 var selected : bool = false
 
+# combos
+const easter_egg_logos : Array = [
+	["Famidash","SWAP!MINUS"], #
+	["Famdiash","PULS"], #
+	["Family Dash","Add"], #
+	["",""], #
+	["AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA","AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"], #
+	["PLUS   ","Famidash"],
+	["FORTNITE","Battle Royale"],
+	["PEGGLE 2",""],
+	["Deltarune","CHAPTER 5"],
+	["Battleblock","Theater"]
+]
+
+func _easteregg() -> void:
+	logo.size.x = 0
+	logo_caption.size.x = 0
+	var logo_text = ["Famidash","PLUS"]
+	if randi_range(1,1) <= 1:
+		logo_text = easter_egg_logos.pick_random()
+	logo.text = logo_text[0]
+	logo_caption.text = logo_text[1]
+
 func _ready() -> void:
+	_easteregg()
 	parallax_1.texture = load("res://spritesheets/backgrounds/parallax" + str(Global.background) + ".png")
 	ground.texture = load("res://spritesheets/grounds/ground" + str(Global.ground) + ".png")
 	DiscordRich.set_activity("In the menu","On the title screen")

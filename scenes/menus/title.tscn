@@ -96,11 +96,11 @@ region_rect = Rect2(80, 32, 16, 16)
 [node name="Logo" type="Label" parent="." unique_id=1937936099]
 offset_left = 64.0
 offset_top = 30.0
-offset_right = 192.0
+offset_right = 186.0
 offset_bottom = 54.0
 theme_override_fonts/font = ExtResource("6_3q1jb")
 theme_override_font_sizes/font_size = 24
-text = "FAMIDASH"
+text = "Famidash"
 
 [node name="LogoCaption" type="Label" parent="Logo" unique_id=1945020928]
 material = SubResource("ShaderMaterial_yjpe6")
