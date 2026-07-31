@@ -29,7 +29,7 @@ func _easteregg() -> void:
 	logo.size.x = 0
 	logo_caption.size.x = 0
 	var logo_text = ["Famidash","PLUS"]
-	if randi_range(1,1) <= 1:
+	if randi_range(1,1000) <= 1:
 		logo_text = easter_egg_logos.pick_random()
 	logo.text = logo_text[0]
 	logo_caption.text = logo_text[1]

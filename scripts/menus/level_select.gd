@@ -29,22 +29,17 @@ const difficulties = {
 @onready var right_level: Node2D = $RightLevel
 
 const menu_themes : Array = ["menu_theme","menu_b_sides","emeht_unem","menu_d_sides","menu_e_sides"]
-var json
+var json : Array = JSON.parse_string(FileAccess.open("res://level_header.json",FileAccess.READ).get_as_text())
 
 func _ready() -> void:
 	DiscordRich.set_activity("In the menu","Choosing a level")
-	set_level_data(get_level_data(0))
 	robtop = Global.levelIdx <= robtopLvlCnt
 	if Global.songName.contains("menu") or Global.songName.contains("unem"):
 		return
 	Global.change_song(menu_themes[Global.menuTheme],true)
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	banner_corner.position.x = -get_viewport_rect().size.x/8
-	banner_corner_2.position.x = get_viewport_rect().size.x/8
 	if Input.is_action_just_pressed("B"):
 		if !selected_level:
 			Global.fade_scene("uid://du82hjkyi5nln")
@@ -59,21 +54,13 @@ func _process(delta: float) -> void:
 	color_rect_2.material.set_shader_parameter("BG1",Global.get_color(fmod(Global.levelIdx,12)+17))
 	if !selected_level:
 		center_level.position.x = lerp(center_level.position.x,0.0,delta * 12)
-	
-	left_level.position.x = center_level.position.x-get_viewport_rect().size.x/4
-	right_level.position.x = center_level.position.x+get_viewport_rect().size.x/4
-	
 	if !selected_level:
 		if Input.is_action_just_pressed("left"):
 			Global.levelIdx -= 1
-			left_level.position.x = -get_viewport_rect().size.x/2
 			center_level.position.x = -get_viewport_rect().size.x/4
-			right_level.position.x = 0
 		if Input.is_action_just_pressed("right"):
 			Global.levelIdx += 1
-			left_level.position.x = 0
 			center_level.position.x = get_viewport_rect().size.x/4
-			right_level.position.x = get_viewport_rect().size.x/2
 	if Global.levelIdx < 0:
 		Global.levelIdx = robtopLvlCnt
 	if Global.levelIdx > json.size()-1:
@@ -84,7 +71,11 @@ func _process(delta: float) -> void:
 	else:
 		if Global.levelIdx < robtopLvlCnt+1:
 			Global.levelIdx = json.size()-1
+	banner_corner.position.x = -get_viewport_rect().size.x/8
+	banner_corner_2.position.x = get_viewport_rect().size.x/8
 	
+	left_level.position.x = center_level.position.x-get_viewport_rect().size.x/4
+	right_level.position.x = center_level.position.x+get_viewport_rect().size.x/4
 	
 	if true:
 		var data = get_level_data(Global.levelIdx-1)
@@ -100,10 +91,16 @@ func _process(delta: float) -> void:
 		set_level_progress()
 
 func get_level_data(index:int):
-	var file = FileAccess.open("res://level_header.json",FileAccess.READ)
-	var text = file.get_as_text()
-	file.close()
-	json = JSON.parse_string(text)
+	if robtop:
+		if index > robtopLvlCnt:
+			index = 0
+		if index < 0:
+			index = robtopLvlCnt
+	else:
+		if index <= robtopLvlCnt:
+			index = json.size()-1
+		if index > json.size()-1:
+			index = robtopLvlCnt+1
 	return json[clamp(index,0,json.size()-1)]
 
 func set_level_data(data:Dictionary,node:Node2D=$CenterLevel):
