@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @onready var area_2d: Area2D = $Area2D
-@export var speed: float = 300.0
+@export var color: String = "yellow"
 @export var flipGrav: bool = false
 
 var activated : bool = false
@@ -9,39 +9,22 @@ var activated : bool = false
 @onready var player : CharacterBody2D = $"../../CharacterBody2D"
 
 func _ready() -> void:
-	area_2d.body_entered.connect(on_body_entered)
 	Global.refreshed.connect(blue)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	
-	if activated:
-		return
-	for body in area_2d.get_overlapping_bodies():
-		if body.is_in_group("player"):
-			if !body.buffering:
+func _physics_process(delta: float) -> void:
+		if area_2d.overlaps_body(player):
+			if !player.buffering:
 				return
+			if abs(player.position.y) * player.flippedMult > 0:
+				player.position.y -= player.velocity.y * delta
 			activated = true
-			body.buffering = false
+			player.buffering = false
 			if flipGrav:
-				body.velocity.y = -speed * body.flippedMult
-				body.flipped = !body.flipped
+				player.velocity.y = player.physicsTable["orbs"][color] * player.flippedMult
+				player.flipped = !player.flipped
 			else:
-				body.velocity.y = -speed * body.flippedMult
+				player.velocity.y = -player.physicsTable["orbs"][color] * player.flippedMult
 
 func blue() -> void:
 	activated = false
-
-func on_body_entered(body:Node2D) -> void:
-	if activated:
-		return
-	if body.is_in_group("player"):
-		if !body.buffering:
-			return
-		activated = true
-		body.buffering = false
-		if flipGrav:
-			body.velocity.y = -speed * body.flippedMult
-			body.flipped = !body.flipped
-		else:
-			body.velocity.y = -speed * body.flippedMult

@@ -14,7 +14,7 @@ hframes = 4
 vframes = 12
 frame = 12
 script = ExtResource("3_18wbg")
-speed = -284.942
+color = "green"
 flipGrav = true
 
 [node name="Area2D" parent="." index="0" unique_id=1803678054]

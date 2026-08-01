@@ -3,9 +3,24 @@
 		"canHeadBonk":false,
 		"upVel":300,
 		"gravity":1440,
-		"maxFall":397.0,
+		"maxFall":397,
 		"maxUp":9999,
-		"pads":[0,0,0,0],
+		"orbs":{
+			"yellow":300,
+			"red":400,
+			"blue":-300,
+			"green":300,
+			"black":-397,
+			"white":0,
+			"pink":200
+		},
+		"pads":{
+			"yellow":0,
+			"blue":0,
+			"pink":0,
+			"green":0,
+			"red":0
+		},
 		"size":[14,14]
 	},
 	"ship":{
@@ -14,7 +29,22 @@
 		"gravity":540,
 		"maxFall":198.5,
 		"maxUp":198.5,
-		"pads":[0,0,0,0],
+		"orbs":{
+			"yellow":300,
+			"red":400,
+			"blue":-300,
+			"green":300,
+			"black":-397,
+			"white":0,
+			"pink":200
+		},
+		"pads":{
+			"yellow":0,
+			"blue":0,
+			"pink":0,
+			"green":0,
+			"red":0
+		},
 		"size":[14,14]
 	},
 	"ball":{
@@ -23,7 +53,22 @@
 		"gravity":1200,
 		"maxFall":397.0,
 		"maxUp":9999,
-		"pads":[0,0,0,0],
+		"orbs":{
+			"yellow":300,
+			"red":400,
+			"blue":-300,
+			"green":300,
+			"black":-397,
+			"white":0,
+			"pink":200
+		},
+		"pads":{
+			"yellow":0,
+			"blue":0,
+			"pink":0,
+			"green":0,
+			"red":0
+		},
 		"size":[14,14]
 	},
 	"robot":{
@@ -32,7 +77,22 @@
 		"gravity":1296,
 		"maxFall":397.0,
 		"maxUp":9999,
-		"pads":[0,0,0,0],
+		"orbs":{
+			"yellow":300,
+			"red":400,
+			"blue":-300,
+			"green":300,
+			"black":-397,
+			"white":0,
+			"pink":200
+		},
+		"pads":{
+			"yellow":0,
+			"blue":0,
+			"pink":0,
+			"green":0,
+			"red":0
+		},
 		"size":[14,14]
 	},
 	"ufo":{
@@ -41,7 +101,22 @@
 		"gravity":500,
 		"maxFall":150,
 		"maxUp":397.0,
-		"pads":[0,0,0,0],
+		"orbs":{
+			"yellow":300,
+			"red":400,
+			"blue":-300,
+			"green":300,
+			"black":-397,
+			"white":0,
+			"pink":200
+		},
+		"pads":{
+			"yellow":0,
+			"blue":0,
+			"pink":0,
+			"green":0,
+			"red":0
+		},
 		"size":[14,14]
 	},
 	"spider":{
@@ -50,7 +125,22 @@
 		"gravity":1200,
 		"maxFall":397.0,
 		"maxUp":397.0,
-		"pads":[0,0,0,0],
+		"orbs":{
+			"yellow":300,
+			"red":400,
+			"blue":-300,
+			"green":300,
+			"black":-397,
+			"white":0,
+			"pink":200
+		},
+		"pads":{
+			"yellow":0,
+			"blue":0,
+			"pink":0,
+			"green":0,
+			"red":0
+		},
 		"size":[14,14]
 	},
 	"swing":{
@@ -59,7 +149,22 @@
 		"gravity":500,
 		"maxFall":150,
 		"maxUp":397.0,
-		"pads":[0,0,0,0],
+		"orbs":{
+			"yellow":300,
+			"red":400,
+			"blue":-300,
+			"green":300,
+			"black":-397,
+			"white":0,
+			"pink":200
+		},
+		"pads":{
+			"yellow":0,
+			"blue":0,
+			"pink":0,
+			"green":0,
+			"red":0
+		},
 		"size":[14,14]
 	},
 }

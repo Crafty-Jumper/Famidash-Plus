@@ -163,7 +163,7 @@ func _physics_process(delta: float) -> void:
 	
 	buffer()
 	
-	move_and_slide()
+	position += velocity * delta
 	collision_handle()
 
 func animate_cube(texture: Texture2D=cubeSpr,rotate:bool=true) -> void:

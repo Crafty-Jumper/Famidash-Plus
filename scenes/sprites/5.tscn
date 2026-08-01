@@ -14,6 +14,7 @@ hframes = 4
 vframes = 12
 frame = 4
 script = ExtResource("3_txvqe")
+color = "blue"
 flipGrav = true
 
 [node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1803678054) index="0" unique_id=545990553]

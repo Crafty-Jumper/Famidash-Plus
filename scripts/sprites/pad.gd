@@ -7,11 +7,11 @@ extends Sprite2D
 var activated : bool = false
 
 func _ready() -> void:
-	area_2d.body_entered.connect(on_body_entered)
+	#area_2d.body_entered.connect(on_body_entered)
 	Global.refreshed.connect(blue)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for body in area_2d.get_overlapping_bodies():
 		if body.is_in_group("player"):
 			if activated and one_shot:
@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 					body.velocity.y = -speed * body.flippedMult
 					body.flipped = !body.flipped
 			else:
-				body.velocity.y = -speed * body.flippedMult / (1.5 if body.gamemode == 2 else 1.0)
+				body.velocity.y = -speed * body.flippedMult
 			activated = true
 
 func blue() -> void:

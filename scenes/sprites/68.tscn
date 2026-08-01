@@ -14,7 +14,7 @@ hframes = 4
 vframes = 12
 frame = 20
 script = ExtResource("3_bhhip")
-speed = -999.0
+color = "black"
 
 [node name="Area2D" parent="." index="0" unique_id=1803678054]
 position = Vector2(8, 8)
