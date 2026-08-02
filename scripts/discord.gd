@@ -17,6 +17,8 @@ func _ready() -> void:
 	var activity := DiscordActivity.new()
 	activity.set_type(DiscordActivityTypes.PLAYING)
 	
+	activity.set_details("hi sniper")
+	activity.set_state("like my rich presence")
 	
 	var timestamps := DiscordActivityTimestamps.new()
 	timestamps.set_start(start_time)
@@ -29,14 +31,23 @@ func _ready() -> void:
 	activity.set_assets(assets)
 	
 	activity.set_status_display_type(DiscordStatusDisplayTypes.STATE)
+	
+	client.update_rich_presence(activity, _on_rich_presence_updated)
+
 
 func _process(_delta: float) -> void:
 	Discord.run_callbacks()
+
 
 func _on_log(message: String, severity: DiscordLoggingSeverity.Enum) -> void:
 	var enum_str: String = Discord.enum_to_string(severity, DiscordLoggingSeverity.id)
 	
 	print("[%s] %s" % [enum_str, message])
+
+
+func _on_rich_presence_updated(result: DiscordClientResult) -> void:
+	if result.successful():
+		print("✅ Rich presence updated!")
 
 func set_activity(details:String="In Game",state:String="",imagekey:String=""):
 	client.set_application_id(application_id)
@@ -59,3 +70,5 @@ func set_activity(details:String="In Game",state:String="",imagekey:String=""):
 	var timestamps := DiscordActivityTimestamps.new()
 	timestamps.set_start(start_time)
 	activity.set_timestamps(timestamps)
+	
+	client.update_rich_presence(activity, _on_rich_presence_updated)
