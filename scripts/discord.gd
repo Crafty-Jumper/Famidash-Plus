@@ -17,8 +17,6 @@ func _ready() -> void:
 	var activity := DiscordActivity.new()
 	activity.set_type(DiscordActivityTypes.PLAYING)
 	
-	activity.set_details("hi sniper")
-	activity.set_state("like my rich presence")
 	
 	var timestamps := DiscordActivityTimestamps.new()
 	timestamps.set_start(start_time)
