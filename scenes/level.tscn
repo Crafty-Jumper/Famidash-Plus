@@ -490,7 +490,7 @@ size = Vector2(256, 240)
 load_path = "res://.godot/imported/AAH.png-31d53f87af4b8e71646957d15421911a.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qflbg"]
-size = Vector2(20, 66)
+size = Vector2(66, 66)
 
 [node name="Node2D" type="Node2D" unique_id=562772880]
 script = ExtResource("1_2r41h")
@@ -525,6 +525,8 @@ offset_bottom = 694.0
 
 [node name="CharacterBody2D" parent="." unique_id=1335267833 instance=ExtResource("4_mx8sn")]
 process_mode = 3
+process_priority = 2
+process_physics_priority = 2
 position = Vector2(-57, -9)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=973075758]
