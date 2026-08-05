@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	for body in area_2d.get_overlapping_bodies():
 		if body.is_in_group("player"):
 			if body.flipped != inverted:

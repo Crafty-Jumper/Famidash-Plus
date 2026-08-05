@@ -41,7 +41,7 @@ func _ready() -> void:
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	static_body_2d.position.x = character_body_2d.position.x
 	label.visible = Global.debug
 	pause_management()

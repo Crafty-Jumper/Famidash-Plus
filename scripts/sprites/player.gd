@@ -89,7 +89,7 @@ func _ready() -> void:
 	sprite_2d.material.set_shader_parameter("col1",Global.get_color(Global.save_data["colors"][0]))
 	sprite_2d.material.set_shader_parameter("col2",Global.get_color(Global.save_data["colors"][1]))
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	debug_mode()
 	sprite_2d_2.visible = false
 	collision_shape_2d.disabled = gamemode == -1
@@ -466,87 +466,19 @@ func collision_handle() -> void:
 	on_floor = false
 	on_left_wall = false
 	on_right_wall = false
+	var up : bool = flipped or physicsTable["canHeadBonk"]
+	var down : bool = !flipped or physicsTable["canHeadBonk"]
 	if gamemode != -1:
-		handle_ceiling_collisions()
-		handle_floor_collisions()
-		#handle_wall_collisions()
-
-func handle_wall_collisions() -> void:
-	cl.enabled = false
-	c.enabled = false
-	cr.enabled = false
-	cl.force_raycast_update()
-	c.force_raycast_update()
-	cr.force_raycast_update()
-	cl.enabled = true
-	c.enabled = true
-	cr.enabled = true
-	if cr.is_colliding():
-		on_right_wall = true
-		velocity.x = 0
-		position.x = cr.get_collision_point().x - physicsTable["size"][0]/2
-	#if cl.is_colliding():
-		#on_left_wall = true
-		#velocity.x = 0
-		#position.x = cl.get_collision_point().x + physicsTable["size"][0]/2
-
-func handle_floor_collisions() -> void:
-	bl.enabled = false
-	b.enabled = false
-	br.enabled = false
-	bl.force_raycast_update()
-	b.force_raycast_update()
-	br.force_raycast_update()
-	bl.enabled = true
-	b.enabled = true
-	br.enabled = true
-	
-	if velocity.y < 1:
-		return
-	if br.is_colliding():
-		if !flipped or physicsTable["canHeadBonk"]:
-			on_floor = true
-			velocity.y = 0
-			position.y = br.get_collision_point().y - physicsTable["size"][1]/2
-	if b.is_colliding():
-		on_floor = true
-		if !flipped or physicsTable["canHeadBonk"]:
-			velocity.y = 0
-			position.y = b.get_collision_point().y - physicsTable["size"][1]/2
-	if bl.is_colliding():
-		if !flipped or physicsTable["canHeadBonk"]:
-			on_floor = true
-			velocity.y = 0
-			position.y = bl.get_collision_point().y - physicsTable["size"][1]/2
-
-func handle_ceiling_collisions() -> void:
-	tl.enabled = false
-	t.enabled = false
-	tr.enabled = false
-	tl.force_raycast_update()
-	t.force_raycast_update()
-	tr.force_raycast_update()
-	tl.enabled = true
-	t.enabled = true
-	tr.enabled = true
-	
-	if velocity.y > -1:
-		return
-	if tr.is_colliding():
-		if flipped or physicsTable["canHeadBonk"]:
-			on_ceil = true
-			velocity.y = 0
-			position.y = tr.get_collision_point().y + physicsTable["size"][1]/2
-	if t.is_colliding():
-		on_ceil = true
-		if flipped or physicsTable["canHeadBonk"]:
-			velocity.y = 0
-			position.y = t.get_collision_point().y + physicsTable["size"][1]/2
-	if tl.is_colliding():
-		if flipped or physicsTable["canHeadBonk"]:
-			on_ceil = true
-			velocity.y = 0
-			position.y = tl.get_collision_point().y + physicsTable["size"][1]/2
+		collide(br,"on_floor",down,down)
+		collide(b,"on_floor",true,down)
+		collide(bl,"on_floor",down,down)
+		collide(tr,"on_ceil",up,up)
+		collide(t,"on_ceil",true,up)
+		collide(tl,"on_ceil",up,up)
+		collide(cr,"on_right_wall",true,true)
+		if c.is_colliding():
+			die()
+		collide(cr,"on_left_wall",false,false)
 
 func collide(node:RayCast2D,surface:String,push:bool=true,surface_graze:bool=false):
 	node.enabled = false
