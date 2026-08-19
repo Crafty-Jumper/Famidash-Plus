@@ -89,7 +89,7 @@ func _ready() -> void:
 	sprite_2d.material.set_shader_parameter("col1",Global.get_color(Global.save_data["colors"][0]))
 	sprite_2d.material.set_shader_parameter("col2",Global.get_color(Global.save_data["colors"][1]))
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	debug_mode()
 	sprite_2d_2.visible = false
 	collision_shape_2d.disabled = gamemode == -1
@@ -120,11 +120,7 @@ func _physics_process(delta: float) -> void:
 	if !clickDisabler:
 		clicking = (Input.is_action_pressed("A") or Input.is_action_pressed("up"))
 		first_click = (Input.is_action_just_pressed("A") or Input.is_action_just_pressed("up"))
-	if on_right_wall:
-		die()
-	if on_ceil:
-		if !physicsTable["canHeadBonk"]:
-			die()
+	
 	
 	
 	
@@ -165,6 +161,11 @@ func _physics_process(delta: float) -> void:
 	
 	position += velocity * delta
 	collision_handle()
+	if on_right_wall:
+		die()
+	if (on_ceil and !flipped) or (on_floor and flipped):
+		if !physicsTable["canHeadBonk"]:
+			die()
 
 func animate_cube(texture: Texture2D=cubeSpr,rotate:bool=true) -> void:
 	sprite_2d.texture = texture

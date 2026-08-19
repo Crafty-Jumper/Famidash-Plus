@@ -6,6 +6,8 @@
 size = Vector2(16, 48)
 
 [node name="Sprite2D" type="Sprite2D" unique_id=1678419382]
+process_priority = 1
+process_physics_priority = 1
 texture = ExtResource("1_ixp6j")
 centered = false
 hframes = 5
