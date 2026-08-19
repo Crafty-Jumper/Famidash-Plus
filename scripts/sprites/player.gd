@@ -13,6 +13,8 @@ var clicking : bool = false
 var first_click : bool = false
 var clickDisabler : bool = false
 @onready var trigger_manager: Area2D = $"../Area2D"
+var lastSlope = 0
+var currSlope = 0
 
 var iconRotates : bool = true
 var iconSpeed : float = 1.0
@@ -89,6 +91,68 @@ func _ready() -> void:
 	sprite_2d.material.set_shader_parameter("col1",Global.get_color(Global.save_data["colors"][0]))
 	sprite_2d.material.set_shader_parameter("col2",Global.get_color(Global.save_data["colors"][1]))
 
+@onready var node_2d: Node2D = $Node2D
+@onready var br: RayCast2D = $Node2D/br
+@onready var b: RayCast2D = $Node2D/b
+@onready var bl: RayCast2D = $Node2D/bl
+@onready var cr: RayCast2D = $Node2D/cr
+@onready var c: RayCast2D = $Node2D/c
+@onready var cl: RayCast2D = $Node2D/cl
+@onready var tr: RayCast2D = $Node2D/tr
+@onready var t: RayCast2D = $Node2D/t
+@onready var tl: RayCast2D = $Node2D/tl
+
+func collision_handle() -> void:
+	on_ceil = false
+	on_floor = false
+	on_left_wall = false
+	on_right_wall = false
+	var up : bool = flipped
+	var down : bool = !flipped
+	if gamemode != -1:
+		collide(br,"on_floor",down,down)
+		collide(b,"on_floor",true,down)
+		collide(bl,"on_floor",down,down)
+		collide(tr,"on_ceil",up,up)
+		collide(t,"on_ceil",true,up)
+		collide(tl,"on_ceil",up,up)
+		collide(cr,"on_right_wall",true,true)
+		if c.is_colliding():
+			die()
+		collide(cr,"on_left_wall",false,false)
+
+func collide(node:RayCast2D,surface:String,push:bool=true,surface_graze:bool=false):
+	node.enabled = false
+	node.force_raycast_update()
+	node.enabled = true
+	var push_mask : Vector2 = node.target_position / physicsTable["size"][1]
+	if node.is_colliding():
+		if push:
+			position.y = node.get_collision_point().y - push_mask.y * physicsTable["size"][1]
+			velocity.y = 0
+			if surface == "on_ceil":
+				on_ceil = surface_graze
+				if flipped:
+					lastSlope = currSlope
+					currSlope = int(rad_to_deg(node.get_collision_normal().angle())) + 90
+			elif surface == "on_left_wall":
+				on_left_wall = surface_graze
+			elif surface == "on_right_wall":
+				on_right_wall = surface_graze
+			else:
+				on_floor = surface_graze
+				if !flipped:
+					lastSlope = currSlope
+					currSlope = int(rad_to_deg(node.get_collision_normal().angle())) + 90
+
+func alefunky_fix_your_slopes() -> void:
+	if lastSlope != currSlope:
+		return
+	else:
+		if (!on_floor) or (!on_ceil):
+			velocity.y -= velocity.x * (lastSlope/-45)
+			currSlope = null
+
 func _process(delta: float) -> void:
 	debug_mode()
 	sprite_2d_2.visible = false
@@ -161,6 +225,7 @@ func _process(delta: float) -> void:
 	
 	position += velocity * delta
 	collision_handle()
+	alefunky_fix_your_slopes()
 	if on_right_wall:
 		die()
 	if (on_ceil and !flipped) or (on_floor and flipped):
@@ -450,54 +515,6 @@ func disable_clicks() -> void:
 func teleport(vel:float=velocity.y,off:float=0) -> void:
 	position.y = trigger_manager.tpExitY + off
 	velocity.y = vel
-
-@onready var node_2d: Node2D = $Node2D
-@onready var br: RayCast2D = $Node2D/br
-@onready var b: RayCast2D = $Node2D/b
-@onready var bl: RayCast2D = $Node2D/bl
-@onready var cr: RayCast2D = $Node2D/cr
-@onready var c: RayCast2D = $Node2D/c
-@onready var cl: RayCast2D = $Node2D/cl
-@onready var tr: RayCast2D = $Node2D/tr
-@onready var t: RayCast2D = $Node2D/t
-@onready var tl: RayCast2D = $Node2D/tl
-
-func collision_handle() -> void:
-	on_ceil = false
-	on_floor = false
-	on_left_wall = false
-	on_right_wall = false
-	var up : bool = flipped or physicsTable["canHeadBonk"]
-	var down : bool = !flipped or physicsTable["canHeadBonk"]
-	if gamemode != -1:
-		collide(br,"on_floor",down,down)
-		collide(b,"on_floor",true,down)
-		collide(bl,"on_floor",down,down)
-		collide(tr,"on_ceil",up,up)
-		collide(t,"on_ceil",true,up)
-		collide(tl,"on_ceil",up,up)
-		collide(cr,"on_right_wall",true,true)
-		if c.is_colliding():
-			die()
-		collide(cr,"on_left_wall",false,false)
-
-func collide(node:RayCast2D,surface:String,push:bool=true,surface_graze:bool=false):
-	node.enabled = false
-	node.force_raycast_update()
-	node.enabled = true
-	var push_mask : Vector2 = node.target_position / physicsTable["size"][1]
-	if node.is_colliding():
-		if push:
-			position.y = node.get_collision_point().y - push_mask.y * physicsTable["size"][1]
-			velocity.y = 0
-			if surface == "on_ceil":
-				on_ceil = surface_graze
-			elif surface == "on_left_wall":
-				on_left_wall = surface_graze
-			elif surface == "on_right_wall":
-				on_right_wall = surface_graze
-			else:
-				on_floor = surface_graze
 
 func debug_mode() -> void:
 	if !Global.debug:

@@ -46,8 +46,7 @@ func _on_log(message: String, severity: DiscordLoggingSeverity.Enum) -> void:
 
 
 func _on_rich_presence_updated(result: DiscordClientResult) -> void:
-	if result.successful():
-		print("✅ Rich presence updated!")
+	pass
 
 func set_activity(details:String="In Game",state:String="",imagekey:String=""):
 	client.set_application_id(application_id)

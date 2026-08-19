@@ -493,8 +493,8 @@ load_path = "res://.godot/imported/AAH.png-31d53f87af4b8e71646957d15421911a.ctex
 size = Vector2(20, 66)
 
 [node name="Node2D" type="Node2D" unique_id=562772880]
-process_priority = 2
-process_physics_priority = 2
+process_priority = 4
+process_physics_priority = 4
 script = ExtResource("1_2r41h")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=897857094]
