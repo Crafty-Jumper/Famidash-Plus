@@ -134,7 +134,7 @@ func collide(node:RayCast2D,surface:String,push:bool=true,surface_graze:bool=fal
 				on_ceil = surface_graze
 				if flipped:
 					lastSlope = currSlope
-					currSlope = int(rad_to_deg(node.get_collision_normal().angle())) + 90
+					currSlope = int(rad_to_deg(node.get_collision_normal().angle())) - 90
 			elif surface == "on_left_wall":
 				on_left_wall = surface_graze
 			elif surface == "on_right_wall":
