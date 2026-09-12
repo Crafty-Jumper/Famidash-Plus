@@ -14,11 +14,13 @@ func _physics_process(_delta: float) -> void:
 	for body in area_2d.get_overlapping_bodies():
 		if body.is_in_group("player"):
 			if body.flipped != inverted:
-				body.velocity.y /= 2
-			body.flipped = inverted
+				print("Beginning of frame: ", body.velocity.y, ", Divided: ", body.velocity.y/2)
+				body.velocity.y = body.velocity.y / 2
+				body.flipped = inverted
+				print("End of frame: ", body.velocity.y)
 
 func on_body_entered(body:Node2D) -> void:
 	if body.is_in_group("player"):
 		if body.flipped != inverted:
-			body.velocity.y /= 2
-		body.flipped = inverted
+			body.velocity.y = body.velocity.y / 2
+			body.flipped = inverted
