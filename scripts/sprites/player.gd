@@ -128,9 +128,11 @@ func collide(node:RayCast2D,surface:String,push:bool=true,surface_graze:bool=fal
 	var push_mask : Vector2 = node.target_position / physicsTable["size"][1]
 	if node.is_colliding():
 		if push:
-			position.y = node.get_collision_point().y - push_mask.y * physicsTable["size"][1]
-			velocity.y = 0
 			if surface == "on_ceil":
+				if velocity.y > 0:
+					return
+				velocity.y = 0
+				position.y = node.get_collision_point().y - push_mask.y * physicsTable["size"][1]
 				on_ceil = surface_graze
 				if flipped:
 					lastSlope = currSlope
@@ -140,6 +142,10 @@ func collide(node:RayCast2D,surface:String,push:bool=true,surface_graze:bool=fal
 			elif surface == "on_right_wall":
 				on_right_wall = surface_graze
 			else:
+				if velocity.y < 0:
+					return
+				velocity.y = 0
+				position.y = node.get_collision_point().y - push_mask.y * physicsTable["size"][1]
 				on_floor = surface_graze
 				if !flipped:
 					lastSlope = currSlope
