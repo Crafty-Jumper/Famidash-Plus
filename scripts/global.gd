@@ -87,12 +87,12 @@ func change_song(song: String = "menu_theme",loop:bool=false):
 	songLoop = loop
 	songName = song
 	if DirAccess.dir_exists_absolute("res://music/song_" + song):
-		var name = "res://music/song_" + song + "/" + DirAccess.get_files_at("res://music/song_" + song)[randi_range(0,DirAccess.get_files_at("res://music/song_" + song).size()-1)]
+		var name = "music/song_" + song + "/" + DirAccess.get_files_at("res://music/song_" + song)[randi_range(0,DirAccess.get_files_at("res://music/song_" + song).size()-1)]
 		name = name.replace(".import","")
-		music.stream = load(name)
+		music.stream = load_song(name)
 		music.play()
 		return
-	music.stream = load("res://music/song_" + song + ".wav")
+	music.stream = load_song("music/song_" + song + ".wav")
 	music.play()
 
 func play_sfx(id) -> void:
@@ -133,3 +133,27 @@ const colors : Array = [
 
 func get_color(index:int=0) -> Color:
 	return Color("#" + colors[clamp(index,0,colors.size()-1)])
+
+func get_file(filename:String) -> Variant:
+	var file = FileAccess.open("user://resources/" + filename,FileAccess.READ)
+	if !file:
+		file = FileAccess.open("res://" + filename,FileAccess.READ)
+	var filedata = file.get_as_text()
+	file.close()
+	return filedata
+
+func load_image(path:String) -> Texture:
+	var image = Image.new()
+	get_file(path)
+	image.load("user://resources/" + path)
+	return ImageTexture.create_from_image(image)
+
+func load_song(path: String) -> AudioStreamWAV:
+	var file = FileAccess.open("user://" + path, FileAccess.READ)
+	if FileAccess.file_exists("user://" + path):
+		path = "user://" + path
+	else:
+		return load("res://" + path)
+	var audio = AudioStreamWAV.load_from_file(path)
+	file.close()
+	return audio
